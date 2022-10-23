@@ -1,6 +1,6 @@
 body{
 	font-family: sans-serif;
-	background: #e6f1f2 url('https://i.postimg.cc/tRfmmgRf/IMG-5275-1.jpg');
+	background: #e6f1f2 url('https://i.postimg.cc/SQ8PtMhN/Desktop-7.png');
     background-size: cover;
 }
  
@@ -24,7 +24,7 @@ h1{
  
 .kotak_login{
 	width: 350px;
-	background: rgb(255, 255, 255) url('https://i.postimg.cc/L8qykFMS/faisal-1.jpg');
+	background: rgb(255, 255, 255);
 	/*meletakkan form ke tengah*/
     background-size: cover;
 	margin: 80px auto;
