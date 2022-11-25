@@ -1,6 +1,6 @@
 <?php 
  
-include '../Koneksi/koneksi.php';
+include '../Web_Kelurahan_Kepuharjo/koneksi/koneksi.php';
  
 error_reporting(0);
  
@@ -12,17 +12,15 @@ session_start();
  
 if (isset($_POST['submit'])) {
     $email = ($_POST['id_akun']);
-    $password = ($_POST['password']);
+    $password = md5($_POST['password']);
     
     $sql = "SELECT * FROM akun WHERE id_akun='$email' AND password='$password'";
     $result = mysqli_query($conn, $sql);
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $password_hash = '$2y$10$6q.0BseQwbuhI0dPeXeeg.Fejiz7Se6HR9OjQRdrgFvrUPQIUQbG.';
-        password_verify($password,$password_hash);
 
         // $_SESSION['username'] = $row['id_akun'];
-        header("Location: ../model/dashboard.php");
+        header("Location: dashboard.php");
     } else {
         echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
     }
@@ -41,7 +39,7 @@ if (isset($_POST['submit'])) {
  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
  
-    <link rel="stylesheet" type="text/css" href="../view/style.css">
+    <link rel="stylesheet" type="text/css" href="../Web_Kelurahan_Kepuharjo/view/style.css">
  
     <title>S-Kepuharjo</title>
 </head>
