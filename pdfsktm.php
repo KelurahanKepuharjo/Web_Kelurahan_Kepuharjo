@@ -20,8 +20,21 @@ use Mpdf\Tag\Center;
  
     $pdf = new FPDF();
     $pdf->AddPage();
-    $pdf->SetFont('arial','',12);
+    // $pdf->SetFont('Times','B');
+    // $pdf->SetXY(63,33);
+    // $pdf->SetFontSize(16);
+    // $pdf->Write(0,'KELURAHAN KEPUHARJO');
+    // $pdf->SetFont('Times','');
+    // $pdf->SetXY(63,39);
+    // $pdf->SetFontSize(14);
+    // $pdf->Write(0,'Jl. Langsep No. 18 Telp. (0334) 888243');
+
+    // $pdf->SetFont('Times','',12);
     $pdf->Image('../Web_Kelurahan_Kepuharjo/images/headersurat.png',0,0,0);
+    // $pdf->SetXY(90,45);
+    // $pdf->SetFontSize(14);
+    // $pdf->Write(0,'LUMAJANG');
+    $pdf->SetXY(10,10);
     $pdf->SetFont('Times','B',14);
     $pdf->Cell(0,80,'SURAT KETERANGAN TIDAK MAMPU',0,0,'C');
 
@@ -99,7 +112,5 @@ use Mpdf\Tag\Center;
     // $pdf->Write(100,$name);
     // $pdf->Write(100,$email);
     // $pdf->Write(100,$mobile);
- 
-    // $file = time().'.pdf';
     $pdf->output();
 ?>

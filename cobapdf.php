@@ -1,6 +1,6 @@
 <?php
 include 'koneksi/koneksi.php';
-$query = mysqli_query($conn,"SELECT no_surat,nama,tempat_lahir, tanggal_lahir,jenis_kelamin,kebangsaan,agama,status,pekerjaan,nik,alamat,tgl_pengajuan from surat_tidak_mampu WHERE id_surat =  'IDS0003'");
+$query = mysqli_query($conn,"SELECT no_surat,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,kebangsaan,agama,status,pekerjaan,nik,alamat,tgl_pengajuan, no_hp from surat_tidak_mampu join akun on surat_tidak_mampu.id_akun = akun.id_akun WHERE id_surat =  'IDS0003'");
 $data = mysqli_fetch_assoc($query);
 ?>
 
@@ -74,6 +74,9 @@ $data = mysqli_fetch_assoc($query);
                     
 
                     <input type="submit" class="btn btn-primary" name="signup" value="submit">
+                    <input type= "" onclick="location.href='<?php echo "https://wa.me/62"; echo $data['no_hp'];?>'"" class="btn btn-primary" name="" value="Kirim">
+                    <a href="<?php echo "https://wa.me/62"; echo $data['no_hp'];?>">kirim</a>
+                    
                 </form>
             </div>
         </div>    

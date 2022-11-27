@@ -19,8 +19,8 @@ if (isset($_POST['submit'])) {
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
 
-        // $_SESSION['username'] = $row['id_akun'];
-        header("Location: dashboard.php");
+        $_SESSION['username'] = $row['id_akun'];
+        header("Location: ../Web_Kelurahan_Kepuharjo/dashboard.php");
     } else {
         echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
     }
