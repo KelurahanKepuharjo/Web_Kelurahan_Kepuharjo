@@ -1139,7 +1139,7 @@ protected function _loadfont($font)
 	if(!isset($name))
 		$this->Error('Could not include font definition file');
 	if(isset($enc))
-		$enc = strtolower($enc);
+		// $enc = strtolower($enc);
 	if(!isset($subsetted))
 		$subsetted = false;
 	return get_defined_vars();
