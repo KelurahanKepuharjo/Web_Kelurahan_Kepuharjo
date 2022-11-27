@@ -1,21 +1,21 @@
 <?php
 session_start();
 include('koneksi.php');
-$sql = "SELECT * FROM user";
+$sql = "SELECT COUNT(id_akun) FROM akun";
 $result = mysqli_query($conn, $sql);
-$array = array();
-if(mysqli_num_rows($result)>0){
-    while($row = mysqli_fetch_array($result)){
-        $data = array(
-            'id_user' => $row['id'],
-            'nama_user' => $row['username'],
-            'pass' => md5($row['password']),
-            'alamat_user' => $row['alamat'],
-        );
-    array_push($array, $data);
-    }
-}
-echo json_encode($array);
+// $array = array();
+// if(mysqli_num_rows($result)>0){
+//     while($row = mysqli_fetch_array($result)){
+//         $data = array(
+//             'id_user' => $row['id'],
+//             'nama_user' => $row['username'],
+//             'pass' => md5($row['password']),
+//             'alamat_user' => $row['alamat'],
+//         );
+//     array_push($array, $data);
+//     }
+// }
+// echo json_encode($result);
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +27,6 @@ echo json_encode($array);
     <title>Document</title>
 </head>
 <body>
-    <a href=""></a>
+    <a href=""><?php $result ?></a>
 </body>
 </html>
