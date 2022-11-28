@@ -4,9 +4,8 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="../Web_Kelurahan_Kepuharjo/css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="shortcut icon" href="images/logo_kepuharjo.png" />
 </head>
 
 <body>
@@ -15,12 +14,11 @@
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="images/logo-kepuharjo.png"></a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                         <li class="nav-item">
@@ -167,10 +165,7 @@
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="map-kepuharjo">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.87003004516106!2d113.22873494918294!3d-8.109579479571078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd65d0d4b3fe4cd%3A0x899313326432ef25!2sKantor%20Kelurahan%20Kepuharjo!5e0!3m2!1sen!2sid!4v1669073292264!5m2!1sen!2sid"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.87003004516106!2d113.22873494918294!3d-8.109579479571078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd65d0d4b3fe4cd%3A0x899313326432ef25!2sKantor%20Kelurahan%20Kepuharjo!5e0!3m2!1sen!2sid!4v1669073292264!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
