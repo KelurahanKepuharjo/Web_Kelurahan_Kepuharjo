@@ -1,94 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Web_Kelurahan_Kepuharjo/view/stylee.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
-    <input type="checkbox" id="check">
-    <label for="check">
-        <i id="btn"> <img src="../Web_Kelurahan_Kepuharjo/images/bars.png" alt=""></i>
-        <i id="cancel"> <img src="../Web_Kelurahan_Kepuharjo/images/bars.png" alt=""></i>
-    </label>
-    <div class="sidebar">
-        <header>S-Kepuharjo</header>
-        <ul>
-            <li><a href="#">
-                <img src="../Web_Kelurahan_Kepuharjo/images/icon1.png" alt="" class="icon">
-                <span class="deskription">Dashboard</span>
-            </a></li>
-        </ul>
-        <ul>
-            <li><a href="#">
-                <img src="../Web_Kelurahan_Kepuharjo/images/icon2.png" alt="" class="icon">
-                <span class="deskription">Pengajuan Surat</span>
-                
-            </a></li>
-            <div class="sub-sidebar">
-                <ul>
-                    <li><a href="#">
-                        <img src="../Web_Kelurahan_Kepuharjo/images/icon3.png" alt="" class="icon">
-                        <span class="deskription">Surat Masuk</span>
-                    </a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">
-                        <img src="../Web_Kelurahan_Kepuharjo/images/icon4.png" alt="" class="icon">
-                        <span class="deskription">Surat Diproses</span>
-                    </a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">
-                        <img src="../Web_Kelurahan_Kepuharjo/images/icon5.png" alt="" class="icon">
-                        <span class="deskription">Surat Dapat Diambil</span>
-                    </a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">
-                        <img src="../Web_Kelurahan_Kepuharjo/images/icon6.png" alt="" class="icon">
-                        <span class="deskription">Surat Ditolak</span>
-                    </a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">
-                        <img src="../Web_Kelurahan_Kepuharjo/images/icon7.png" alt="" class="icon">
-                        <span class="deskription">Surat Selesai</span>
-                    </a></li>
-                </ul>
-            </div>
-        </ul>
-        <ul>
-            <li><a href="#">
-                <img src="../Web_Kelurahan_Kepuharjo/images/icon8.png" alt="" class="icon">
-                <span class="deskription">Master Data</span>
-            </a></li>
-        </ul>
-        <ul>
-            <li><a href="#">
-                <img src="../Web_Kelurahan_Kepuharjo/images/icon9.png" alt="" class="icon">
-                <span class="deskription">Tentang</span>
-            </a></li>
-        </ul>
-        <h2 class="version-text">Version 1.0</h2>
-    </div>
-    
-</body>
-</html>
-
 <?php
-session_start();
- 
-if (!isset($_SESSION['username'])) {
-    header("Location: index.php");
-}
-
+include('include/header.php');
+include('include/navbar.php');
 ?>
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+  </div>
+
+  <!-- Content Row -->
+  <div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Registered Admin</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+
+                <h4>Total Admin: *</h4>
+
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-calendar fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-auto">
+                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                </div>
+                <div class="col">
+                  <div class="progress progress-sm mr-2">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-comments fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Row -->
+
+
+
+
+
+
+
+
+  <?php
+  include('includes/scripts.php');
+  include('includes/footer.php');
+  ?>
