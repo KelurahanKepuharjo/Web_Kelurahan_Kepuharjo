@@ -13,7 +13,7 @@
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="images/logo-kepuharjo.png"></a>
+                <a class="navbar-brand" href="#"><img src="images/LOGO-KEPUHARJO.png"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -176,17 +176,17 @@
     <!-- Bagian footer bang -->
     <section id="footer">
         <footer class="bg-dark text-white pt-5 pb-4">
-            <div class="container text-center text-md-left">
-                <div class="row text-center text-md-left">
-                    <div class="col-md-4 col-xl-2">
-                        <img src="images/logo-kepuharjo.png" class="gbr-logo">
+            <div class="container text-left text-md-left">
+                <div class="row text-left text-md-left">
+                    <div class="col-md-4 col-xl-3">
+                        <img src="images/logo_kepuharjo1.png" class="gbr-logo">
                         <p align="justify">Layanan pengajuan surat Kelurahan
                             Kepuharjo dapat diakses pada hari
                             Senin - kamis pukul 08:00-14:oo WIB
                             Jum’at pukul 08:00-11:00 WIB</p>
 
                     </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Social Media</h5>
                         <p>
                             <a href="#" class="text-white" style="text-decoration: none;">Hati-hati</a>
@@ -200,20 +200,20 @@
                         <p>
                             <a href="#" class="text-white" style="text-decoration: none;">Hati-hati</a>
                         </p>
-                    </div>
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    </div> -->
+                    <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Navigasi</h5>
                         <p>
                             <a href="#" class="text-white" style="text-decoration: none;">Home</a>
                         </p>
                         <p>
-                            <a href="#" class="text-white" style="text-decoration: none;">Tentang</a>
+                            <a href="#tentang" class="text-white" style="text-decoration: none;">Tentang</a>
                         </p>
                         <p>
-                            <a href="#" class="text-white" style="text-decoration: none;">Fitur</a>
+                            <a href="#fitur" class="text-white" style="text-decoration: none;">Fitur</a>
                         </p>
                         <p>
-                            <a href="#" class="text-white" style="text-decoration: none;">Hubungi Kami</a>
+                            <a href="#hubungi-kami" class="text-white" style="text-decoration: none;">Hubungi Kami</a>
                         </p>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
