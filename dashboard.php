@@ -27,7 +27,7 @@ include('include/navbar.php');
               <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
             </div>
             <div class="col-auto">
-              <img src="img/icon-masuk.png" height="40">
+              <img src="images/icon-masuk.png" height="40">
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ include('include/navbar.php');
               <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
             </div>
             <div class="col-auto">
-              <img src="img/icon-diproses.png" height="40">
+              <img src="images/icon-diproses.png" height="40">
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ include('include/navbar.php');
               <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
             </div>
             <div class="col-auto">
-              <img src="img/icon-diambil.png" height="40">
+              <img src="images/icon-diambil.png" height="40">
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ include('include/navbar.php');
               <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
             </div>
             <div class="col-auto">
-              <img src="img/icon-jenis-surat.png" height="40">
+              <img src="images/icon-jenis-surat.png" height="40">
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@ include('include/navbar.php');
               <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
             </div>
             <div class="col-auto">
-              <img src="img/icon-selesai.png" height="40">
+              <img src="images/icon-selesai.png" height="40">
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ include('include/navbar.php');
               <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
             </div>
             <div class="col-auto">
-              <img src="img/icon-ditolak.png" height="40">
+              <img src="images/icon-ditolak.png" height="40">
             </div>
           </div>
         </div>

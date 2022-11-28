@@ -4,7 +4,7 @@
           <!-- Sidebar - Brand -->
           <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
             <div class="sidebar-brand-icon rotate-n-0">
-              <img src="img/logo_kepuharjo.png" height="40">
+              <img src="images/logo_kepuharjo.png" height="40">
             </div>
             <div class="sidebar-brand-text mx-2">S-Kepuharjo <sup></sup></div>
           </a>
@@ -224,7 +224,7 @@
                 <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Faisal Oktabrian</span>
-                    <img class="img-profile rounded-circle" src="img/icon-user-profile.png">
+                    <img class="img-profile rounded-circle" src="images/icon-user-profile.png">
                   </a>
                   <!-- Dropdown - User Information -->
                   <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
