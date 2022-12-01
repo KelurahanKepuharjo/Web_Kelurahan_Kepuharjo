@@ -4,9 +4,8 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="../Web_Kelurahan_Kepuharjo/css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="shortcut icon" href="images/logo_kepuharjo.png" />
 </head>
 
 <body>
@@ -14,13 +13,12 @@
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="images/logo-kepuharjo.png"></a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#"><img src="images/LOGO-KEPUHARJO.png"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                         <li class="nav-item">
@@ -167,10 +165,7 @@
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="map-kepuharjo">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.87003004516106!2d113.22873494918294!3d-8.109579479571078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd65d0d4b3fe4cd%3A0x899313326432ef25!2sKantor%20Kelurahan%20Kepuharjo!5e0!3m2!1sen!2sid!4v1669073292264!5m2!1sen!2sid"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.87003004516106!2d113.22873494918294!3d-8.109579479571078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd65d0d4b3fe4cd%3A0x899313326432ef25!2sKantor%20Kelurahan%20Kepuharjo!5e0!3m2!1sen!2sid!4v1669073292264!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -181,17 +176,17 @@
     <!-- Bagian footer bang -->
     <section id="footer">
         <footer class="bg-dark text-white pt-5 pb-4">
-            <div class="container text-center text-md-left">
-                <div class="row text-center text-md-left">
-                    <div class="col-md-4 col-xl-2">
-                        <img src="images/logo-kepuharjo.png" class="gbr-logo">
+            <div class="container text-left text-md-left">
+                <div class="row text-left text-md-left">
+                    <div class="col-md-4 col-xl-3">
+                        <img src="images/logo_kepuharjo1.png" class="gbr-logo">
                         <p align="justify">Layanan pengajuan surat Kelurahan
                             Kepuharjo dapat diakses pada hari
                             Senin - kamis pukul 08:00-14:oo WIB
                             Jum’at pukul 08:00-11:00 WIB</p>
 
                     </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Social Media</h5>
                         <p>
                             <a href="#" class="text-white" style="text-decoration: none;">Hati-hati</a>
@@ -205,20 +200,20 @@
                         <p>
                             <a href="#" class="text-white" style="text-decoration: none;">Hati-hati</a>
                         </p>
-                    </div>
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    </div> -->
+                    <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Navigasi</h5>
                         <p>
                             <a href="#" class="text-white" style="text-decoration: none;">Home</a>
                         </p>
                         <p>
-                            <a href="#" class="text-white" style="text-decoration: none;">Tentang</a>
+                            <a href="#tentang" class="text-white" style="text-decoration: none;">Tentang</a>
                         </p>
                         <p>
-                            <a href="#" class="text-white" style="text-decoration: none;">Fitur</a>
+                            <a href="#fitur" class="text-white" style="text-decoration: none;">Fitur</a>
                         </p>
                         <p>
-                            <a href="#" class="text-white" style="text-decoration: none;">Hubungi Kami</a>
+                            <a href="#hubungi-kami" class="text-white" style="text-decoration: none;">Hubungi Kami</a>
                         </p>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">

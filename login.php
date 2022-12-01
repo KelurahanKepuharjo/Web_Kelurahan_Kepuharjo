@@ -43,6 +43,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" type="text/css" href="../Web_Kelurahan_Kepuharjo/view/style.css">
 
     <title>S-Kepuharjo</title>
+    <link rel="shortcut icon" href="images/logo_kepuharjo.png" />
 </head>
 
 <body>
