@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
 include('include/header.php');
 include('include/navbar.php');
 ?>
@@ -20,6 +23,7 @@ include('include/navbar.php');
                     </p>
                     <div class="table-responsive">
                         <table class="table">
+
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -27,61 +31,44 @@ include('include/navbar.php');
                                     <th>Nama Lengkap</th>
                                     <th>Password</th>
                                     <th>No Hp</th>
-                                    <th>Aksi
-                                        <td>
-                                            <tr>
-                                                <tr></tr>
-                                            </tr>
-                                        </td>
-                                    </th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php 
-	                        if(isset($_GET['pesan'])){
-		                    $pesan = $_GET['pesan'];
-		                    if($pesan == "input"){
-			                echo "Data berhasil di input.";
-		                    }else if($pesan == "update"){
-			                echo "Data berhasil di update.";
-		                    }else if($pesan == "hapus"){
-			                echo "Data berhasil di hapus.";
-		                        }
-	                        }
-	                        ?>
+                            <?php
+                            require '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                            require '../Web_Kelurahan_Kepuharjo/Api/lihatdata.php';
                            
-                            <?php 
-		                    include "../Web_Kelurahan_Kepuharjo/koneksi/koneksi.php";
-		                    $query = mysqli_query($conn,"SELECT id_akun, nama_lengkap, password, no_hp FROM akun");
-        
-		                    $nomor = 1;
-		                    while($data = mysqli_fetch_assoc($query)){
-                            
-		                    ?>
+
+                            $obj = new read;
+                            $data = $obj->lihatdata();
+                            $nomor = 1;
+                            if($data->rowCount()>0){
+                                while($row=$data->fetch(PDO::FETCH_ASSOC)){
+
+                                
+
+                            ?>
+		                    
                                 <tr>
                                 <td scope="col"><?php echo $nomor++; ?></td>
-                                <td scope="col"><?php echo $data['id_akun']; ?></td>
-                                <td scope="col"><?php echo $data['nama_lengkap']; ?></td>
-                                <td scope="col"><?php echo $data['password']; ?></td>
-                                <td scope="col"><?php echo $data['no_hp']; ?></td>
-                                <?php } ?>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                          Detail
+                                <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                <td scope="col"><?php echo $row['nama_lengkap']; ?></td>
+                                <td scope="col"><?php echo $row['password'];?></td>
+                                <td scope="col"><?php echo $row['no_hp'];?></td>
+                                
+                                    <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                            Detail
                                             <i class="typcn typcn-edit btn-icon-append"></i>
                                         </button>
-                                    
-                                       
                                         <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                          Detail
+                                            Detail
                                             <i class="typcn typcn-edit btn-icon-append"></i>
                                         </button>
-                                       
-                                        
                                     </td>
-                                        
+                                       
                                 </tr>
-            
+                                 <?php }}?> 
                             </tbody>
                         </table>
                     </div>
