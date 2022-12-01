@@ -25,34 +25,63 @@ include('include/navbar.php');
                                     <th>No</th>
                                     <th>NIK</th>
                                     <th>Nama Lengkap</th>
-                                    <th>Tempat, Tanggal dan Lahir</th>
-                                    <th>Alamat</th>
-                                    <th>Aksi</th>
+                                    <th>Password</th>
+                                    <th>No Hp</th>
+                                    <th>Aksi
+                                        <td>
+                                            <tr>
+                                                <tr></tr>
+                                            </tr>
+                                        </td>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php 
+	                        if(isset($_GET['pesan'])){
+		                    $pesan = $_GET['pesan'];
+		                    if($pesan == "input"){
+			                echo "Data berhasil di input.";
+		                    }else if($pesan == "update"){
+			                echo "Data berhasil di update.";
+		                    }else if($pesan == "hapus"){
+			                echo "Data berhasil di hapus.";
+		                        }
+	                        }
+	                        ?>
+                           
+                            <?php 
+		                    include "../Web_Kelurahan_Kepuharjo/koneksi/koneksi.php";
+		                    $query = mysqli_query($conn,"SELECT id_akun, nama_lengkap, password, no_hp FROM akun");
+        
+		                    $nomor = 1;
+		                    while($data = mysqli_fetch_assoc($query)){
+                            
+		                    ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>3602183134759</td>
-                                    <td>Nadia Ayu Safitri</td>
-                                    <td>jember, 26 Desember 2003</td>
-                                    <td>Tegal Besar Permai 1</td>
-                                    <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                            Detail
+                                <td scope="col"><?php echo $nomor++; ?></td>
+                                <td scope="col"><?php echo $data['id_akun']; ?></td>
+                                <td scope="col"><?php echo $data['nama_lengkap']; ?></td>
+                                <td scope="col"><?php echo $data['password']; ?></td>
+                                <td scope="col"><?php echo $data['no_hp']; ?></td>
+                                <?php } ?>
+                                <td>
+                                    <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                          Detail
                                             <i class="typcn typcn-edit btn-icon-append"></i>
-                                        </button></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>3602183134760</td>
-                                    <td>Faisal Oktabrian Sholihin</td>
-                                    <td>jember, 08 Oktober 2002</td>
-                                    <td>Griya Mangli Permai</td>
-                                    <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                            Detail
+                                        </button>
+                                    
+                                       
+                                        <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                          Detail
                                             <i class="typcn typcn-edit btn-icon-append"></i>
-                                        </button></td>
+                                        </button>
+                                       
+                                        
+                                    </td>
+                                        
                                 </tr>
+            
                             </tbody>
                         </table>
                     </div>
