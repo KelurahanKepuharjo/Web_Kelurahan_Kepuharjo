@@ -1,11 +1,12 @@
 <?php
 include 'koneksi/koneksi.php';
-$query = mysqli_query($conn,"SELECT no_surat,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,kebangsaan,agama,status,pekerjaan,nik,alamat,tgl_pengajuan, no_hp from surat_tidak_mampu join akun on surat_tidak_mampu.id_akun = akun.id_akun WHERE id_surat =  'IDS0003'");
+$query = mysqli_query($conn, "SELECT no_surat,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,kebangsaan,agama,status,pekerjaan,nik,alamat,tgl_pengajuan, no_hp from surat_tidak_mampu join akun on surat_tidak_mampu.id_akun = akun.id_akun WHERE id_surat =  'IDS0003'");
 $data = mysqli_fetch_assoc($query);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Simple Registration Form in PHP - Tutsmake.com</title>
@@ -15,6 +16,7 @@ $data = mysqli_fetch_assoc($query);
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -22,7 +24,7 @@ $data = mysqli_fetch_assoc($query);
                 <div class="page-header">
                     <h2>Preview data Syarat Surat</h2>
                 </div>
-                
+
                 <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
 
                     <div class="form-group">
@@ -35,7 +37,9 @@ $data = mysqli_fetch_assoc($query);
                     </div>
                     <div class="form-group">
                         <label>Tempat, Tanggal Lahir</label>
-                        <input type="text" name="ttl" class="form-control" value="<?php echo $data['tempat_lahir'] ;  echo ", ";  echo $data['tanggal_lahir'] ?>" maxlength="50" required="">
+                        <input type="text" name="ttl" class="form-control" value="<?php echo $data['tempat_lahir'];
+                                                                                    echo ", ";
+                                                                                    echo $data['tanggal_lahir'] ?>" maxlength="50" required="">
                     </div>
                     <div class="form-group">
                         <label>Jenis kelamin</label>
@@ -71,15 +75,18 @@ $data = mysqli_fetch_assoc($query);
                         <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $data['tgl_pengajuan']; ?>" maxlength="50" required="">
                         <span class="text-danger">
                     </div>
-                    
+
 
                     <input type="submit" class="btn btn-primary" name="signup" value="submit">
-                    <input type= "" onclick="location.href='<?php echo "https://wa.me/62"; echo $data['no_hp'];?>'"" class="btn btn-primary" name="" value="Kirim">
-                    <a href="<?php echo "https://wa.me/62"; echo $data['no_hp'];?>">kirim</a>
-                    
+                    <!-- <input type= "" onclick="location.href='<?php echo "https://wa.me/62";
+                                                                    echo $data['no_hp']; ?>'"" class="btn btn-primary" name="" value="Kirim"> -->
+                    <a href="<?php echo "https://wa.me/62";
+                                echo $data['no_hp']; ?>"><input type="kirim" class="btn btn-primary" name="signup" value="kirim"></a>
+
                 </form>
             </div>
-        </div>    
+        </div>
     </div>
 </body>
+
 </html>
