@@ -38,7 +38,6 @@
                 <h6 class="collapse-header">Status Surat:</h6>
                 <a class="collapse-item" href="surat-masuk.php">Surat Masuk</a>
                 <a class="collapse-item" href="surat-diproses.php">Surat Diproses</a>
-                <a class="collapse-item" href="surat-dapat-diambil.php">Surat Dapat Diambil</a>
                 <a class="collapse-item" href="surat-ditolak.php">Surat Ditolak</a>
                 <a class="collapse-item" href="surat-selesai.php">Surat Selesai</a>
               </div>
