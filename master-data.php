@@ -31,13 +31,16 @@ include('include/navbar.php');
                                     <th>Nama Lengkap</th>
                                     <th>Password</th>
                                     <th>No Hp</th>
+                                    <th>RT</th>
+                                    <th>RW</th>
+                                    <th>Alamat</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <?php
                             require '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                            require '../Web_Kelurahan_Kepuharjo/Api/lihatdata.php';
+                            require '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
                            
 
                             $obj = new read;
@@ -56,6 +59,9 @@ include('include/navbar.php');
                                 <td scope="col"><?php echo $row['nama_lengkap']; ?></td>
                                 <td scope="col"><?php echo $row['password'];?></td>
                                 <td scope="col"><?php echo $row['no_hp'];?></td>
+                                <td scope="col"><?php echo $row['rt'];?></td>
+                                <td scope="col"><?php echo $row['rw'];?></td>
+                                <td scope="col"><?php echo $row['alamat '];?></td>
                                 
                                     <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
                                             Detail
