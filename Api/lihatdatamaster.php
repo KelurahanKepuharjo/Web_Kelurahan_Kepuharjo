@@ -6,7 +6,8 @@
         ";
         $result= $this->koneksi->prepare($sql);
         $result->execute();
-        return $result;                               
+        return $result; 
+                                      
         }  
     }
        

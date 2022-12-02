@@ -61,7 +61,7 @@ include('include/navbar.php');
                                 <td scope="col"><?php echo $row['no_hp'];?></td>
                                 <td scope="col"><?php echo $row['rt'];?></td>
                                 <td scope="col"><?php echo $row['rw'];?></td>
-                                <td scope="col"><?php echo $row['alamat '];?></td>
+                                <td scope="col"><?php echo $row['alamat'];?></td>
                                 
                                     <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
                                             Detail
