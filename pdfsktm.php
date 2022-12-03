@@ -112,5 +112,6 @@ use Mpdf\Tag\Center;
     // $pdf->Write(100,$name);
     // $pdf->Write(100,$email);
     // $pdf->Write(100,$mobile);
-    $pdf->output();
+    $pdf->Output('D', "filename.pdf", true);
+    // $pdf->output();
 ?>
