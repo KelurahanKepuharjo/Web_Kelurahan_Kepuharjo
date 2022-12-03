@@ -10,6 +10,17 @@
                                       
         }  
     }
+
+    class readprofile extends koneksii{
+        public function lihatprofile(){
+            $sql = "SELECT nama_lengkap,image_profil FROM akun JOIN penduduk ON akun.id_akun = penduduk.id_akun 
+            WHERE akun.id_akun = 'admin' ";
+            $result= $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result; 
+                                          
+            }  
+        }
        
 
 ?>

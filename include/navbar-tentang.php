@@ -223,7 +223,24 @@
                 <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Faisal Oktabrian</span>
-                    <img class="img-profile rounded-circle" src="images/icon-user-profile.png">
+                    <?php
+                            require '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                            require '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                           
+
+                            $obj = new readprofile;
+                            $data = $obj->lihatprofile();
+                           
+                            if($data->rowCount()>0){
+                                while($row=$data->fetch(PDO::FETCH_ASSOC)){
+
+                                
+
+                            ?>
+                        
+                    <img class="img-profile rounded-circle" src="uploads/<?php echo $row['image_profil']?> ">
+                    <?php }}?>
+
                   </a>
                   <!-- Dropdown - User Information -->
                   <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
