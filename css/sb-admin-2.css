@@ -10681,7 +10681,7 @@ a:focus {
   background-color: #4e73df;
   background: linear-gradient(180deg, rgba(51,142,112,1) 35%, rgba(9,111,155,1) 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #4e73df), to(#224abe));
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-image: linear-gradient(180deg, #16533F 20%, #18A3DF 100%);
   background-size: cover;
 }
 
