@@ -287,6 +287,97 @@ $pdf->Cell($width_cell[0],10,'18',1,0,'L',false); // First column of row 1
 $pdf->Cell($width_cell[1],10,'Pengikut',1,0,'L',false); // Second column of row 1 
 $pdf->Cell($width_cell[2],10,'Four',1,0,'L',false); // Third column of row 1 
 
+$pdf->SetXY(30,270);
+$pdf->SetFont('Times','');
+$pdf->SetFontSize(16);
+
+
+// $pdf = new FPDF();
+$pdf->AddPage();
+$pdf->Image('../Web_Kelurahan_Kepuharjo/images/logohp.png',18,8,50);
+    $pdf->SetFont('Times','',14);
+    $pdf->SetXY(70,18);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'PEMERINTAH KABUPATEN LUMAJANG');
+    $pdf->SetXY(85,24);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'KECAMATAN LUMAJANG');
+    $pdf->SetFont('Times','',20);
+    $pdf->SetXY(75,30);
+    $pdf->SetFontSize(18);
+    $pdf->Write(0,'KELURAHAN KEPUHARJO');
+    $pdf->SetFont('TIMES','',14);
+    $pdf->SetXY(75,36);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'Jl. Langsep No. 18 Telp. (0334) 888243');
+    $pdf->SetFont('TIMES','',14);
+    $pdf->SetXY(99,42);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'LUMAJANG');
+    $pdf->SetFont('TIMES','',14);
+    $pdf->SetXY(30,60);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'DATA KEPEMILIKAN PENDUDUK :');
+    
+    $pdf->SetFont('Arial','B',12);
+    $pdf->SetXY(30,75);
+    $pdf->SetFont('Times','');
+    $pdf->SetFontSize(16);
+    $pdf->Write(0,'');
+$width_cell=array(10,70,70);
+$pdf->SetFillColor(193,229,252);
+$pdf->Cell($width_cell[0],10,'1',1,0,'L',false); // First column of row 1 
+$pdf->Cell($width_cell[1],10,'Nama Lengkap',1,0,'L',false); // Second column of row 1 
+$pdf->Cell($width_cell[2],10,'Four',1,0,'L',false); // Third column of row 1 
+$pdf->SetXY(30,85);
+    $pdf->SetFont('Times','');
+    $pdf->SetFontSize(16);
+    $pdf->Write(0,'');
+$pdf->Cell($width_cell[0],10,'2',1,0,'L',false); // First column of row 1 
+$pdf->Cell($width_cell[1],10,'Tempat Lahir',1,0,'L',false); // Second column of row 1 
+$pdf->Cell($width_cell[2],10,'Four',1,0,'L',false); // Third column of row 1 
+$pdf->SetXY(30,95);
+    $pdf->SetFont('Times','');
+    $pdf->SetFontSize(16);
+    $pdf->Write(0,'');
+$pdf->Cell($width_cell[0],10,'3',1,0,'L',false); // First column of row 1 
+$pdf->Cell($width_cell[1],10,'Tanggal Lahir',1,0,'L',false); // Second column of row 1 
+$pdf->Cell($width_cell[2],10,'Four',1,0,'L',false); // Third column of row 1 
+$pdf->SetXY(30,105);
+    $pdf->SetFont('Times','');
+    $pdf->SetFontSize(16);
+    $pdf->Write(0,'');
+$pdf->Cell($width_cell[0],10,'4',1,0,'L',false); // First column of row 1 
+$pdf->Cell($width_cell[1],10,'Jenis Kelamin',1,0,'L',false); // Second column of row 1 
+$pdf->Cell($width_cell[2],10,'Four',1,0,'L',false);
+$pdf->SetXY(30,115);
+    $pdf->SetFont('Times','');
+    $pdf->SetFontSize(16);
+    $pdf->Write(0,'');
+$pdf->Cell($width_cell[0],10,'5',1,0,'L',false); // First column of row 1 
+$pdf->Cell($width_cell[1],10,'Jenis Kelamin',1,0,'L',false); // Second column of row 1 
+$pdf->Cell($width_cell[2],10,'Four',1,0,'L',false);
+$pdf->SetXY(40,174);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'Demikian surat keterangan ini kami buat untuk dapat dipergunakan ');
+    $pdf->SetXY(25,180);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'sebagaimana mestinnya.');
+    $pdf->SetXY(45,200);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'Mengetahui,                                     Lumajang, ');
+    $pdf->Write(0,'$tanggalsurat');
+    $pdf->SetXY(35,206);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'CAMAT LUMAJANG                               LURAH KEPUHARJO');
+    $pdf->SetXY(35,206);
+    $pdf->SetFontSize(14);
+    $pdf->Image('../Web_Kelurahan_Kepuharjo/images/ttd.png',120,210,50);
+    $pdf->Image('../Web_Kelurahan_Kepuharjo/images/stempel.png',110,200,40);
+    $pdf->SetXY(35,240);
+    $pdf->SetFontSize(14);
+    $pdf->Write(0,'                                                                MUHAMMAD SAIFUL,S.AP');
+
 
 
 
