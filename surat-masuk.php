@@ -47,6 +47,9 @@ include('include/navbar.php');
                                     <th>
                                         Tanggal
                                     </th>
+                                    <th>
+                                        Status
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,6 +69,9 @@ include('include/navbar.php');
                                     <td>
                                         17 Nopember 2022
                                     </td>
+                                    <td>
+                                        
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -83,7 +89,9 @@ include('include/navbar.php');
                                     <td>
                                         18 Nopember 2022
                                     </td>
-
+                                    <td>
+                                        
+                                    </td>
                                 </tr>
                             </tbody>
 
