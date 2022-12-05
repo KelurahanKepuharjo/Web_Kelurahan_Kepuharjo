@@ -20,7 +20,16 @@ include('include/navbar-tentang.php');
         margin-left: 21%;
     }
    </style>
+
+    
+
     <div class="lingkaran1"> <img class="lingkaran1" src="../Web_Kelurahan_Kepuharjo/uploads/Group1.jpeg" alt=""></div>
+    <?php
+    // $imagepath = "";
+    // $newpath = "../WE";
+    
+
+    ?>
     <button type="submit" name="upload" class="btn btn-danger upload">Upload</button>
     <form method="post">
         <div class="col-lg-6">

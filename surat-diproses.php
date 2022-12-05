@@ -56,6 +56,43 @@ include('include/navbar.php');
                                     </th>
                                 </tr>
                               </thead>
+                              <tbody>
+                              <?php
+                            require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                            require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                           
+
+                            $obj = new readsm;
+                            $data = $obj->suratdiproses();
+                            $nomor = 1;
+                            if($data->rowCount()>0){
+                                while($row=$data->fetch(PDO::FETCH_ASSOC)){
+
+                                
+
+                            ?>
+		                    
+                                <tr>
+                                <td scope="col"><?php echo $nomor++; ?></td>
+                                <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                <td scope="col"><?php echo $row['nama']; ?></td>
+                                <td scope="col"><?php echo 'Surat Domisili';?></td>
+                                <td scope="col"><?php echo $row['tgl_surat_pengantar'];?></td>
+                                <td scope="col"><?php echo $row['status_surat'];?></td>
+                                
+                                    <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                            Detail
+                                            <i class="typcn typcn-edit btn-icon-append"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                            Detail
+                                            <i class="typcn typcn-edit btn-icon-append"></i>
+                                        </button>
+                                    </td>
+                                       
+                                </tr>
+                                 <?php }}?> 
+                              </tbody>
                           </table>
                       </div>
                   </div>
