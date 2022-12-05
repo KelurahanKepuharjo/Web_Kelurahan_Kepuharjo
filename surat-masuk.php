@@ -89,12 +89,16 @@ include('include/navbar.php');
 
                         </table>
                     </div>
-                </div>
+                </div>          
             </div>
+            <div class="col-lg-6 mb-4"></div>
+            <button type="button" class="btn btn-info">SETUJUI SEMUA</button>
+        </div>
+        <div class="col-lg-6 mb-4">
+
         </div>
     </div>
     <!-- /.container-fluid -->
-    <button type="button" class="btn btn-info">SETUJUI SEMUA</button>
 </div>
 
 <?php
