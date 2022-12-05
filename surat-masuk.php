@@ -53,7 +53,32 @@ include('include/navbar.php');
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                            require_once '../Web_Kelurahan_Kepuharjo/Api/suratmasuk.php';
+                           
+
+                            $obj = new suratmasuk;
+                            $data = $obj->lihatsuratmasuk();
+                            $nomor = 1;
+                            if($data->rowCount()>0){
+                                while($row=$data->fetch(PDO::FETCH_ASSOC)){
+
+                                
+
+                            ?>
+		                    
                                 <tr>
+                                <td scope="col"><?php echo $nomor++; ?></td>
+                                <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                <td scope="col"><?php echo $row['nama']; ?></td>
+                                <td scope="col"><?php echo 'Surat Domisili';?></td>
+                                <td scope="col"><?php echo $row['tgl_surat_pengantar'];?></td>
+                                <td scope="col"><?php echo $row['status_surat'];?></td>
+                                       
+                                </tr>
+                                 <?php }}?>
+                                <!-- <tr>
                                     <td>
                                         1
                                     </td>
@@ -92,7 +117,7 @@ include('include/navbar.php');
                                     <td>
                                         
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
 
                         </table>
