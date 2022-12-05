@@ -1,4 +1,7 @@
         <!-- Sidebar -->
+        <?php
+        session_start();
+        ?>
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
           <!-- Sidebar - Brand -->
@@ -222,7 +225,9 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Faisal Oktabrian</span>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php
+                    echo $_SESSION['username'];
+                    ?></span>
                     <?php
                             require '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
                             require '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
@@ -233,7 +238,7 @@
                            
                             if($data->rowCount()>0){
                                 while($row=$data->fetch(PDO::FETCH_ASSOC)){
-
+                                
                                 
 
                             ?>
