@@ -10,17 +10,18 @@ include('include/navbar.php');
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <!-- Topbar Search -->
-    <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
-                <div class="input-group">
-                  <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                      <i class="fas fa-search fa-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
+        <!-- Topbar Search -->
+        <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filter Laporan
+          </button>
+          <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item"><input type="datetime-local" class=""></a>
+
+          </div>
+        </form>
+      </div>
+    </form>
   </div>
 
   <!-- Content Row -->
