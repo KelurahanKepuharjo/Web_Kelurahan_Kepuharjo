@@ -22,9 +22,12 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $row['id_akun'];
         header("Location: ../Web_Kelurahan_Kepuharjo/dashboard.php");
     } else {
-        echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+        echo "<script>alert('Username Anda salah. Silahkan coba lagi!')</script>";
     }
+}else{
+    echo "<script>alert('Password Anda Salah. Silahkan coba lagi!')</script>";
 }
+
 
 
 

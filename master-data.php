@@ -57,11 +57,12 @@ include('include/navbar.php');
 
                             $obj = new read;
                             $data = $obj->lihatdata();
+                          
+                            
                             $nomor = 1;
                             if($data->rowCount()>0){
                                 while($row=$data->fetch(PDO::FETCH_ASSOC)){
-
-                                
+                                  
 
                             ?>
 		                    
