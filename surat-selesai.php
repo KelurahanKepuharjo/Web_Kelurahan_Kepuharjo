@@ -8,17 +8,17 @@ include('include/navbar.php');
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-4 text-gray-800">Surat Selesai</h1>
-    <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
-                <div class="input-group">
-                  <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
+        <h1 class="h3 mb-4 text-gray-800">Surat Selesai</h1>
+        <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
-                      <i class="fas fa-search fa-sm"></i>
+                        <i class="fas fa-search fa-sm"></i>
                     </button>
-                  </div>
                 </div>
-              </form>
+            </div>
+        </form>
     </div>
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
@@ -51,41 +51,42 @@ include('include/navbar.php');
                                         Keterangan
                                     </th>
                                 </tr>
-                              </thead>
-                              <tbody>
-                              <?php
-                            require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                            require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
-                           
+                            </thead>
+                            <tbody>
+                                <?php
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
 
-                            $obj = new suratselesai;
-                            $data = $obj->lihatsuratselesai();
-                            $nomor = 1;
-                            if($data->rowCount()>0){
-                                while($row=$data->fetch(PDO::FETCH_ASSOC)){
 
-                                
+                                $obj = new suratselesai;
+                                $data = $obj->lihatsuratselesai();
+                                $nomor = 1;
+                                if ($data->rowCount() > 0) {
+                                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                            ?>
-		                    
-                                <tr>
-                                <td scope="col"><?php echo $nomor++; ?></td>
-                                <td scope="col"><?php echo $row['id_akun']; ?></td>
-                                <td scope="col"><?php echo $row['nama']; ?></td>
-                                <td scope="col"><?php echo 'Surat Domisili';?></td>
-                                <td scope="col"><?php echo $row['tgl_surat_pengantar'];?></td>
-                                <td scope="col"><?php echo $row['status_surat'];?></td>
-                                       
-                                </tr>
-                                 <?php }}?>
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 mb-4"></div>
-      </div>
+
+
+                                ?>
+
+                                        <tr>
+                                            <td scope="col"><?php echo $nomor++; ?></td>
+                                            <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                            <td scope="col"><?php echo $row['nama']; ?></td>
+                                            <td scope="col"><?php echo 'Surat Domisili'; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col" class="badge badge-success"><?php echo $row['status_surat']; ?></td>
+
+                                        </tr>
+                                <?php }
+                                } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4"></div>
+    </div>
     <!-- /.container-fluid -->
 
 </div>
