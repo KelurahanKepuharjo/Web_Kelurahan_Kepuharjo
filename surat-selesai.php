@@ -20,13 +20,44 @@ include('include/navbar.php');
                 </div>
               </form>
     </div>
-
     <div class="row">
-
-        <div class="col-lg-6">
-        </div>
-
-    </div>
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Surat Selesai</h4>
+                    <p class="card-description">
+                        Menampilkan data surat yang telah diproses
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        No
+                                    </th>
+                                    <th>
+                                        NIK
+                                    </th>
+                                    <th>
+                                        Nama Lengkap
+                                    </th>
+                                    <th>
+                                        Jenis Surat
+                                    </th>
+                                    <th>
+                                        Tanggal
+                                    </th>
+                                    <th>
+                                        Keterangan
+                                    </th>
+                                </tr>
+                              </thead>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     <!-- /.container-fluid -->
 
 </div>
