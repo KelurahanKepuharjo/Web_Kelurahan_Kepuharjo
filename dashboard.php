@@ -17,17 +17,22 @@ include('include/navbar.php');
       <h2>to</h2><a class="dropdown-item"><input type="datetime-local" class=""></a> -->
       <div class="container">
         <div class="row">
-          <div class="col-12" id="sandbox-container">
-            <div class="input-daterange input-group pt-5" id="datepicker">
-              <span class="input-group-text" id="addon-wrapping">Laporan awal</span>
-              <input type="datetime-local" class="input-sm form-control" name="start">
-              <span class="input-group-text" id="addon-wrapping">Laporan akhir</span>
-              <input type="datetime-local" class="input-sm form-control" name="end">
-              <button type="button" class="btn btn-info">Tampilkan</button>
+          <div class="container-fluid">
+            <div class="form-group row">
+              <label for="date" class="col-form-label col-sm-2">Laporan</label>
+              <div class="col-sm-3">
+                <input type="date" class="form-control input-sm" id="fromDate" name="fromDate" required />
+              </div>
+              <label for="date" class="col-form-label col-sm-2">Laporan</label>
+              <div class="col-sm-3">
+                <input type="date" class="form-control input-sm" id="fromDate" name="fromDate" required />
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" class="btn" name="search" title="Search"><img src="https://img.icons8.com/search" width="25px" height="25"></button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </form>
   </div>
   </form>
