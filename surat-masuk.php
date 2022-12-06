@@ -15,126 +15,126 @@ include('include/navbar.php');
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">SKTM
-                <span class="badge badge-danger badge-counter">
-                <?php
-                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-               
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
-                $obj = new readsktm;
-                $data = $obj->sumsktm();
-              
-                
-                $nomor = 1;
-                if ($data->rowCount() > 0) {
-                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                        echo $row['sumid'];
-                    }
-                }
-                ?></span>
+                        $obj = new readsktm;
+                        $data = $obj->sumsktm();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
                 </a>
                 <a class="dropdown-item" href="#">Domisili
-                <span class="badge badge-danger badge-counter">
-                <?php
-                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-               
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
-                $obj = new readdomisili;
-                $data = $obj->sumdomisili();
-              
-                
-                $nomor = 1;
-                if ($data->rowCount() > 0) {
-                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                        echo $row['sumid'];
-                    }
-                }
-                ?></span>
+                        $obj = new readdomisili;
+                        $data = $obj->sumdomisili();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
                 </a>
                 <a class="dropdown-item" href="#">Akta Kelahiran
-                <span class="badge badge-danger badge-counter">
-                <?php
-                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-               
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
-                $obj = new readakta;
-                $data = $obj->sumakta();
-              
-                
-                $nomor = 1;
-                if ($data->rowCount() > 0) {
-                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                        echo $row['sumid'];
-                    }
-                }
-                ?></span>
+                        $obj = new readakta;
+                        $data = $obj->sumakta();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
                 </a>
                 <a class="dropdown-item" href="#">Keterangan Pindah
-                <span class="badge badge-danger badge-counter">
-                <?php
-                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-               
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
-                $obj = new readpindah;
-                $data = $obj->sumpindah();
-              
-                
-                $nomor = 1;
-                if ($data->rowCount() > 0) {
-                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                        echo $row['sumid'];
-                    }
-                }
-                ?></span>
+                        $obj = new readpindah;
+                        $data = $obj->sumpindah();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
                 </a>
                 <a class="dropdown-item" href="#">Belum menikah
-                <span class="badge badge-danger badge-counter">
-                <?php
-                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-               
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
-                $obj = new readbelumnikah;
-                $data = $obj->sumbelumnikah();
-              
-                
-                $nomor = 1;
-                if ($data->rowCount() > 0) {
-                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                        echo $row['sumid'];
-                    }
-                }
-                ?></span>
+                        $obj = new readbelumnikah;
+                        $data = $obj->sumbelumnikah();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
                 </a>
                 <a class="dropdown-item" href="#">Domisili
-                <span class="badge badge-danger badge-counter">
-                <?php
-                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-               
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
-                $obj = new readkematian;
-                $data = $obj->sumkematian();
-              
-                
-                $nomor = 1;
-                if ($data->rowCount() > 0) {
-                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                        echo $row['sumid'];
-                    }
-                }
-                ?></span>
+                        $obj = new readkematian;
+                        $data = $obj->sumkematian();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
                 </a>
-                
+
             </div>
         </form>
     </div>
@@ -192,7 +192,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Domisili'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
-                                            <td scope="col" class="badge badge-secondary"><?php echo $row['status_surat']; ?></td>
+                                            <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
 
                                         </tr>
                                 <?php }

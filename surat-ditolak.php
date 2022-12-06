@@ -48,7 +48,7 @@ include('include/navbar.php');
                                         Tanggal
                                     </th>
                                     <th>
-                                        Keterangan
+                                        Status
                                     </th>
                                 </tr>
                             </thead>
@@ -74,7 +74,8 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Domisili'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
-                                            <td scope="col" class="badge badge-danger"><?php echo $row['status_surat']; ?></td>
+                                            <td scope="col"><span class="badge badge-danger"><?php echo $row['status_surat']; ?></span>
+                                            </td>
 
                                         </tr>
                                 <?php }

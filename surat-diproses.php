@@ -78,7 +78,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Domisili'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
-                                            <td scope="col" class="badge badge-warning mr-3"><?php echo $row['status_surat']; ?></td>
+                                            <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
 
                                             <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
                                                     Detail
