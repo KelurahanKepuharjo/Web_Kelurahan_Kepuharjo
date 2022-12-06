@@ -63,6 +63,12 @@
               <span>Master Data</span></a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="berita.php">
+              <i class="fas fa-fw fa-table"></i>
+              <span>Berita</span></a>
+          </li>
+
           <!-- Nav Item - Tables -->
           <li class="nav-item">
             <a class="nav-link" href="tentang.php">
@@ -156,9 +162,7 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php
-                                                                              echo $_SESSION['username'];
-                                                                              ?>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?>
                     </span>
 
                     <?php
@@ -172,10 +176,7 @@
                     if ($data->rowCount() > 0) {
                       while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-
-
                     ?>
-
                         <img class="img-profile rounded-circle" src="uploads/<?php echo $row['image_profil'] ?> ">
                     <?php }
                     } ?>

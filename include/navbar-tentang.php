@@ -61,7 +61,11 @@
               <i class="fas fa-fw fa-chart-area"></i>
               <span>Master Data</span></a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="berita.php">
+              <i class="fas fa-fw fa-table"></i>
+              <span>Berita</span></a>
+          </li>
           <!-- Nav Item - Tables -->
           <li class="nav-item">
             <a class="nav-link" href="tentang.php">
