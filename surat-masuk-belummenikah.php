@@ -8,13 +8,13 @@ include('include/navbar.php');
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-4 text-gray-800">Pengajuan Surat</h1>
+        <h1 class="h3 mb-4 text-gray-800">Pengajuan Surat Belum Menikah</h1>
         <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Jenis Pengajuan
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">SKTM <?php $value = 1?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">SKTM <?php $value = 1?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -34,7 +34,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Domisili <?php $value = 2?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-domisili.php">Domisili <?php $value = 2?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -54,7 +54,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Akta Kelahiran <?php $value = 3?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -74,7 +74,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Keterangan Pindah <?php $value = 4?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -94,7 +94,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Belum menikah <?php $value = 5?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -114,7 +114,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Domisili <?php $value = 6?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-kematian.php">Kematian <?php $value = 6?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -176,7 +176,7 @@ include('include/navbar.php');
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratmasuk.php';
 
 
-                                $obj = new suratmasuk;
+                                $obj = new suratmasukbelumnikah;
                                 $data = $obj->lihatsuratmasuk();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {

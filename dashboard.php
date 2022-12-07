@@ -216,7 +216,25 @@ include('include/navbar.php');
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
               Surat Ditolak</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        $obj = new readstolakdash;
+                        $data = $obj->sumstolakdash();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['total'];
+                            }
+                        }
+                        ?>
+            </div>
           </div>
           <div class="col-auto">
             <img src="images/icon-ditolak.png" height="40">

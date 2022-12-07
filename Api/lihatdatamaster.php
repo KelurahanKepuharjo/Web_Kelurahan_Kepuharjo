@@ -39,7 +39,7 @@ class readsktm extends koneksii
 {
     public function sumsktm()
     {
-        $sql = "SELECT COUNT(id_surat) as sumid from surat_tidak_mampu";
+        $sql = "SELECT COUNT(id_surat) as sumid from surat_tidak_mampu WHERE status_surat = 'Diajukan'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -49,7 +49,7 @@ class readdomisili extends koneksii
 {
     public function sumdomisili()
     {
-        $sql = "SELECT COUNT(domisili.id_surat) as sumid from domisili";
+        $sql = "SELECT COUNT(domisili.id_surat) as sumid from domisili WHERE status_surat = 'Diajukan'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -59,7 +59,7 @@ class readakta extends koneksii
 {
     public function sumakta()
     {
-        $sql = "SELECT COUNT(surat_akta_kelahiran.id_surat) as sumid from surat_akta_kelahiran";
+        $sql = "SELECT COUNT(surat_akta_kelahiran.id_surat) as sumid from surat_akta_kelahiran WHERE status_surat = 'Diajukan'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -69,7 +69,7 @@ class readpindah extends koneksii
 {
     public function sumpindah()
     {
-        $sql = "SELECT COUNT(surat_pindah.id_surat) as sumid from surat_pindah";
+        $sql = "SELECT COUNT(surat_pindah.id_surat) as sumid from surat_pindah WHERE status_surat = 'Diajukan'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -79,7 +79,7 @@ class readkematian extends koneksii
 {
     public function sumkematian()
     {
-        $sql = "SELECT COUNT(surat_kematian.id_surat) as sumid from surat_kematian";
+        $sql = "SELECT COUNT(surat_kematian.id_surat) as sumid from surat_kematian WHERE status_surat = 'Diajukan'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -89,7 +89,7 @@ class readbelumnikah extends koneksii
 {
     public function sumbelumnikah()
     {
-        $sql = "SELECT COUNT(surat_ket_belum_menikah.id_surat) as sumid from surat_ket_belum_menikah";
+        $sql = "SELECT COUNT(surat_ket_belum_menikah.id_surat) as sumid from surat_ket_belum_menikah WHERE status_surat = 'Diajukan'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -140,6 +140,23 @@ class readssdash extends koneksii{
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = 'selesai') +  
         (SELECT COUNT(*) from surat_pindah WHERE status_surat = 'selesai') + 
         (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = 'selesai') 
+        as total ";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+    }
+     
+}
+
+class readstolakdash extends koneksii{
+    public function sumstolakdash(){
+        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = 'ditolak')+ 
+        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = 'ditolak') + 
+        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = 'ditolak') + 
+        (SELECT COUNT(*) from surat_kematian WHERE status_surat = 'ditolak')+ 
+        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = 'ditolak') +  
+        ( SELECT COUNT(*) from surat_pindah WHERE status_surat = 'ditolak') + 
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = 'ditolak') 
         as total ";
         $result = $this->koneksi->prepare($sql);
         $result->execute();

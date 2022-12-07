@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
 
     if(!empty(trim($email))&& !empty(trim($password))){
-        $sql = "SELECT * FROM akun WHERE id_akun='$email'";
+        $sql = "SELECT * FROM akun WHERE id_akun='$email' and hak_akses = '1'";
         $result = mysqli_query($conn, $sql);
         $num = mysqli_num_rows($result);
         while($row = mysqli_fetch_array($result)){

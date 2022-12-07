@@ -33,14 +33,14 @@
 
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <i class="fas fa-fw fa-cog"></i>
               <span>Pengajuan Surat</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Status Surat:</h6>
-                <a class="collapse-item" href="surat-masuk.php">Surat Masuk</a>
+                <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk</a>
                 <a class="collapse-item" href="surat-diproses.php">Surat Diproses</a>
                 <a class="collapse-item" href="surat-ditolak.php">Surat Ditolak</a>
                 <a class="collapse-item" href="surat-selesai.php">Surat Selesai</a>
