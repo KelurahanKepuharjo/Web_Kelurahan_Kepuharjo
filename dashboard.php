@@ -50,23 +50,23 @@ include('include/navbar.php');
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
               Surat Masuk</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readsmdash;
-                        $data = $obj->sumsmdash();
+              $obj = new readsmdash;
+              $data = $obj->sumsmdash();
 
 
-                        $nomor = 1;
-                        if ($data->rowCount() > 0) {
-                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                                echo $row['total'];
-                            }
-                        }
-                        ?>
+                  echo $row['total'];
+                }
+              }
+              ?>
             </div>
           </div>
           <div class="col-auto">
@@ -79,30 +79,30 @@ include('include/navbar.php');
 
   <!-- kartu surat diproses -->
   <div class="col-xl-3 col-md-6 mb-2">
-    <div class="card border-left-success shadow h-100 py-2">
+    <div class="card border-left-warning shadow h-100 py-2">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
               Surat Diproses</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readspdash;
-                        $data = $obj->sumspdash();
+              $obj = new readspdash;
+              $data = $obj->sumspdash();
 
 
-                        $nomor = 1;
-                        if ($data->rowCount() > 0) {
-                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                                echo $row['total'];
-                            }
-                        }
-                        ?>
+                  echo $row['total'];
+                }
+              }
+              ?>
             </div>
           </div>
           <div class="col-auto">
@@ -113,36 +113,36 @@ include('include/navbar.php');
     </div>
   </div>
 
-  <!-- kartu surat dapat diambil
-    <div class="col-xl-3 col-md-6 mb-2">
-      <div class="card border-left-warning shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                Surat Dapat Diambil</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-            </div>
-            <div class="col-auto">
-              <img src="images/icon-diambil.png" height="40">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-  <!-- kartu jenis surat -->
+  <!-- kartu surat ditolak -->
   <div class="col-xl-3 col-md-6 mb-2">
-    <div class="card border-left-primary shadow h-100 py-2">
+    <div class="card border-left-danger shadow h-100 py-2">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-              Jenis Surat</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+              Surat Ditolak</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">
+              <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readstolakdash;
+              $data = $obj->sumstolakdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+              ?>
+            </div>
           </div>
           <div class="col-auto">
-            <img src="images/icon-jenis-surat.png" height="40">
+            <img src="images/icon-ditolak.png" height="40">
           </div>
         </div>
       </div>
@@ -158,23 +158,23 @@ include('include/navbar.php');
             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
               Surat Selesai</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readssdash;
-                        $data = $obj->sumssdash();
+              $obj = new readssdash;
+              $data = $obj->sumssdash();
 
 
-                        $nomor = 1;
-                        if ($data->rowCount() > 0) {
-                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                                echo $row['total'];
-                            }
-                        }
-                        ?>
+                  echo $row['total'];
+                }
+              }
+              ?>
             </div>
           </div>
           <div class="col-auto">
@@ -190,59 +190,11 @@ include('include/navbar.php');
 <!-- Content Row -->
 <div class="row">
 
-  <!-- kartu jenis surat -->
-  <!-- <div class="col-xl-3 col-md-6 mb-2">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Jenis Surat</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <img src="img/icon-jenis-surat.png" height="40">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-  <!-- kartu surat ditolak -->
-  <div class="col-xl-3 col-md-6 mb-5">
-    <div class="card border-left-warning shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-              Surat Ditolak</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readstolakdash;
-                        $data = $obj->sumstolakdash();
 
-
-                        $nomor = 1;
-                        if ($data->rowCount() > 0) {
-                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-
-                                echo $row['total'];
-                            }
-                        }
-                        ?>
-            </div>
-          </div>
-          <div class="col-auto">
-            <img src="images/icon-ditolak.png" height="40">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="col-lg-6 mb-4">
 
 </div>
 
