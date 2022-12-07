@@ -121,8 +121,25 @@ class readspdash extends koneksii{
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = 'diproses') + 
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = 'diproses')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = 'diproses') +  
-        ( SELECT COUNT(*) from surat_pindah WHERE status_surat = 'diproses') + 
+        (SELECT COUNT(*) from surat_pindah WHERE status_surat = 'diproses') + 
         (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = 'diproses') 
+        as total ";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+    }
+     
+}
+
+class readssdash extends koneksii{
+    public function sumssdash(){
+        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = 'selesai')+ 
+        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = 'selesai') + 
+        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = 'selesai') + 
+        (SELECT COUNT(*) from surat_kematian WHERE status_surat = 'selesai')+ 
+        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = 'selesai') +  
+        (SELECT COUNT(*) from surat_pindah WHERE status_surat = 'selesai') + 
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = 'selesai') 
         as total ";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
