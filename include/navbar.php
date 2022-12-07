@@ -162,7 +162,7 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['nama_lengkap']; ?>
                     </span>
 
                     <?php
@@ -214,7 +214,7 @@
                   <div class="modal-body">Maka anda akan diarahkan ke halaman landing page.</div>
                   <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-                    <a class="btn btn-primary" href="landingpage.php">Iya</a>
+                    <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Logout.php">Iya</a>
                   </div>
                 </div>
               </div>

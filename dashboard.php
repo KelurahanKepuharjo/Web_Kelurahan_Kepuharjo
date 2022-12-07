@@ -49,7 +49,25 @@ include('include/navbar.php');
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
               Surat Masuk</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        $obj = new readsmdash;
+                        $data = $obj->sumsmdash();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['total'];
+                            }
+                        }
+                        ?>
+            </div>
           </div>
           <div class="col-auto">
             <img src="images/icon-masuk.png" height="40">
@@ -67,7 +85,25 @@ include('include/navbar.php');
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
               Surat Diproses</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        $obj = new readspdash;
+                        $data = $obj->sumspdash();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['total'];
+                            }
+                        }
+                        ?>
+            </div>
           </div>
           <div class="col-auto">
             <img src="images/icon-diproses.png" height="40">

@@ -95,3 +95,38 @@ class readbelumnikah extends koneksii
         return $result;
     }
 }
+
+
+class readsmdash extends koneksii{
+    public function sumsmdash(){
+        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = 'diajukan')+ 
+        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = 'diajukan') + 
+        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = 'diajukan') + 
+        (SELECT COUNT(*) from surat_kematian WHERE status_surat = 'diajukan')+ 
+        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = 'diajukan') +  
+        (SELECT COUNT(*) from surat_pindah WHERE status_surat = 'diajukan') + 
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = 'diajukan') 
+        as total ";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+    }
+     
+}
+
+class readspdash extends koneksii{
+    public function sumspdash(){
+        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = 'diproses')+ 
+        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = 'diproses') + 
+        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = 'diproses') + 
+        (SELECT COUNT(*) from surat_kematian WHERE status_surat = 'diproses')+ 
+        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = 'diproses') +  
+        ( SELECT COUNT(*) from surat_pindah WHERE status_surat = 'diproses') + 
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = 'diproses') 
+        as total ";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+    }
+     
+}

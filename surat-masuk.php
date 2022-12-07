@@ -14,7 +14,7 @@ include('include/navbar.php');
                 Jenis Pengajuan
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">SKTM
+                <a class="dropdown-item" href="#">SKTM <?php $value = 1?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -34,7 +34,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Domisili
+                <a class="dropdown-item" href="#">Domisili <?php $value = 2?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -54,7 +54,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Akta Kelahiran
+                <a class="dropdown-item" href="#">Akta Kelahiran <?php $value = 3?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -74,7 +74,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Keterangan Pindah
+                <a class="dropdown-item" href="#">Keterangan Pindah <?php $value = 4?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -94,7 +94,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Belum menikah
+                <a class="dropdown-item" href="#">Belum menikah <?php $value = 5?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -114,7 +114,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="#">Domisili
+                <a class="dropdown-item" href="#">Domisili <?php $value = 6?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -181,7 +181,7 @@ include('include/navbar.php');
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-
+                                    
 
 
                                 ?>

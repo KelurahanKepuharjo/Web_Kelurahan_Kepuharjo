@@ -1,37 +1,49 @@
 <?php
 
 include '../Web_Kelurahan_Kepuharjo/koneksi/koneksi.php';
-
 error_reporting(0);
-
 session_start();
 
-// if (isset($_SESSION['username'])) {
-//     header("Location: index.php");
+// if (isset($_SESSION['nama_lengkap'])) {
+//     header("Location: ../Web_Kelurahan_Kepuharjo/dashboard.php");
 // }
 
 if (isset($_POST['submit'])) {
     $email = ($_POST['id_akun']);
     $password = md5($_POST['password']);
 
-    $sql = "SELECT * FROM akun WHERE id_akun='$email' AND password='$password'";
-    $result = mysqli_query($conn, $sql);
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
+    if(!empty(trim($email))&& !empty(trim($password))){
+        $sql = "SELECT * FROM akun WHERE id_akun='$email'";
+        $result = mysqli_query($conn, $sql);
+        $num = mysqli_num_rows($result);
+        while($row = mysqli_fetch_array($result)){
+            $userval = $row['id_akun'];
+            // $_SESSION = $userval;
+            $passval = $row['password'];
+            // $_SESSION = $passval;
+            $username = $row['nama_lengkap'];
+            // $_SESSION = $username;
+        }
 
-        $_SESSION['username'] = $row['id_akun'];
-        header("Location: ../Web_Kelurahan_Kepuharjo/dashboard.php");
+        if ($num != 0) {
+            if($userval==$email && $passval==$password){
+                session_start();
+                $_SESSION['id_akun'] = $userval;
+                $_SESSION['password'] = $passval;
+                $_SESSION['nama_lengkap'] = $username;
+
+                header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap ='. urlencode($username));
+                
+            }else{
+                echo "<script>alert('Password Anda salah. Silahkan coba lagi!')</script>";
+            }
+        }else{
+            echo "<script>alert('Username Anda Salah. Silahkan coba lagi!')</script>";
+        }
     } else {
-        echo "<script>alert('Username Anda salah. Silahkan coba lagi!')</script>";
+        echo "<script>alert('Data Tidak Boleh Kosong!')</script>";
     }
-}else{
-    echo "<script>alert('Password Anda Salah. Silahkan coba lagi!')</script>";
 }
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
