@@ -41,7 +41,6 @@ include('include/navbar.php');
                                     <th>No</th>
                                     <th>NIK</th>
                                     <th>Nama Lengkap</th>
-                                    <th>Password</th>
                                     <th>No Hp</th>
                                     <th>RT</th>
                                     <th>RW</th>
@@ -70,7 +69,7 @@ include('include/navbar.php');
                                 <td scope="col"><?php echo $nomor++; ?></td>
                                 <td scope="col"><?php echo $row['id_akun']; ?></td>
                                 <td scope="col"><?php echo $row['nama_lengkap']; ?></td>
-                                <td scope="col"><?php echo $row['password'];?></td>
+                                
                                 <td scope="col"><?php echo $row['no_hp'];?></td>
                                 <td scope="col"><?php echo $row['rt'];?></td>
                                 <td scope="col"><?php echo $row['rw'];?></td>
