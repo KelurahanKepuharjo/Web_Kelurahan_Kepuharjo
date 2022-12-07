@@ -73,9 +73,10 @@ $data = mysqli_fetch_assoc($query);
                     </div>
                     
 
-                    <input type="submit" class="btn btn-primary" name="signup" value="submit">
-                    <input type= ""  onclick="location.href='<?php echo "https://wa.me/62"; echo $data['no_hp'];?>'"" class="btn btn-primary" name="" value="Kirim">
-                    
+                    <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                    <!-- <input type= ""  onclick="location.href='<?php //echo "https://wa.me/62"; echo $data['no_hp']; ?>' "" class="btn btn-primary" name="" value="Kirim"> -->
+                    <a class="btn btn-primary" href="<?php echo "https://wa.me/62"; echo $data['no_hp']; ?>" target="_blank" >Kirim Via WhatsApp</a>
+                    <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php" >Kembali</a>
                     
                 </form>
             </div>
