@@ -28,7 +28,7 @@
 
           <!-- Heading -->
           <div class="sidebar-heading">
-            Interface
+            MENU UTAMA
           </div>
 
           <!-- Nav Item - Pages Collapse Menu -->
@@ -53,7 +53,7 @@
 
           <!-- Heading -->
           <div class="sidebar-heading">
-            Addons
+            MENU LAINNYA
           </div>
 
           <!-- Nav Item - Charts -->
