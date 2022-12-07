@@ -76,11 +76,11 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
-                                            <td scope="col"><?php echo 'Surat Domisili'; ?></td>
+                                            <td scope="col"><?php echo 'Surat SKTM'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
                                             <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
 
-                                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3" onclick="location.href='../Web_Kelurahan_Kepuharjo/previewsktm.php'">
                                                     Detail
                                                     <i class="typcn typcn-edit btn-icon-append"></i>
                                                 </button>

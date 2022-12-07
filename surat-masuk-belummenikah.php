@@ -12,6 +12,24 @@ include('include/navbar.php');
         <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Jenis Pengajuan
+                <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        $obj = new readsmdash;
+                        $data = $obj->sumsmdash();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['total'];
+                            }
+                        }
+                        ?></span>
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">SKTM <?php $value = 1?>

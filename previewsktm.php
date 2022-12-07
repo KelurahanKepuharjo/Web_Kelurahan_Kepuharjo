@@ -74,8 +74,8 @@ $data = mysqli_fetch_assoc($query);
                     
 
                     <input type="submit" class="btn btn-primary" name="signup" value="submit">
-                    <input type= "" onclick="location.href='<?php echo "https://wa.me/62"; echo $data['no_hp'];?>'"" class="btn btn-primary" name="" value="Kirim">
-                    <a href="<?php echo "https://wa.me/62"; echo $data['no_hp'];?>">kirim</a>
+                    <input type= ""  onclick="location.href='<?php echo "https://wa.me/62"; echo $data['no_hp'];?>'"" class="btn btn-primary" name="" value="Kirim">
+                    
                     
                 </form>
             </div>
