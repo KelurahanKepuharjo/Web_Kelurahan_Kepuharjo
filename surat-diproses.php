@@ -105,6 +105,88 @@ include('include/navbar.php');
                 </style>
 
                   <div class="form-group">
+                        <label>SKTM</label>
+                        <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                        
+                    </div><div class="form-group">
+                        <label>SKTM</label>
+                        <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                        
+                    </div><div class="form-group">
+                        <label>SKTM</label>
+                        <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                        
+                    </div><div class="form-group">
+                        <label>SKTM</label>
+                        <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                        
+                    </div>
+                  
+                  <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php //Sampai Sini ?>
+                                            </td>
+
+                                        </tr>
+                                <?php }
+                                } ?>
+
+
+<?php
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+
+
+                                $obj = new readsm;
+                                $data = $obj->suratdiproses();
+                                $nomor = 1;
+                                if ($data->rowCount() > 0) {
+                                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+
+
+                                ?>
+
+                                        <tr>
+                                            <td scope="col"><?php echo $nomor++; ?></td>
+                                            <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                            <td scope="col"><?php echo $row['nama']; ?></td>
+                                            <td scope="col"><?php echo 'Surat DOMISILI'; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
+
+                                            <td>
+            <?php //Dibagian Ini Modalnya Oke?>
+            <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#Previewdomisili">
+                      Preview Data
+                    </a>
+                  </div>
+                  <div class="modal fade" id="Previewdomisili" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    
+                    <h5 class="modal-title" id="exampleModalLabel">Preview Surat </h5>
+                    
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                <style>
+                    .form-group{
+                        margin-left: 10%;
+                        margin-right: 10%;
+                    }
+                </style>
+
+                  <div class="form-group">
                         <label>Tempat, Tanggal Lahir</label>
                         <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
                         
@@ -132,11 +214,11 @@ include('include/navbar.php');
               </div>
             </div>
             <?php //Sampai Sini ?>
-                                            </td>
+            </td>
 
-                                        </tr>
-                                <?php }
-                                } ?>
+</tr>
+<?php }
+} ?>
                             </tbody>
                         </table>
                     </div>
