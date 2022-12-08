@@ -12,36 +12,120 @@ if (isset($_POST['submit'])) {
     $email = ($_POST['id_akun']);
     $password = md5($_POST['password']);
 
-    if(!empty(trim($email))&& !empty(trim($password))){
-        $sql = "SELECT * FROM akun WHERE id_akun='$email' and hak_akses = '1'";
+    if (!empty(trim($email)) && !empty(trim($password))) {
+        $sql = "SELECT * FROM akun WHERE id_akun='$email' and hak_akses = '1' ";
         $result = mysqli_query($conn, $sql);
         $num = mysqli_num_rows($result);
-        while($row = mysqli_fetch_array($result)){
+        while ($row = mysqli_fetch_array($result)) {
             $userval = $row['id_akun'];
             // $_SESSION = $userval;
             $passval = $row['password'];
             // $_SESSION = $passval;
             $username = $row['nama_lengkap'];
             // $_SESSION = $username;
+            $hakakses = $row['hak_akses'];
         }
 
         if ($num != 0) {
-            if($userval==$email && $passval==$password){
+            if ($userval == $email && $passval == $password) {
                 session_start();
                 $_SESSION['id_akun'] = $userval;
                 $_SESSION['password'] = $passval;
                 $_SESSION['nama_lengkap'] = $username;
+                $_SESSION['hak_akses'] = $hakakses;
 
-                header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap ='. urlencode($username));
-                
-            }else{
+                header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap =' . urlencode($username));
+
+            } else {
                 echo "<script>alert('Password Anda salah. Silahkan coba lagi!')</script>";
             }
-        }else{
+        } else {
             echo "<script>alert('Username Anda Salah. Silahkan coba lagi!')</script>";
         }
     } else {
         echo "<script>alert('Data Tidak Boleh Kosong!')</script>";
+    }
+
+
+
+    if (isset($_POST['submit'])) {
+        $email = ($_POST['id_akun']);
+        $password = md5($_POST['password']);
+
+        if (!empty(trim($email)) && !empty(trim($password))) {
+            $sql = "SELECT * FROM akun WHERE id_akun='$email' and hak_akses = '2' ";
+            $result = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($result);
+            while ($row = mysqli_fetch_array($result)) {
+                $userval = $row['id_akun'];
+                // $_SESSION = $userval;
+                $passval = $row['password'];
+                // $_SESSION = $passval;
+                $username = $row['nama_lengkap'];
+                // $_SESSION = $username;
+                $hakakses = $row['hak_akses'];
+            }
+
+            if ($num != 0) {
+                if ($userval == $email && $passval == $password) {
+                    session_start();
+                    $_SESSION['id_akun'] = $userval;
+                    $_SESSION['password'] = $passval;
+                    $_SESSION['nama_lengkap'] = $username;
+                    $_SESSION['hak_akses'] = $hakakses;
+
+                    header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap =' . urlencode($username));
+
+                } else {
+                    echo "<script>alert('Password Anda salah. Silahkan coba lagi!')</script>";
+                }
+            } else {
+                echo "<script>alert('Username Anda Salah. Silahkan coba lagi!')</script>";
+            }
+        } else {
+            echo "<script>alert('Data Tidak Boleh Kosong!')</script>";
+        }
+
+
+
+        if (isset($_POST['submit'])) {
+            $email = ($_POST['id_akun']);
+            $password = md5($_POST['password']);
+
+            if (!empty(trim($email)) && !empty(trim($password))) {
+                $sql = "SELECT * FROM akun WHERE id_akun='$email' and hak_akses = '3' ";
+                $result = mysqli_query($conn, $sql);
+                $num = mysqli_num_rows($result);
+                while ($row = mysqli_fetch_array($result)) {
+                    $userval = $row['id_akun'];
+                    // $_SESSION = $userval;
+                    $passval = $row['password'];
+                    // $_SESSION = $passval;
+                    $username = $row['nama_lengkap'];
+                    // $_SESSION = $username;
+                    $hakakses = $row['hak_akses'];
+                }
+
+                if ($num != 0) {
+                    if ($userval == $email && $passval == $password) {
+                        session_start();
+                        $_SESSION['id_akun'] = $userval;
+                        $_SESSION['password'] = $passval;
+                        $_SESSION['nama_lengkap'] = $username;
+                        $_SESSION['hak_akses'] = $hakakses;
+
+                        header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap =' . urlencode($username));
+
+                    } else {
+                        echo "<script>alert('Password Anda salah. Silahkan coba lagi!')</script>";
+                    }
+                } else {
+                    echo "<script>alert('Username Anda Salah. Silahkan coba lagi!')</script>";
+                }
+            } else {
+                echo "<script>alert('Data Tidak Boleh Kosong!')</script>";
+            }
+        }
     }
 }
 ?>

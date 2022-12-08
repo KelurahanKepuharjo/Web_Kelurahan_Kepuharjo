@@ -1,6 +1,7 @@
 <?php
+
 include('include/header.php');
-include('include/navbar.php');
+include('include/navbar.php')
 ?>
 
 
@@ -9,7 +10,9 @@ include('include/navbar.php');
 
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <h1 class="h3 mb-0 text-gray-800">Dashboard <?php 
+    
+    ?></h1>
     <!-- Topbar Search -->
     <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
       <!-- <a class="dropdown-item"><input type="datetime-local" class=""></a>
