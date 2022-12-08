@@ -2,57 +2,57 @@
 include('include/header.php');
 include('include/navbar-tentang.php');
 ?>
-
+<link rel="stylesheet" href="css/profil.css">
 <!-- Begin Page Content -->
-<div class="container-fluid">
 
+<div class="container">
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Profil</h1>
-    <style>
-    .lingkaran1{
-	width: 200px;
-	height: 200px;
-    margin-left: 12%; 
-	border-radius: 100%;
-    }
-    .upload{
-        margin-top: 2%;
-        margin-left: 21%;
-    }
-   </style>
+    <h1 class="judul">Profil</h1>
 
-    
-
-    <div class="lingkaran1"> <img class="lingkaran1" src="../Web_Kelurahan_Kepuharjo/uploads/Group1.jpeg" alt=""></div>
+    <div class="lingkaran1">
+        <img class="lingkaran1" src="../Web_Kelurahan_Kepuharjo/uploads/Group1.jpeg" alt="">
+        <div class="sub_link">
+            <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png">
+            <i class="fa fa-camera" style="color: #fff"></i>
+        </div>
+    </div>
     <?php
     // $imagepath = "";
     // $newpath = "../WE";
-    
+
 
     ?>
-    <button type="submit" name="upload" class="btn btn-danger upload">Upload</button>
     <form method="post">
-        <div class="col-lg-6">
-        <div class=form-group>
-            <label>Nama</label>
-            <input type="text" name="username" class="form-control">
+        <div class="field-box">
+            <div class="form-group">
+                <label>Nama</label>
+                <input type="text" name="username" class="form-control">
+            </div>
+            <div class=form-group>
+                <label>Email</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+            <div class=form-group>
+                <label>Status</label>
+                <input type="text" name="status" class="form-control">
+            </div>
+            <div class="button">
+                <input type="submit" value="Tambah Berita">
+            </div>
         </div>
-        <div class=form-group>
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" >
-        </div>
-        <div class=form-group>
-            <label>Status</label>
-            <input type="text" name="status" class="form-control">
-        </div>
-        </div>
-        <button type="submit" name="update" class="btn btn-primary"> Update Profile</button>
-        </div>
-    </form>
-    
-    <!-- /.container-fluid -->
+        <!-- <div class="button">
+            <input type="submit" value="Update Profil">
+        </div> -->
 
+    </form>
+    <div class="col-lg-6 mb-4">
+
+    </div>
 </div>
+
+<!-- /.container-fluid -->
+
+
 <!-- End of Main Content -->
 
 <?php
