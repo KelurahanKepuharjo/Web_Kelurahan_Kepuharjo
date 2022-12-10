@@ -72,6 +72,7 @@ include('include/navbar.php');
 
 
                                 ?>
+                                
                                     <tr>
                                         <td scope="col"><?php echo $nomor++; ?></td>
                                         <td scope="col"><?php echo $row['id_akun']; ?></td>
@@ -102,7 +103,9 @@ include('include/navbar.php');
                                                         </style>
                                                         <div class="form-group">
                                                             <label>Nomor Surat</label>
-                                                            <input type="text" name="nomor" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="nomor" class="form-control" value="
+                                                            
+                                                            " maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Nama</label>
