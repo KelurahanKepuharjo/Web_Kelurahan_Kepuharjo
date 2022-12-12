@@ -75,12 +75,11 @@ include('include/navbar.php');
                                         $row['kebangsaan'];
                                         $row['agama'];
                                         $row['status'];
-                                       
-
-
-                                        
-
-
+                                        $row['pekerjaan'];
+                                        $row['nik'];
+                                        $row['alamat'];
+                                        $row['tgl_pengajuan'];
+                                        $row['no_hp'];  
                                 ?>
                                 
                                     <tr>
@@ -93,6 +92,7 @@ include('include/navbar.php');
 
                                         <td>
                                         <?php //Dibagian Ini Modalnya Oke?>
+                                        <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
                                             <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewsktmModal<?php echo $row['id_akun'];?>">
                                                     Preview Data
                                             </a>
@@ -111,7 +111,7 @@ include('include/navbar.php');
                                                                 margin-right: 10%;
                                                             }
                                                         </style>
-
+                                                    <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
                                                         <div class="form-group">
                                                             <label>Nomor Surat</label>
                                                             <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
@@ -122,7 +122,7 @@ include('include/navbar.php');
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tempat, Tanggal Lahir </label>
-                                                            <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir']; ?> <?php  echo $row['tanggal_lahir']; ?>" maxlength="50" required="">
+                                                            <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir']; ?> <?php echo ", "; ?> <?php  echo $row['tanggal_lahir']; ?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Jenis kelamin</label>
@@ -130,39 +130,41 @@ include('include/navbar.php');
                                                         </div>
                                                         <div class="form-group ">
                                                             <label>Kebangsaan/Agama</label>
-                                                            <input type="text" name="kebangsaan" class="form-control" value="" maxlength="30" required="">
+                                                            <input type="text" name="kebangsaan" class="form-control" value="<?php echo  $row['kebangsaan']; ?> <?php echo "/"; ?>  <?php echo  $row['agama']; ?>" maxlength="30" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Status</label>
-                                                            <input type="text" name="status" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="status" class="form-control" value="<?php echo $row['status'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Pekerjaan</label>
-                                                            <input type="text" name="pekerjaan" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['pekerjaan'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>NIK</label>
-                                                            <input type="text" name="nik" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="nik" class="form-control" value="<?php echo $row['nik'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Alamat</label>
-                                                            <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tanggal Pengajuan</label>
-                                                            <input type="text" name="tanggalsurat" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                     
                                                         <div class="modal-footer">
-                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
-                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
-                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                        <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>   
                                                         </div>
+                                                        
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

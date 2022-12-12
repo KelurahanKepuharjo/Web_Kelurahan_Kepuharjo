@@ -11,6 +11,7 @@ use Mpdf\Tag\Center;
     $nik = $_POST['nik'];
     $alamat = $_POST['alamat'];
     $tanggalsurat = $_POST['tanggalsurat'];
+    
 
 
     
