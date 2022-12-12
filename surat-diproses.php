@@ -83,10 +83,10 @@ include('include/navbar.php');
 
                                         <td>
                                         <?php //Dibagian Ini Modalnya Oke?>
-                                            <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewsktmModal">
+                                            <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewsktmModal<?php echo $row['id_akun'];?>">
                                                     Preview Data
                                             </a>
-                                            <div class="modal fade" id="PreviewsktmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="PreviewsktmModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header"> 
@@ -101,6 +101,7 @@ include('include/navbar.php');
                                                                 margin-right: 10%;
                                                             }
                                                         </style>
+                                                        
                                                         <div class="form-group">
                                                             <label>Nomor Surat</label>
                                                             <input type="text" name="nomor" class="form-control" value="
@@ -108,11 +109,11 @@ include('include/navbar.php');
                                                             " maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Nama</label>
-                                                            <input type="text" name="nama" class="form-control" value="" maxlength="50" required="">
+                                                            <label>Nama </label>
+                                                            <input type="text" name="nama" class="form-control" value="<?php echo $row['id_akun'];?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Tempat, Tanggal Lahir</label>
+                                                            <label>Tempat, Tanggal Lahir </label>
                                                             <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
