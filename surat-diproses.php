@@ -68,7 +68,17 @@ include('include/navbar.php');
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                                        $row['no_surat'];
+                                        $row['tempat_lahir'];
+                                        $row['tanggal_lahir'];
+                                        $row['jenis_kelamin'];
+                                        $row['kebangsaan'];
+                                        $row['agama'];
+                                        $row['status'];
+                                       
 
+
+                                        
 
 
                                 ?>
@@ -101,24 +111,22 @@ include('include/navbar.php');
                                                                 margin-right: 10%;
                                                             }
                                                         </style>
-                                                        
+
                                                         <div class="form-group">
                                                             <label>Nomor Surat</label>
-                                                            <input type="text" name="nomor" class="form-control" value="
-                                                            
-                                                            " maxlength="50" required="">
+                                                            <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Nama </label>
-                                                            <input type="text" name="nama" class="form-control" value="<?php echo $row['id_akun'];?>" maxlength="50" required="">
+                                                            <input type="text" name="nama" class="form-control" value="<?php echo $row['nama'];?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tempat, Tanggal Lahir </label>
-                                                            <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir']; ?> <?php  echo $row['tanggal_lahir']; ?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Jenis kelamin</label>
-                                                            <input type="text" name="kelamin" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group ">
                                                             <label>Kebangsaan/Agama</label>

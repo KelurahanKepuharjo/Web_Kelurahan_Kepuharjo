@@ -12,7 +12,7 @@
 
     class sktm extends koneksii{
         public function suratdiproses(){
-            $sql = "SELECT id_akun,nama, tgl_pengajuan, status_surat from surat_tidak_mampu WHERE status_surat = 'diproses'";
+            $sql = "SELECT * from surat_tidak_mampu WHERE status_surat = 'diproses'";
             $result= $this->koneksi->prepare($sql);
             $result->execute();
             return $result; 
