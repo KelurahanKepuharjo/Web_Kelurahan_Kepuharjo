@@ -21,6 +21,25 @@ class readberita extends koneksii
         $result->execute();
         return $result;
     }
+
+    public function insertberita($judull, $bagann, $deskripsii){
+        try {
+            $sql = "INSERT INTO `berita`(`judul`, `sub_title`, `dekripsi`) VALUES (:judul, :sub_title, :dekripsi)";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":judul",$judull);
+            $result->bindParam(":sub_title",$bagann);
+            $result->bindParam(":dekripsi",$deskripsii);
+            $result->execute();
+            return true;
+            
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+            //throw $th;
+        }
+       
+
+    }
 }
 
 class readprofile extends koneksii
