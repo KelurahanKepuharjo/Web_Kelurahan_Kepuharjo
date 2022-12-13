@@ -188,14 +188,30 @@ include('include/navbar.php');
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
 
-                                $obj = new readsm;
+                                $obj = new domisili;
                                 $data = $obj->suratdiproses();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-
-
-
+                                        $row['no_surat'];
+                                        $row['tempat_lahir'];
+                                        $row['tanggal_lahir'];
+                                        $row['jenis_kelamin'];
+                                        $row['kebangsaan'];
+                                        $row['agama'];
+                                        $row['status_perkawinan'];
+                                        $row['pekerjaan'];
+                                        $row['nik'];
+                                        $row['alamat'];
+                                        $row['RT'];
+                                        $row['RW'];
+                                        $row['no_pengantar_surat'];
+                                        $row['tgl_surat_pengantar'];
+                                        $row['alamat_domisili_kel_kepu'];
+                                        $row['surat_digunakan_untuk'];
+                                        $row['tgl_surat_dibuat'];
+                                        $row['images'];
+                                        $row['no_hp'];
                                 ?>
                                     <tr>
                                         <td scope="col"><?php echo $nomor++; ?></td>
@@ -207,10 +223,11 @@ include('include/navbar.php');
 
                                         <td>
                                         <?php //Dibagian Ini Modalnya Oke?>
-                                            <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewdomisiliModal">
+                                        <form action="../Web_Kelurahan_Kepuharjo/pdfdomisili.php" method="post">
+                                            <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewdomisiliModal<?php echo $row['id_akun'];?>">
                                                     Preview Data
                                             </a>
-                                            <div class="modal fade" id="PreviewdomisiliModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="PreviewdomisiliModal<?php echo $row['id_akun'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header"> 
@@ -227,42 +244,66 @@ include('include/navbar.php');
                                                         </style>
                                                         <div class="form-group">
                                                             <label>Nomor Surat</label>
-                                                            <input type="text" name="nomor" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Nama</label>
-                                                            <input type="text" name="nama" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="nama" class="form-control" value="<?php echo $row['nama'];?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tempat, Tanggal Lahir</label>
-                                                            <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir'];?> <?php echo $row['tanggal_lahir'];?>" maxlength="50" required="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Jenis kelamin</label>
+                                                            <input type="text" name="kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Kebangsaan/Agama</label>
-                                                            <input type="text" name="kelamin" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="kelamin" class="form-control" value="<?php echo  $row['kebangsaan']; ?> <?php echo "/"; ?>  <?php echo  $row['agama']; ?>" maxlength="50" required="">
                                                         </div>
                                                         <div class="form-group ">
                                                             <label>Status</label>
-                                                            <input type="text" name="kebangsaan" class="form-control" value="" maxlength="30" required="">
+                                                            <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['status_perkawinan'];?>" maxlength="30" required="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Pekerjaan</label>
-                                                            <input type="text" name="status" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="status" class="form-control" value="<?php echo $row['pekerjaan'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>NIK</label>
-                                                            <input type="text" name="nik" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="nik" class="form-control" value="<?php echo $row['nik'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Alamat</label>
-                                                            <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat'];?>" maxlength="50" required="">
+                                                            <span class="text-danger">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Surat Pengantar</label>
+                                                            <input type="text" name="pengantarsurat" class="form-control" value="<?php echo  $row['RT']; ?> <?php echo "/"; ?>  <?php echo  $row['RW']; ?>" maxlength="50" required="">
+                                                            <span class="text-danger">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Tanggal Surat Pengantar</label>
+                                                            <input type="text" name="tglpengantarsurat" class="form-control" value="<?php echo $row['tgl_surat_pengantar'];?>" maxlength="50" required="">
+                                                            <span class="text-danger">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Alamat Domisili</label>
+                                                            <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_domisili_kel_kepu'];?>" maxlength="50" required="">
+                                                            <span class="text-danger">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Keterangan Surat</label>
+                                                            <input type="text" name="ketsurat" class="form-control" value="<?php echo $row['surat_digunakan_untuk'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tanggal Pengajuan</label>
-                                                            <input type="text" name="tanggalsurat" class="form-control" value="" maxlength="50" required="">
+                                                            <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
                                                     

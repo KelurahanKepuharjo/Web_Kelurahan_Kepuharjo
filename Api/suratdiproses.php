@@ -20,6 +20,15 @@
             }  
         }
     
+        class domisili extends koneksii{
+            public function suratdiproses(){
+                $sql = "SELECT id_surat, no_surat, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, kebangsaan, agama, status_perkawinan, pekerjaan, nik, alamat, RT, RW, no_pengantar_surat, tgl_surat_pengantar, alamat_domisili_kel_kepu, surat_digunakan_untuk, tgl_surat_dibuat, status_surat, domisili.images, akun.no_hp, domisili.id_akun FROM domisili JOIN akun ON domisili.id_akun = akun.id_akun WHERE domisili.status_surat = 'Diproses'";
+                $result= $this->koneksi->prepare($sql);
+                $result->execute();
+                return $result; 
+                                              
+                }  
+            }
 
         class readprosessktm extends koneksii{
             public function suratdiproses(){
