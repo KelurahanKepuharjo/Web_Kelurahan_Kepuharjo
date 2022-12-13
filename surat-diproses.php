@@ -292,6 +292,11 @@ include('include/navbar.php');
                                                             <span class="text-danger">
                                                         </div>
                                                         <div class="form-group">
+                                                            <label>Nomor Surat Pengantar</label>
+                                                            <input type="text" name="tglpengantarsurat" class="form-control" value="<?php echo $row['no_pengantar_surat'];?>" maxlength="50" required="">
+                                                            <span class="text-danger">
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label>Alamat Domisili</label>
                                                             <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_domisili_kel_kepu'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
@@ -306,7 +311,12 @@ include('include/navbar.php');
                                                             <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
                                                         </div>
-                                                    
+                                                        <div class="form-group">
+                                                            <label>Kartu Keluarga</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                        <img src="../Web_Kelurahan_Kepuharjo/uploads/<?php echo $row['image'];?>" class="img-thumbnail" alt="Responsive image">
+                                                        </div>
                                                         <div class="modal-footer">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
