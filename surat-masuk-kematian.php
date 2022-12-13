@@ -207,9 +207,9 @@ include('include/navbar.php');
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
-                                            <td scope="col"><?php echo $row['nama']; ?></td>
-                                            <td scope="col"><?php echo 'Surat Domisili'; ?></td>
-                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col"><?php echo $row['nama_almarhum']; ?></td>
+                                            <td scope="col"><?php echo 'Surat Kematian'; ?></td>
+                                            <td scope="col"><?php echo $row['tanggal']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
 
                                         </tr>

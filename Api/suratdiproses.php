@@ -12,7 +12,17 @@
 
     class sktm extends koneksii{
         public function suratdiproses(){
-            $sql = "SELECT surat_tidak_mampu.id_akun as id_akun, id_surat, no_surat, nama,tempat_lahir,tanggal_lahir, jenis_kelamin, kebangsaan, agama, status, pekerjaan,nik, alamat, no_pengantar, tgl_pengajuan, keterangan, keperluan, tgl_dibuat, status_surat,surat_tidak_mampu.image, akun.no_hp as no_hp from akun JOIN surat_tidak_mampu on akun.id_akun = surat_tidak_mampu.id_akun WHERE surat_tidak_mampu.status_surat = 'diproses'";
+            $_SESSION['hak_akses'];
+            if($_SESSION['hak_akses']==2){
+                $row = "Diajukan";
+            }elseif($_SESSION['hak_akses']==3){
+                $row = "Disetujui RT";
+            }elseif($_SESSION['hak_akses']==4){
+                $row = "Disetujui RW";
+            }else{
+                
+            }
+            $sql = "SELECT surat_tidak_mampu.id_akun as id_akun, id_surat, no_surat, nama,tempat_lahir,tanggal_lahir, jenis_kelamin, kebangsaan, agama, status, pekerjaan,nik, alamat, no_pengantar, tgl_pengajuan, keterangan, keperluan, tgl_dibuat, status_surat,surat_tidak_mampu.image, akun.no_hp as no_hp from akun JOIN surat_tidak_mampu on akun.id_akun = surat_tidak_mampu.id_akun WHERE surat_tidak_mampu.status_surat = '$row'";
             $result= $this->koneksi->prepare($sql);
             $result->execute();
             return $result; 
