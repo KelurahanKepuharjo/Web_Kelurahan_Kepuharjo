@@ -79,6 +79,7 @@ include('include/navbar.php');
                                         $row['nik'];
                                         $row['alamat'];
                                         $row['tgl_pengajuan'];
+                                        $row['image'];
                                         $row['no_hp'];  
                                 ?>
                                 
@@ -94,7 +95,7 @@ include('include/navbar.php');
                                         <?php //Dibagian Ini Modalnya Oke?>
                                         <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
                                             <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewsktmModal<?php echo $row['id_akun'];?>">
-                                                    Preview Data
+                                                    Preview Data SKTM
                                             </a>
                                             <div class="modal fade" id="PreviewsktmModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -156,13 +157,21 @@ include('include/navbar.php');
                                                             <label>Tanggal Pengajuan</label>
                                                             <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan'];?>" maxlength="50" required="">
                                                             <span class="text-danger">
+                                                                
                                                         </div>
-                                                    
+                                                        <div class="form-group">
+                                                            <label>Kartu Keluarga</label>
+                                                       
+                                                        </div>
+                                                        <div class="form-group">
+                                                        <img src="../Web_Kelurahan_Kepuharjo/uploads/<?php echo $row['image'];?>" class="img-thumbnail" alt="Responsive image">
+                                                        </div>
                                                         <div class="modal-footer">
                                                         <input type="submit" class="btn btn-primary" name="signup" value="Download">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>   
                                                         </div>
+                                                        
                                                         
                                                         </form>
                                                     </div>
