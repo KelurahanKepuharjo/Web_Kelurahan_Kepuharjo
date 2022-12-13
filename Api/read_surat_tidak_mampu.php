@@ -7,7 +7,7 @@ if(!$db)
 	echo "Database connection failed";
 }
     $id_akun = $_POST['id_akun'];
-    $sql = "SELECT * FROM surat_tidak_mampu WHERE id_akun = '".$id_akun."'";
+    $sql = "SELECT * FROM surat_tidak_mampu WHERE id_akun = '".$id_akun."' ORDER BY id_surat DESC";
     $data = mysqli_query($db, $sql);
     $rows = array();
 

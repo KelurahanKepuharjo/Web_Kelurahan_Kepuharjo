@@ -11,10 +11,14 @@ $db = mysqli_connect('localhost','root','','kepuharjo');
     $pekerjaan = $_POST['pekerjaan'];
     $nik = $_POST['nik'];
     $alamat = $_POST['alamat'];
+    $rt = $_POST['RT'];
+    $rw = $_POST['RW'];
     $surat_digunakan_untuk = $_POST['surat_digunakan_untuk'];
+    $status_surat = $_POST['status_surat'];
+    $tgl_pengajuan = $_POST['tgl_pengajuan'];
     $image = $_FILES['image']['name'];
 
     $imagePath = "uploads/".$image; 
     move_uploaded_file($_FILES['image']['tmp_name'],$imagePath); 
-    $db->query("INSERT INTO domisili (id_akun,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,kebangsaan,agama,status_perkawinan,pekerjaan,nik,alamat,surat_digunakan_untuk,image) VALUES ('{$id_akun}','{$nama}','{$tempat_lahir}','{$tanggal_lahir}','{$jenis_kelamin}','{$kebangsaan}','{$agama}','{$status_perkawinan}','{$pekerjaan}','{$nik}','{$alamat}','{$surat_digunakan_untuk}','{$image}')");
+    $db->query("INSERT INTO domisili (id_akun,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,kebangsaan,agama,status_perkawinan,pekerjaan,nik,alamat,RT,RW,surat_digunakan_untuk,status_surat,tgl_pengajuan,image) VALUES ('{$id_akun}','{$nama}','{$tempat_lahir}','{$tanggal_lahir}','{$jenis_kelamin}','{$kebangsaan}','{$agama}','{$status_perkawinan}','{$pekerjaan}','{$nik}','{$alamat}','{$rt}','{$rw}','{$surat_digunakan_untuk}','{$status_surat}','{$tgl_pengajuan}','{$image}')");
 ?>

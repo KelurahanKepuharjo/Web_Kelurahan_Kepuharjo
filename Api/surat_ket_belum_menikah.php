@@ -1,10 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include('koneksi.php');
-if (!isset($_POST['id_akun']) && !isset($_POST['nama']) && !isset($_POST['tempat_lahir']) && !isset($_POST['tanggal_lahir']) && !isset($_POST['jenis_kelamin']) && !isset($_POST['kebangsaan']) && !isset($_POST['agama']) && !isset($_POST['status']) && !isset($_POST['pekerjaan']) && !isset($_POST['nik']) && !isset($_POST['alamat']) && !isset($_POST['surat_digunakan_untuk']) && !isset($_POST['tgl_pengajuan'])) {
-    echo json_encode("No Data Send");
-    # code...
-} else {
+$db = mysqli_connect('localhost','root','','kepuharjo');
     $id_akun = $_POST['id_akun'];
     $nama = $_POST['nama'];
     $tempat_lahir = $_POST['tempat_lahir'];
@@ -16,15 +12,15 @@ if (!isset($_POST['id_akun']) && !isset($_POST['nama']) && !isset($_POST['tempat
     $pekerjaan = $_POST['pekerjaan'];
     $nik = $_POST['nik'];
     $alamat = $_POST['alamat'];
+    $status_surat = $_POST['status_surat'];
     $tgl_pengajuan = $_POST['tgl_pengajuan'];
-    $surat_digunakan_untuk = $_POST['surat_digunakan_untuk'];
+    $rt = $_POST['RT']; 
+    $rw = $_POST['RW'];
+    $surat_digunakan = $_POST['surat_digunakan'];
+    $image = $_FILES['image']['name']; 
 
-    $result = mysqli_query($conn, "INSERT INTO surat_ket_belum_menikah (id_akun,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,kebangsaan,agama,status,pekerjaan,nik,alamat,surat_digunakan_untuk,tgl_pengajuan) 
-    VALUES ('{$id_akun}','{$nama}','{$tempat_lahir}','{$tanggal_lahir}','{$jenis_kelamin}','{$kebangsaan}','{$agama}','{$status}','{$pekerjaan}','{$nik}','{$alamat}','{$surat_digunakan_untuk},'{$tgl_pengajuan}')");
-    if ($result) {
-        echo json_encode("Succes");
-    } else {
-        echo json_encode("Failed");
-    }   
-}
+    $imagePath = "uploads/".$image;
+    move_uploaded_file($_FILES['image']['tmp_name'],$imagePath);
+
+    $db->query($conn, "INSERT INTO surat_ket_belum_menikah (id_akun,nama,tempat_lahir,tanggal_lahir,jenis_kelamin,kebangsaan,agama,status,pekerjaan,nik,alamat,status_surat,tgl_pengajuan,RT,RW,surat_digunakan,image) VALUES ('{$id_akun}','{$nama}','{$tempat_lahir}','{$tanggal_lahir}','{$jenis_kelamin}','{$kebangsaan}','{$agama}','{$status}','{$pekerjaan}','{$nik}','{$alamat}','{$status_surat},'{$tgl_pengajuan}','{$rt}','{$rw}','{$surat_digunakan}','{$image}')");
 ?>
