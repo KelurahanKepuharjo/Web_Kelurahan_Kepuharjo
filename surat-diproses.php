@@ -185,8 +185,8 @@ include('include/navbar.php');
                                 <?php  }
                                 } ?>
 
-                                <!-- suratdomisili -->
-                                <?php
+                                                                <!-- suratdomisili -->
+                                                                <?php
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
@@ -264,15 +264,15 @@ include('include/navbar.php');
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Kebangsaan/Agama</label>
-                                                                    <input type="text" name="kelamin" class="form-control" value="<?php echo  $row['kebangsaan']; ?> <?php echo "/"; ?>  <?php echo  $row['agama']; ?>" maxlength="50" required="">
+                                                                    <input type="text" name="kebangsaan" class="form-control" value="<?php echo  $row['kebangsaan']; ?> <?php echo "/"; ?>  <?php echo  $row['agama']; ?>" maxlength="50" required="">
                                                                 </div>
                                                                 <div class="form-group ">
                                                                     <label>Status</label>
-                                                                    <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['status_perkawinan']; ?>" maxlength="30" required="">
+                                                                    <input type="text" name="status" class="form-control" value="<?php echo $row['status_perkawinan']; ?>" maxlength="30" required="">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Pekerjaan</label>
-                                                                    <input type="text" name="status" class="form-control" value="<?php echo $row['pekerjaan']; ?>" maxlength="50" required="">
+                                                                    <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['pekerjaan']; ?>" maxlength="50" required="">
                                                                     <span class="text-danger">
                                                                 </div>
                                                                 <div class="form-group">
@@ -287,7 +287,7 @@ include('include/navbar.php');
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Surat Pengantar</label>
-                                                                    <input type="text" name="pengantarsurat" class="form-control" value="<?php echo  $row['RT']; ?> <?php echo "/"; ?>  <?php echo  $row['RW']; ?>" maxlength="50" required="">
+                                                                    <input type="text" name="rtrw" class="form-control" value="<?php echo "RT. " ?><?php echo  $row['RT']; ?><?php echo " RW."; ?> <?php echo  $row['RW']; ?>" maxlength="50" required="">
                                                                     <span class="text-danger">
                                                                 </div>
                                                                 <div class="form-group">
@@ -297,7 +297,7 @@ include('include/navbar.php');
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Nomor Surat Pengantar</label>
-                                                                    <input type="text" name="tglpengantarsurat" class="form-control" value="<?php echo $row['no_pengantar_surat']; ?>" maxlength="50" required="">
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_pengantar_surat']; ?>" maxlength="50" required="">
                                                                     <span class="text-danger">
                                                                 </div>
                                                                 <div class="form-group">
@@ -322,7 +322,7 @@ include('include/navbar.php');
                                                                     <img src="../Web_Kelurahan_Kepuharjo/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
+                                                                <input type="submit" class="btn btn-primary" name="signup" value="Download">
                                                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
                                                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                                 </div>

@@ -24,7 +24,7 @@ class sktm extends koneksii
             $row = "Disetujui RW";
         } else {
         }
-        $sql = "SELECT surat_tidak_mampu.id_akun as id_akun, id_surat, no_surat, nama,tempat_lahir,tanggal_lahir, jenis_kelamin, kebangsaan, agama, status, pekerjaan,nik, alamat, no_pengantar, tgl_pengajuan, keterangan, keperluan, tgl_dibuat, status_surat,surat_tidak_mampu.image, akun.no_hp as no_hp from akun JOIN surat_tidak_mampu on akun.id_akun = surat_tidak_mampu.id_akun WHERE surat_tidak_mampu.status_surat = '$row'";
+        $sql = "SELECT surat_tidak_mampu.id_akun as id_akun, id_surat, no_surat, nama,tempat_lahir,tanggal_lahir, jenis_kelamin, kebangsaan, agama, status, pekerjaan,nik, alamat, no_pengantar, tgl_pengajuan, keterangan, keperluan, tgl_dibuat, status_surat,surat_tidak_mampu.image, akun.no_hp as no_hp from akun JOIN surat_tidak_mampu on akun.id_akun = surat_tidak_mampu.id_akun WHERE surat_tidak_mampu.status_surat = 'Diproses'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -76,7 +76,7 @@ class akta_kelahiran extends koneksii
 {
     public function suratdiproses()
     {
-        $sql = "SELECT `id_surat`, `nomor_surat`, `nama_anak`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`,surat_akta_kelahiran.kebangsaan, `agama`, `status`, `pekerjaan`, `nik`, `alamat`, `nama_ayah`, `umur_ayah`, `kebangsaan_ayah`, `agama_ayah`, `pekerjaan_ayah`, `alamat_ayah`, `nama_ibu`, `umur_ibu`, `kebangsaan_ibu`, `agama_ibu`, `pekerjaan_ibu`, `alamat_ibu`, `RT`, `RW`, `status_surat`, `tgl_pengajuan`, surat_akta_kelahiran.image, surat_akta_kelahiran.id_akun FROM `surat_akta_kelahiran` JOIN akun ON surat_akta_kelahiran.id_akun=akun.id_akun WHERE status_surat='diproses'";
+        $sql = "SELECT `id_surat`, `nomor_surat`, `nama_anak`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `status`, `pekerjaan`, `nik`, `alamat`, `nama_ayah`, `umur_ayah`, `kebangsaan_ayah`, `agama_ayah`, `pekerjaan_ayah`, `alamat_ayah`, `nama_ibu`, `umur_ibu`, `kebangsaan_ibu`, `agama_ibu`, `pekerjaan_ibu`, `alamat_ibu`, `RT`, `RW`, `status_surat`, `tgl_pengajuan`, surat_akta_kelahiran.image, surat_akta_kelahiran.id_akun FROM `surat_akta_kelahiran` JOIN akun ON surat_akta_kelahiran.id_akun=akun.id_akun WHERE status_surat='diproses'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -96,7 +96,7 @@ class pindah extends koneksii
 {
     public function suratdiproses()
     {
-        $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, `RT`, `RW`, surat_pindah.image, surat_pindah.id_akun FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='diproses'";
+        $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alamat_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, `RT`, `RW`, surat_pindah.image, surat_pindah.id_akun FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='diproses'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
