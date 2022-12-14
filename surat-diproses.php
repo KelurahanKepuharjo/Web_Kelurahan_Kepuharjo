@@ -481,7 +481,7 @@ include('include/navbar.php');
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
-                                            <td scope="col"><?php echo $row['nama']; ?></td>
+                                            <td scope="col"><?php echo $row['nama_almarhum']; ?></td>
                                             <td scope="col"><?php echo 'Surat Kematian'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
@@ -614,7 +614,7 @@ include('include/navbar.php');
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
-                                            <td scope="col"><?php echo $row['nama']; ?></td>
+                                            <td scope="col"><?php echo $row['nama_anak']; ?></td>
                                             <td scope="col"><?php echo 'Surat Akta'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
