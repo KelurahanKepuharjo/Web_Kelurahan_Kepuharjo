@@ -342,12 +342,24 @@ include('include/navbar.php');
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
 
-                                $obj = new readsm;
+                                $obj = new belum_menikah;
                                 $data = $obj->suratdiproses();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
+                                        $row['nama'];
+                                        $row['no_surat'];
+                                        $row['tempat_lahir'];
+                                        $row['tanggal_lahir'];
+                                        $row['jenis_kelamin'];
+                                        $row['kebangsaan'];
+                                        $row['agama'];
+                                        $row['status'];
+                                        $row['pekerjaan'];
+                                        $row['nik'];
+                                        $row['alamat'];
+                                        $row['tgl_pengajuan'];
 
 
                                 ?>
@@ -356,7 +368,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Belum Nikah'; ?></td>
-                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
 
                                             <td>
@@ -382,47 +394,47 @@ include('include/navbar.php');
                                                             </style>
                                                             <div class="form-group">
                                                                 <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
-                                                                <input type="text" name="nama" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tempat, Tanggal Lahir</label>
-                                                                <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir']; ?>, <?php echo $row['tanggal_lahir']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Jenis kelamin</label>
-                                                                <input type="text" name="kelamin" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group ">
                                                                 <label>Kebangsaan/Agama</label>
-                                                                <input type="text" name="kebangsaan" class="form-control" value="" maxlength="30" required="">
+                                                                <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['kebangsaan']; ?> / <?php echo $row['agama']; ?>" maxlength="30" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Status</label>
-                                                                <input type="text" name="status" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="status" class="form-control" value="<?php echo $row['status']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Pekerjaan</label>
-                                                                <input type="text" name="pekerjaan" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['pekerjaan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>NIK</label>
-                                                                <input type="text" name="nik" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
 
@@ -447,13 +459,23 @@ include('include/navbar.php');
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
 
-                                $obj = new readsm;
+                                $obj = new kematian;
                                 $data = $obj->suratdiproses();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-
+                                        $row['no_surat'];
+                                        $row['nama_almarhum'];
+                                        $row['saksi_kematian'];
+                                        $row['hubungan'];
+                                        $row['hari'];
+                                        $row['tanggal'];
+                                        $row['alamat'];
+                                        $row['nik_almarhum'];
+                                        $row['penyebab_kematian'];
+                                        $row['surat_digunakan'];
+                                        $row['tgl_pengajuan'];
 
                                 ?>
                                         <tr>
@@ -461,7 +483,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Kematian'; ?></td>
-                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
 
                                             <td>
@@ -557,13 +579,36 @@ include('include/navbar.php');
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
 
-                                $obj = new readsm;
+                                $obj = new akta_kelahiran;
                                 $data = $obj->suratdiproses();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-
+                                        $row['nomor_surat'];
+                                        $row['nama_anak'];
+                                        $row['tempat_lahir'];
+                                        $row['tanggal_lahir'];
+                                        $row['jenis_kelamin'];
+                                        $row['kebangsaan'];
+                                        $row['agama'];
+                                        $row['status'];
+                                        $row['pekerjaan'];
+                                        $row['nik'];
+                                        $row['alamat'];
+                                        $row['nama_ayah'];
+                                        $row['umur_ayah'];
+                                        $row['kebangsaan_ayah'];
+                                        $row['agama_ayah'];
+                                        $row['pekerjaan_ayah'];
+                                        $row['alamat_ayah'];
+                                        $row['nama_ibu'];
+                                        $row['umur_ibu'];
+                                        $row['kebangsaan_ibu'];
+                                        $row['agama_ibu'];
+                                        $row['pekerjaan_ibu'];
+                                        $row['alamat_ibu'];
+                                        $row['tgl_pengajuan'];
 
                                 ?>
                                         <tr>
@@ -571,7 +616,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Akta'; ?></td>
-                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
 
                                             <td>
@@ -712,13 +757,26 @@ include('include/navbar.php');
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
 
-                                $obj = new readsm;
+                                $obj = new ket_usaha;
                                 $data = $obj->suratdiproses();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-
+                                        $row['no_surat'];
+                                        $row['nama'];
+                                        $row['tempat_lahir'];
+                                        $row['tanggal_lahir'];
+                                        $row['jenis_kelamin'];
+                                        $row['kebangsaan'];
+                                        $row['agama'];
+                                        $row['status'];
+                                        $row['pekerjaan'];
+                                        $row['nik'];
+                                        $row['alamat'];
+                                        $row['tgl_pengajuan'];
+                                        $row['nama_usaha'];
+                                        $row['keperluan'];
 
                                 ?>
                                         <tr>
@@ -726,7 +784,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Usaha'; ?></td>
-                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
 
                                             <td>
