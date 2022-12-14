@@ -509,52 +509,52 @@ include('include/navbar.php');
                                                             </style>
                                                             <div class="form-group">
                                                                 <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Mendiang</label>
-                                                                <input type="text" name="nama" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama_almarhum']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Saksi</label>
-                                                                <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="ttl" class="form-control" value="<?php echo $row['saksi_kematian']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Hubungan Saksi</label>
-                                                                <input type="text" name="kelamin" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="kelamin" class="form-control" value="<?php echo $row['hubungan']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group ">
                                                                 <label>Hari Kematian</label>
-                                                                <input type="text" name="kebangsaan" class="form-control" value="" maxlength="30" required="">
+                                                                <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['hari']; ?>" maxlength="30" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal/Bulan/Tahun</label>
-                                                                <input type="text" name="status" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="status" class="form-control" value="<?php echo $row['tanggal']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat Terakhir</label>
-                                                                <input type="text" name="pekerjaan" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>NIK</label>
-                                                                <input type="text" name="nik" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nik" class="form-control" value="<?php echo $row['nik_almarhum']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Penyebab Kematian</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['penyebab_kematian']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Keterangan Pengajuan</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['surat_digunakan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
 
@@ -642,97 +642,97 @@ include('include/navbar.php');
                                                             </style>
                                                             <div class="form-group">
                                                                 <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['nomor_surat']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
-                                                                <input type="text" name="nama" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama_anak']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tempat, Tanggal Lahir</label>
-                                                                <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir']; ?>, <?php echo $row['tanggal_lahir']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Jenis kelamin</label>
-                                                                <input type="text" name="kelamin" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group ">
                                                                 <label>Kebangsaan/Agama</label>
-                                                                <input type="text" name="kebangsaan" class="form-control" value="" maxlength="30" required="">
+                                                                <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['kebangsaan']; ?> / <?php echo $row['agama']; ?>" maxlength="30" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Status</label>
-                                                                <input type="text" name="status" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="status" class="form-control" value="<?php echo $row['status']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Pekerjaan</label>
-                                                                <input type="text" name="pekerjaan" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['pekerjaan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>NIK</label>
-                                                                <input type="text" name="nik" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['nama_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Umur Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['umur_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Bangsa/Agama Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['kebangsaan_ayah']; ?> / <?php echo $row['agama_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Pekerjaan Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['pekerjaan_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['nama_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Umur Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['umur_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Bangsa/Agama Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['kebangsaan_ibu']; ?> / <?php echo $row['agama_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Pekerjaan Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['pekerjaan_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
 
@@ -810,57 +810,57 @@ include('include/navbar.php');
                                                             </style>
                                                             <div class="form-group">
                                                                 <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
-                                                                <input type="text" name="nama" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tempat, Tanggal Lahir</label>
-                                                                <input type="text" name="ttl" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir']; ?>, <?php echo $row['tanggal_lahir']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Jenis kelamin</label>
-                                                                <input type="text" name="kelamin" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group ">
                                                                 <label>Kebangsaan / Agama</label>
-                                                                <input type="text" name="kebangsaan" class="form-control" value="" maxlength="30" required="">
+                                                                <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['kebangsaan']; ?> / <?php echo $row['agama']; ?>" maxlength="30" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Status</label>
-                                                                <input type="text" name="status" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="status" class="form-control" value="<?php echo $row['status']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Pekerjaan</label>
-                                                                <input type="text" name="pekerjaan" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['pekerjaan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>NIK</label>
-                                                                <input type="text" name="nik" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Usaha</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['nama_usaha']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Keterangan Pengajuan</label>
-                                                                <input type="text" name="alamat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['keperluan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="" maxlength="50" required="">
+                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
 
