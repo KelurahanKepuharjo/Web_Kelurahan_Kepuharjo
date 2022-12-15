@@ -186,6 +186,9 @@ include('include/navbar.php');
                                     <th>
                                         Status
                                     </th>
+                                    <th>
+                                        Aksi
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -211,50 +214,11 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo 'Surat SKTM'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary" ><?php echo $row['status_surat']; ?></span></td>
-
+                                            <td><a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmst.php?kode=<?php echo $row['id_akun']?>">Proses Surat</a></td>
                                         </tr>
                                 <?php }
                                 } ?>
-                                <!-- <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        3602183134758
-                                    </td>
-                                    <td>
-                                        Nadia Ayu Safitri
-                                    </td>
-                                    <td>
-                                        Surat Keterangan Tidak Mampu
-                                    </td>
-                                    <td>
-                                        17 Nopember 2022
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        3602183134759
-                                    </td>
-                                    <td>
-                                        Faisal Oktabrian
-                                    </td>
-                                    <td>
-                                        Surat Keterangan Untuk Nikah
-                                    </td>
-                                    <td>
-                                        18 Nopember 2022
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                </tr> -->
+
                             </tbody>
 
                         </table>

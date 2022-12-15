@@ -24,6 +24,8 @@ if (isset($_POST['submit'])) {
             $username = $row['nama_lengkap'];
             // $_SESSION = $username;
             $hakakses = $row['hak_akses'];
+            $RT = $row['rt'];
+            $RW = $row['rw'];
         }
 
         if ($num != 0) {
@@ -33,6 +35,10 @@ if (isset($_POST['submit'])) {
                 $_SESSION['password'] = $passval;
                 $_SESSION['nama_lengkap'] = $username;
                 $_SESSION['hak_akses'] = $hakakses;
+
+                $_SESSION['rt'] = $RT;
+                $_SESSION['rw'] = $RW;
+                
 
                 header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap =' . urlencode($username));
 
@@ -64,6 +70,8 @@ if (isset($_POST['submit'])) {
                 $username = $row['nama_lengkap'];
                 // $_SESSION = $username;
                 $hakakses = $row['hak_akses'];
+                $RT = $row['rt'];
+            $RW = $row['rw'];
             }
 
             if ($num != 0) {
@@ -73,6 +81,8 @@ if (isset($_POST['submit'])) {
                     $_SESSION['password'] = $passval;
                     $_SESSION['nama_lengkap'] = $username;
                     $_SESSION['hak_akses'] = $hakakses;
+                    $_SESSION['rt'] = $RT;
+                $_SESSION['rw'] = $RW;
 
                     header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap =' . urlencode($username));
 
@@ -104,6 +114,8 @@ if (isset($_POST['submit'])) {
                     $username = $row['nama_lengkap'];
                     // $_SESSION = $username;
                     $hakakses = $row['hak_akses'];
+                    $RT = $row['rt'];
+            $RW = $row['rw'];
                 }
 
                 if ($num != 0) {
@@ -113,6 +125,8 @@ if (isset($_POST['submit'])) {
                         $_SESSION['password'] = $passval;
                         $_SESSION['nama_lengkap'] = $username;
                         $_SESSION['hak_akses'] = $hakakses;
+                        $_SESSION['rt'] = $RT;
+                $_SESSION['rw'] = $RW;
 
                         header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php?nama_lengkap =' . urlencode($username));
 

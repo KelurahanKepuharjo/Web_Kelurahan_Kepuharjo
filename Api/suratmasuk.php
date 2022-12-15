@@ -16,6 +16,7 @@
             $_SESSION['hak_akses'];
             if($_SESSION['hak_akses']=='2'){
                echo $row = "Diajukan";
+            
             }elseif($_SESSION['hak_akses']=='3'){
                 echo $row = "Disetujui RT";
             }elseif($_SESSION['hak_akses']=='1'){
@@ -23,8 +24,9 @@
             }else{
                 
             }
-            $sql = "SELECT surat_tidak_mampu.id_akun, surat_tidak_mampu.nama, surat_tidak_mampu.tgl_pengajuan ,surat_tidak_mampu.status_surat FROM surat_tidak_mampu WHERE status_surat = '$row'
-            ";
+         $rt= $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
+            $sql = "SELECT surat_tidak_mampu.id_surat, surat_tidak_mampu.id_akun, surat_tidak_mampu.nama, surat_tidak_mampu.tgl_pengajuan ,surat_tidak_mampu.status_surat, surat_tidak_mampu.RT, surat_tidak_mampu.RW from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw'";
             $result= $this->koneksi->prepare($sql);
             $result->execute();
             return $result; 

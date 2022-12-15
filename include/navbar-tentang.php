@@ -52,21 +52,32 @@
           <hr class="sidebar-divider">
 
           <!-- Heading -->
-          <div class="sidebar-heading">
-            MENU LAINNYA
-          </div>
-
-          <!-- Nav Item - Charts -->
-          <li class="nav-item">
-            <a class="nav-link" href="master-data.php">
-              <i class="fas fa-fw fa-chart-area"></i>
-              <span>Master Data</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="berita.php">
-              <i class="fas fa-fw fa-table"></i>
-              <span>Berita</span></a>
-          </li>
+          <?php
+          if ($_SESSION['hak_akses'] == "1") {
+            echo '<div class="sidebar-heading">';
+            echo 'MENU LAINNYA';
+            echo '</div>';
+            echo '';
+            echo '<!-- Nav Item - Charts -->';
+            echo '<li class="nav-item">';
+            echo '<a class="nav-link" href="master-data.php">';
+            echo '<i class="fas fa-fw fa-chart-area"></i>';
+            echo '<span>Master Data</span></a>';
+            echo '</li>';
+            echo '';
+            echo '<li class="nav-item">';
+            echo '<a class="nav-link" href="berita.php">';
+            echo '<i class="fas fa-fw fa-table"></i>';
+            echo '<span>Berita</span></a>';
+            echo '</li>';
+          }elseif($_SESSION['hak_akses'] == "2"){
+            echo "";
+          }elseif($_SESSION['hak_akses'] == "3"){
+            echo "";
+          }else{
+            echo "";
+          }
+          ?>
           <!-- Nav Item - Tables -->
           <li class="nav-item">
             <a class="nav-link" href="tentang.php">
