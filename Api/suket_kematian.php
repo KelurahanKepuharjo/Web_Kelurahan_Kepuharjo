@@ -19,5 +19,5 @@ $db = mysqli_connect('localhost','root','','kepuharjo');
 
     $imagePath = "uploads/".$image;
     move_uploaded_file($_FILES['image']['tmp_name'],$imagePath);
-    $db->query("INSERT INTO surat_kematian(id_akun,nama_almarhum,saksi_kematian,hubungan,hari,tanggal,alamat,nik_almarhum,penyebab_kematian,surat_digunakan,status_surat,tgl_pengajuan,RT,RW,image) VALUES ('{$id_akun}','{$nama_almarhum}','{$saksi_kematian}','{$hubungan}','{$hari}','{$tanggal}','{$alamat}','{$nik_almarhum}','{$penyebab_kematian}','{$surat_digunakan}','{$status_surat}','{$tgl_pengajuan}','{$rt}','{$rw}','{$image}')");
+    $db->query("INSERT INTO surat_kematian (id_akun,nama_almarhum,saksi_kematian,hubungan,hari,tanggal,alamat,nik_almarhum,penyebab_kematian,surat_digunakan,status_surat,tgl_pengajuan,RT,RW,image) VALUES ('{$id_akun}','{$nama_almarhum}','{$saksi_kematian}','{$hubungan}','{$hari}','{$tanggal}','{$alamat}','{$nik_almarhum}','{$penyebab_kematian}','{$surat_digunakan}','{$status_surat}','{$tgl_pengajuan}','{$rt}','{$rw}','{$image}')");
 ?>

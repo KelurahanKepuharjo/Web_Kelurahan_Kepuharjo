@@ -5,17 +5,14 @@ $nama_lengkap = $_POST['nama_lengkap'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $no_hp = $_POST['no_hp'];
 $hak_akses = $_POST['hak_akses'];
+$rt = $_POST['rt'];
+$rw = $_POST['rw'];
 
-$sql = "SELECT id_akun FROM akun WHERE id_akun = '".$id_akun."'";
-$result = mysqli_query($db,$sql);
-$count = mysqli_num_rows($result);
-if($count == 1){
-	echo json_encode("Error");
-}else{
-	$insert = "INSERT INTO akun (id_akun, nama_lengkap, password, no_hp, hak_akses) VALUES ('$id_akun', '$nama_lengkap', '$password', '$no_hp', '$hak_akses')";
-		$query = mysqli_query($db,$insert);
-		if($query){
-			echo json_encode("Success");
-		}
+$sql = $insert = "INSERT INTO akun  SET id_akun = '$id_akun', nama_lengkap = '$nama_lengkap', password = '$password', no_hp = '$no_hp', hak_akses = '$hak_akses', rt = '$rt', rw = '$rw'";
+$result = $db->query($sql);
+if ($result) {
+	echo json_encode(array('success'=>true));
+} else {
+	echo json_encode(array('success'=>false));
 }
-?>
+?>	

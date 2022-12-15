@@ -56,7 +56,7 @@ include('include/navbar.php');
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
                                 <!-- suratsktm -->
                                 <?php
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -96,7 +96,7 @@ include('include/navbar.php');
                                                 ?>
                                                 <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
                                                     <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewsktmModal<?php echo $row['id_akun']; ?>">
-                                                        Preview Data SKTM
+                                                        Preview Data
                                                     </a>
                                                     <div class="modal fade" id="PreviewsktmModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -185,8 +185,8 @@ include('include/navbar.php');
                                 <?php  }
                                 } ?>
 
-                                                                <!-- suratdomisili -->
-                                                                <?php
+                                <!-- suratdomisili -->
+                                <?php
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
@@ -323,12 +323,13 @@ include('include/navbar.php');
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                 <input type="submit" class="btn btn-primary" name="signup" value="Download">
-                                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    </form>
                                                     <?php //Sampai Sini 
                                                     ?>
                                             </td>
@@ -360,7 +361,7 @@ include('include/navbar.php');
                                         $row['nik'];
                                         $row['alamat'];
                                         $row['tgl_pengajuan'];
-
+                                        $row['no_hp'];
 
                                 ?>
                                         <tr>
@@ -374,10 +375,11 @@ include('include/navbar.php');
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewbelumnikahModal">
+                                                <form action="../Web_Kelurahan_Kepuharjo/pdfbelumnikah.php" method="post">
+                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewbelumnikahModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
-                                                <div class="modal fade" id="PreviewbelumnikahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="PreviewbelumnikahModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -439,13 +441,14 @@ include('include/navbar.php');
                                                             </div>
 
                                                             <div class="modal-footer">
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </form>
                                                 <?php //Sampai Sini 
                                                 ?>
                                             </td>
@@ -476,7 +479,7 @@ include('include/navbar.php');
                                         $row['penyebab_kematian'];
                                         $row['surat_digunakan'];
                                         $row['tgl_pengajuan'];
-
+                                        $row['no_hp'];
                                 ?>
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
@@ -489,10 +492,11 @@ include('include/navbar.php');
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewkematianModal">
+                                                <form action="../Web_Kelurahan_Kepuharjo/pdfkematian.php" method="post">
+                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewkematianModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
-                                                <div class="modal fade" id="PreviewkematianModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="PreviewkematianModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -513,28 +517,28 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Mendiang</label>
-                                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama_almarhum']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="namamendiang" class="form-control" value="<?php echo $row['nama_almarhum']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Saksi</label>
-                                                                <input type="text" name="ttl" class="form-control" value="<?php echo $row['saksi_kematian']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="saksi" class="form-control" value="<?php echo $row['saksi_kematian']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Hubungan Saksi</label>
-                                                                <input type="text" name="kelamin" class="form-control" value="<?php echo $row['hubungan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="hubungan" class="form-control" value="<?php echo $row['hubungan']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group ">
                                                                 <label>Hari Kematian</label>
-                                                                <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['hari']; ?>" maxlength="30" required="">
+                                                                <input type="text" name="harikematian" class="form-control" value="<?php echo $row['hari']; ?>" maxlength="30" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal/Bulan/Tahun</label>
-                                                                <input type="text" name="status" class="form-control" value="<?php echo $row['tanggal']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="tglkematian" class="form-control" value="<?php echo $row['tanggal']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat Terakhir</label>
-                                                                <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
@@ -544,12 +548,12 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Penyebab Kematian</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['penyebab_kematian']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="penyebabkematian" class="form-control" value="<?php echo $row['penyebab_kematian']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Keterangan Pengajuan</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['surat_digunakan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="ketpengajuan" class="form-control" value="<?php echo $row['surat_digunakan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
@@ -559,13 +563,14 @@ include('include/navbar.php');
                                                             </div>
 
                                                             <div class="modal-footer">
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </form>
                                                 <?php //Sampai Sini 
                                                 ?>
                                             </td>
@@ -584,7 +589,6 @@ include('include/navbar.php');
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-
                                         $row['nomor_surat'];
                                         $row['nama_anak'];
                                         $row['tempat_lahir'];
@@ -609,7 +613,7 @@ include('include/navbar.php');
                                         $row['pekerjaan_ibu'];
                                         $row['alamat_ibu'];
                                         $row['tgl_pengajuan'];
-
+                                        $row['no_hp'];
                                 ?>
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
@@ -622,10 +626,11 @@ include('include/navbar.php');
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewaktaModal">
+                                                <form action="../Web_Kelurahan_Kepuharjo/pdfakta.php" method="post">
+                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewaktaModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
-                                                <div class="modal fade" id="PreviewaktaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="PreviewaktaModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -646,7 +651,7 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
-                                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama_anak']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="namaanak" class="form-control" value="<?php echo $row['nama_anak']; ?>" maxlength="50" required="">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tempat, Tanggal Lahir</label>
@@ -682,52 +687,52 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['nama_ayah']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="namaayah" class="form-control" value="<?php echo $row['nama_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Umur Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['umur_ayah']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="umurayah" class="form-control" value="<?php echo $row['umur_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Bangsa/Agama Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['kebangsaan_ayah']; ?> / <?php echo $row['agama_ayah']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="bangsaayah" class="form-control" value="<?php echo $row['kebangsaan_ayah']; ?> / <?php echo $row['agama_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Pekerjaan Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['pekerjaan_ayah']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="pekerjaanayah" class="form-control" value="<?php echo $row['pekerjaan_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat Ayah</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_ayah']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="alamatayah" class="form-control" value="<?php echo $row['alamat_ayah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['nama_ibu']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="namaibu" class="form-control" value="<?php echo $row['nama_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Umur Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['umur_ibu']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="umuribu" class="form-control" value="<?php echo $row['umur_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Bangsa/Agama Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['kebangsaan_ibu']; ?> / <?php echo $row['agama_ibu']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="bangsaibu" class="form-control" value="<?php echo $row['kebangsaan_ibu']; ?> / <?php echo $row['agama_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Pekerjaan Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['pekerjaan_ibu']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="pekerjaanibu" class="form-control" value="<?php echo $row['pekerjaan_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Alamat Ibu</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_ibu']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="alamatibu" class="form-control" value="<?php echo $row['alamat_ibu']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
@@ -737,13 +742,14 @@ include('include/navbar.php');
                                                             </div>
 
                                                             <div class="modal-footer">
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </form>
                                                 <?php //Sampai Sini 
                                                 ?>
                                             </td>
@@ -777,6 +783,7 @@ include('include/navbar.php');
                                         $row['tgl_pengajuan'];
                                         $row['nama_usaha'];
                                         $row['keperluan'];
+                                        $row['no_hp'];
 
                                 ?>
                                         <tr>
@@ -790,10 +797,11 @@ include('include/navbar.php');
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewusahaModal">
+                                                <form action="../Web_Kelurahan_Kepuharjo/pdfusaha.php" method="post">
+                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewusahaModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
-                                                <div class="modal fade" id="PreviewusahaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="PreviewusahaModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -850,12 +858,12 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Nama Usaha</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['nama_usaha']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="namausaha" class="form-control" value="<?php echo $row['nama_usaha']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Keterangan Pengajuan</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['keperluan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="ketsurat" class="form-control" value="<?php echo $row['keperluan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
@@ -865,13 +873,14 @@ include('include/navbar.php');
                                                             </div>
 
                                                             <div class="modal-footer">
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </form>
                                                 <?php //Sampai Sini 
                                                 ?>
                                             </td>
@@ -907,7 +916,7 @@ include('include/navbar.php');
                                         $row['alasan_pindah'];
                                         $row['pengikut'];
                                         $row['tgl_pengajuan'];
-
+                                        $row['no_hp'];
 
                                 ?>
                                         <tr>
@@ -921,10 +930,11 @@ include('include/navbar.php');
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewpindahModal">
+                                                <form action="../Web_Kelurahan_Kepuharjo/pdfpindah.php" method="post">
+                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewpindahModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
-                                                <div class="modal fade" id="PreviewpindahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="PreviewpindahModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -985,13 +995,13 @@ include('include/navbar.php');
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Propinsi</label>
+                                                                <label>Provinsi</label>
                                                                 <input type="text" name="alamat" class="form-control" value="<?php echo $row['provinsi']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Keterangan Pengajuan</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alasan_pindah']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_pindah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
@@ -1001,13 +1011,14 @@ include('include/navbar.php');
                                                             </div>
 
                                                             <div class="modal-footer">
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Download</button>
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kirim Via WhatsApp</button>
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </form>
                                                 <?php //Sampai Sini 
                                                 ?>
                                             </td>
