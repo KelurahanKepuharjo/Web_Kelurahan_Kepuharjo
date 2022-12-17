@@ -1,6 +1,11 @@
 <?php
-include_once "../Web_Kelurahan_Kepuharjo/Api/update/koneksi.php";
- try {  
+  $dbHost = "localhost";  
+  $dbUser = "root";  
+  $dbPass = "";  
+  $dbName = "kepuharjo";  
+  $conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);  
+ 
+  try {  
    // set the PDO error mode untuk exception  
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
    //menentukan id record yang akan diupdate  
