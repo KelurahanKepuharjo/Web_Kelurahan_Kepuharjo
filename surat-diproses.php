@@ -165,7 +165,8 @@ include('include/navbar.php');
 
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <img src="../Web_Kelurahan_Kepuharjo/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                        <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image'];?>" class="img-thumbnail" alt="Responsive image">
+                                                                        
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <input type="submit" class="btn btn-primary" name="signup" value="Download">
@@ -319,7 +320,7 @@ include('include/navbar.php');
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                 <input type="submit" class="btn btn-primary" name="signup" value="Download">
@@ -439,6 +440,9 @@ include('include/navbar.php');
                                                                 <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                </div>
 
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
@@ -561,6 +565,9 @@ include('include/navbar.php');
                                                                 <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                </div>
 
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
@@ -740,6 +747,9 @@ include('include/navbar.php');
                                                                 <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                </div>
 
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
@@ -871,6 +881,9 @@ include('include/navbar.php');
                                                                 <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                </div>
 
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
@@ -916,6 +929,7 @@ include('include/navbar.php');
                                         $row['alasan_pindah'];
                                         $row['pengikut'];
                                         $row['tgl_pengajuan'];
+                                        $row['image'];
                                         $row['no_hp'];
 
                                 ?>
@@ -1000,8 +1014,8 @@ include('include/navbar.php');
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Keterangan Pengajuan</label>
-                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat_pindah']; ?>" maxlength="50" required="">
+                                                                <label>Alasan Pindah</label>
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alasan_pindah']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
@@ -1009,6 +1023,9 @@ include('include/navbar.php');
                                                                 <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                </div>
 
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">

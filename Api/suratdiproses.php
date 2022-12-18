@@ -133,7 +133,20 @@ class kematian extends koneksii
 {
     public function suratdiproses()
     {
-        $sql = "SELECT `id_surat`, `no_surat`, `nama_almarhum`, `saksi_kematian`, `hubungan`, `hari`, `tanggal`, `alamat`, `nik_almarhum`, `penyebab_kematian`, `surat_digunakan`, `tanggal_dibuat`, `status_surat`, `tgl_pengajuan`, surat_kematian.RT, surat_kematian.RW, surat_kematian.image, akun.id_akun, akun.no_hp  FROM `surat_kematian` JOIN akun ON akun.id_akun = surat_kematian.id_akun WHERE `status_surat` = 'diproses'";
+      $_SESSION['hak_akses'];
+      if($_SESSION['hak_akses']=='2'){
+         $row = "Diproses RT";
+      
+      }elseif($_SESSION['hak_akses']=='3'){
+         $row = "Diproses RW";
+      }elseif($_SESSION['hak_akses']=='1'){
+         $row = "Diproses Kelurahan";
+      }else{
+          
+      }
+   $rt= $_SESSION['rt'];
+  $rw = $_SESSION['rw'];
+        $sql = "SELECT `id_surat`, `no_surat`, `nama_almarhum`, `saksi_kematian`, `hubungan`, `hari`, `tanggal`, `alamat`, `nik_almarhum`, `penyebab_kematian`, `surat_digunakan`, `tanggal_dibuat`, `status_surat`, `tgl_pengajuan`, surat_kematian.RT, surat_kematian.RW, surat_kematian.image, akun.id_akun, akun.no_hp  FROM `surat_kematian` JOIN akun ON akun.id_akun = surat_kematian.id_akun WHERE status_surat='$row' AND surat_kematian.RT = '$rt' AND surat_kematian.RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -156,7 +169,7 @@ class pindah extends koneksii
         }
      $rt= $_SESSION['rt'];
     $rw = $_SESSION['rw'];
-        $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image, surat_pindah.id_akun FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_pindah.RT = '$rt' AND surat_pindah.RW = '$rw'";
+        $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image as image, surat_pindah.id_akun, no_hp FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_pindah.RT = '$rt' AND surat_pindah.RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
