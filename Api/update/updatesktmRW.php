@@ -4,14 +4,14 @@
   $dbPass = "";  
   $dbName = "kepuharjo";  
   $conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);  
- 
+  
   try {  
    // set the PDO error mode untuk exception  
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
    //menentukan id record yang akan diupdate  
     echo $_GET['kode'];
    //membuat query mengupdate record pada tabel User    
-   $query="UPDATE domisili SET status_surat='Diproses RT' WHERE id_akun='$_GET[kode]'";   
+   $query="UPDATE surat_tidak_mampu SET status_surat='Diproses RW' WHERE id_akun='$_GET[kode]'";   
    // Membuat prepare statement  
    $stmt = $conn->prepare($query);  
    // menjalankan query  

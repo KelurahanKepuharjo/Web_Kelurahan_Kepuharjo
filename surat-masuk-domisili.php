@@ -186,6 +186,9 @@ include('include/navbar.php');
                                     <th>
                                         Status
                                     </th>
+                                    <th>
+                                        Aksi
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -211,7 +214,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo 'Surat Domisili'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
-
+                                            <td><a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatedomisilist.php?kode=<?php echo $row['id_akun']?>">Proses Surat</a></td>
                                         </tr>
                                 <?php }
                                 } ?>

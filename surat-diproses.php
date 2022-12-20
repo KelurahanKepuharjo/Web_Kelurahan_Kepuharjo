@@ -168,11 +168,37 @@ include('include/navbar.php');
                                                                         <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image'];?>" class="img-thumbnail" alt="Responsive image">
                                                                         
                                                                     </div>
-                                                                    <div class="modal-footer">
-                                                                        <input type="submit" class="btn btn-primary" name="signup" value="Download">
-                                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
-                                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
-                                                                    </div>
+                                                                    <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
+                                                            <div class="modal-footer">
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
 
 
                                                                 </form>
@@ -320,13 +346,39 @@ include('include/navbar.php');
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['images']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                <input type="submit" class="btn btn-primary" name="signup" value="Download">
-                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
-                                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
-                                                                </div>
+                                                                <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
+                                                            <div class="modal-footer">
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -443,12 +495,37 @@ include('include/navbar.php');
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
-
+                                                                <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -568,12 +645,37 @@ include('include/navbar.php');
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
-
+                                                                <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -750,12 +852,37 @@ include('include/navbar.php');
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
-
+                                                                <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -884,12 +1011,37 @@ include('include/navbar.php');
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
-
+                                                                <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1026,12 +1178,37 @@ include('include/navbar.php');
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
-
+                                                                <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
                                                             <div class="modal-footer">
                                                             <input type="submit" class="btn btn-primary" name="signup" value="Download">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>

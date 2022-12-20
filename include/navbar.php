@@ -2,6 +2,12 @@
 
         <?php
         session_start();
+        if ($_SESSION['nama_lengkap'] == ""){
+        // header('location:login.php');
+        echo "<script>alert('Anda Belum Login');window.location='login.php';</script>";
+        }else{
+         
+        }
         ?>
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 

@@ -4,7 +4,7 @@
   $dbPass = "";  
   $dbName = "kepuharjo";  
   $conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);  
- 
+  
   try {  
    // set the PDO error mode untuk exception  
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
