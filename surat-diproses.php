@@ -113,7 +113,7 @@ include('include/navbar.php');
                                                                         margin-right: 10%;
                                                                     }
                                                                 </style>
-                                                                <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
+                                                                <!-- <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post"> -->
                                                                     <div class="form-group">
                                                                         <label>Nomor Surat</label>
                                                                         <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
@@ -156,7 +156,7 @@ include('include/navbar.php');
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label>Tanggal Pengajuan</label>
-                                                                        <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                        <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                         <span class="text-danger">
 
                                                                     </div>

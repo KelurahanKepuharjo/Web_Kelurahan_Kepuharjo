@@ -1,125 +1,39 @@
-
 <?php
-use Mpdf\Tag\Center;
-    $nomor = $_POST['nomor'];
-    $nama = $_POST['nama'];
-    $ttl = $_POST['ttl'];
-    $kebangsaan = $_POST['kebangsaan'];
-    $kelamin = $_POST['kelamin'];
-    $status = $_POST['status'];
-    $pekerjaan = $_POST['pekerjaan'];
-    $nik = $_POST['nik'];
-    $alamat = $_POST['alamat'];
-    $tanggalsurat = $_POST['tanggalsurat'];
-    
-    require("../Web_Kelurahan_Kepuharjo/fpdf185/fpdf.php");
- 
-    $pdf = new FPDF();
-    $pdf->AddPage();
-    $pdf->Image('../Web_Kelurahan_Kepuharjo/images/logohp.png',18,8,50);
-    $pdf->SetFont('Times','',14);
-    $pdf->SetXY(70,18);
-    $pdf->SetFontSize(14);
-    $pdf->Write(0,'PEMERINTAH KABUPATEN LUMAJANG');
-    $pdf->SetXY(85,24);
-    $pdf->SetFontSize(14);
-    $pdf->Write(0,'KECAMATAN LUMAJANG');
-    $pdf->SetFont('Times','',20);
-    $pdf->SetXY(75,30);
-    $pdf->SetFontSize(18);
-    $pdf->Write(0,'KELURAHAN KEPUHARJO');
-    $pdf->SetFont('TIMES','',14);
-    $pdf->SetXY(75,36);
-    $pdf->SetFontSize(14);
-    $pdf->Write(0,'Jl. Langsep No. 18 Telp. (0334) 888243');
-    $pdf->SetFont('TIMES','',14);
-    $pdf->SetXY(99,42);
-    $pdf->SetFontSize(14);
-    $pdf->Write(0,'LUMAJANG');
 
-    // $pdf->SetFont('Times','',12);
-    // $pdf->Image('../Web_Kelurahan_Kepuharjo/images/headersurat.png',0,0,0);
-    // $pdf->SetXY(90,45);
-    // $pdf->SetFontSize(14);
-    // $pdf->Write(0,'LUMAJANG');
-    $pdf->SetXY(10,20);
-    $pdf->SetFont('Times','B',14);
-    $pdf->Cell(0,80,'SURAT KETERANGAN TIDAK MAMPU',0,0,'C');
+$nomor = $_POST['nomor'];
+$nama = $_POST['nama'];
+$ttl = $_POST['ttl'];
+$kebangsaan = $_POST['kebangsaan'];
+$kelamin = $_POST['kelamin'];
+$status = $_POST['status'];
+$pekerjaan = $_POST['pekerjaan'];
+$nik = $_POST['nik'];
+$alamat = $_POST['alamat'];
+$tanggalsurat = $_POST['tanggalsurat'];
 
-    $pdf->SetFont('Times','');
-    $pdf->SetXY(70,62);
-    $pdf->SetFontSize(12);
-    $pdf->Write(10,'Nomor : ');
-    $pdf->Write(10,$nomor);
-    $pdf->SetFont('Times','');
-    $pdf->SetXY(40,74);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'Yang bertanda tangan di bawah ini kami Lurah Kepuharjo Kecamatan ');
-    $pdf->SetFont('Times','');
-    $pdf->SetXY(25,80);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'Lumajang Kabupaten Lumajang menerangkan bahwa : ');
-    $pdf->SetXY(25,90);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'               Nama                                : ');
-    $pdf->Write(0,$nama);
-    $pdf->SetXY(25,96);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'               Tempat, Tanggal Lahir     : ');
-    $pdf->Write(0,$ttl);
-    $pdf->SetXY(25,102);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'               Kebangsaan/Agama          : ');
-    $pdf->Write(0,$kebangsaan);
-    $pdf->SetXY(25,108);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'               Status                                : ');
-    $pdf->Write(0,$status);
-    $pdf->SetXY(25,114);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'               Pekerjaan                          : ');
-    $pdf->Write(0,$pekerjaan);
-    $pdf->SetXY(25,120);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'               NIK                                   : ');
-    $pdf->Write(0,$nik);
-    $pdf->SetXY(25,126);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'               Alamat                              : ');
-    $pdf->Write(0,$alamat);
-    $pdf->SetXY(40,136);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'Adalah benar sampai dengan saat ini warga kami dan berdasarkan Surat ');
-    $pdf->SetXY(25,142);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'pengantar nomer _________ Tanggal __________ dan pengakuannya. Bahwa nama yang');
-    $pdf->SetXY(25,148);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'tersebut diatas benar keluarga tidak mampu. Surat keterangan ini hanya dipergunakan untuk ');
-    $pdf->SetXY(40,154);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'Demikian surat keterangan ini kami buat untuk dapat dipergunakan ');
-    $pdf->SetXY(25,160);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'sebagaimana mestinnya.');
-    $pdf->SetXY(45,180);
-    $pdf->SetFontSize(12);
-    $pdf->Write(0,'Mengetahui,                                                  Lumajang, ');
-    $pdf->Write(0,$tanggalsurat);
-    $pdf->SetXY(35,186);
-    $pdf->SetFontSize(14);
-    $pdf->Write(0,'CAMAT LUMAJANG                               LURAH KEPUHARJO');
-    $pdf->SetXY(35,206);
-    $pdf->SetFontSize(14);
-    $pdf->Image('../Web_Kelurahan_Kepuharjo/images/ttd.png',120,200,50);
-    $pdf->Image('../Web_Kelurahan_Kepuharjo/images/stempel.png',110,190,40);
-    $pdf->SetXY(35,235);
-    $pdf->SetFontSize(14);
-    $pdf->Write(0,'                                                                MUHAMMAD SAIFUL,S.AP');
 
-    // $pdf->Write(100,$name);
-    // $pdf->Write(100,$email);
-    // $pdf->Write(100,$mobile);
-    // $pdf->Output('D', "filename.pdf", true);
-    $pdf->output();
+//mengambil dokumen surat
+$document = file_get_contents("suratsktm.rtf");
+
+
+//mereplace semua kata yang ada di file dengan variabel
+$document = str_replace("#NOMOR", $nomor, $document);
+$document = str_replace("#NAMA", $nama, $document);
+$document = str_replace("#TTL", $ttl, $document);
+$document = str_replace("#KELAMIN", $kelamin, $document);
+$document = str_replace("#KEBANGSAAN", $kebangsaan, $document);
+$document = str_replace("#STATUS", $status, $document);
+$document = str_replace("#PEKERJAAN", $pekerjaan, $document);
+$document = str_replace("#NIK", $nik, $document);
+$document = str_replace("#ALAMAT", $alamat, $document);
+$document = str_replace("#TANGGAL", date('d-m-Y', strtotime($tanggalsurat)), $document);
+
+
+// header untuk membuka file yang dihasilkan dengna aplikasi Ms. Word
+// nama file yang dihasilkan adalah surat izin.docx
+header("Content-type: application/msword");
+header("Content-disposition: inline; filename=surat.doc");
+header("Content-length: " . strlen($document));
+echo $document;
+
 ?>
