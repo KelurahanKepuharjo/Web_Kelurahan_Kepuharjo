@@ -152,6 +152,26 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-usaha.php">Surat Usaha <?php $value = 6?>
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        $obj = new readusaha;
+                        $data = $obj->sumusaha();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
+                </a>
 
             </div>
         </form>
@@ -160,7 +180,7 @@ include('include/navbar.php');
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Surat Masuk</h4>
+                    <h4 class="card-title">Surat Masuk Akta</h4>
                     <p class="card-description">
                         Menampilkan data surat masuk untuk disetujui
                     </p>
@@ -186,6 +206,9 @@ include('include/navbar.php');
                                     <th>
                                         Status
                                     </th>
+                                    <th>
+                                        Aksi
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -207,54 +230,15 @@ include('include/navbar.php');
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
-                                            <td scope="col"><?php echo $row['nama']; ?></td>
+                                            <td scope="col"><?php echo $row['nama_anak']; ?></td>
                                             <td scope="col"><?php echo 'Surat Domisili'; ?></td>
-                                            <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
-
+                                            <td><a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateaktast.php?kode=<?php echo $row['id_akun']?>">Proses Surat</a></td>
                                         </tr>
                                 <?php }
                                 } ?>
-                                <!-- <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        3602183134758
-                                    </td>
-                                    <td>
-                                        Nadia Ayu Safitri
-                                    </td>
-                                    <td>
-                                        Surat Keterangan Tidak Mampu
-                                    </td>
-                                    <td>
-                                        17 Nopember 2022
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        3602183134759
-                                    </td>
-                                    <td>
-                                        Faisal Oktabrian
-                                    </td>
-                                    <td>
-                                        Surat Keterangan Untuk Nikah
-                                    </td>
-                                    <td>
-                                        18 Nopember 2022
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                </tr> -->
+                               
                             </tbody>
 
                         </table>

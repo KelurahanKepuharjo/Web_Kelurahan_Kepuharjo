@@ -260,6 +260,7 @@ include('include/navbar.php');
                                         $row['tgl_pengajuan'];
                                         $row['images'];
                                         $row['no_hp'];
+                                        $row['status_surat'];
                                 ?>
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>

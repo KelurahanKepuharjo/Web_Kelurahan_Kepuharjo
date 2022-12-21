@@ -55,7 +55,7 @@ include('include/navbar.php');
                             <tbody>
                                 
                                 <?php
-                                if($_SESSION['hak_akses' == ""])
+                               
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 

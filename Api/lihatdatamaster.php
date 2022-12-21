@@ -100,6 +100,31 @@ class readdomisili extends koneksii
         return $result;
     }
 }
+
+class readusaha extends koneksii
+{
+    public function sumusaha()
+    {
+        $_SESSION['hak_akses'];
+        if($_SESSION['hak_akses']=='2'){
+           $row = "Diajukan";
+        
+        }elseif($_SESSION['hak_akses']=='3'){
+           $row = "Disetujui RT";
+        }elseif($_SESSION['hak_akses']=='1'){
+           $row = "Disetujui RW";
+        }else{
+            
+        }
+     $rt= $_SESSION['rt'];
+    $rw = $_SESSION['rw'];
+        $sql = "SELECT COUNT(surat_usaha.id_surat) as sumid from surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+    }
+}
+
 class readakta extends koneksii
 {
     public function sumakta()
@@ -215,7 +240,8 @@ class readsmdash extends koneksii{
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +  
         (SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
-        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +
+        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -244,7 +270,8 @@ class readspdash extends koneksii{
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
         (SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') 
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +
+        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -273,7 +300,8 @@ class readssdash extends koneksii{
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
         (SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') 
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +
+        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -302,7 +330,8 @@ class readstolakdash extends koneksii{
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
         ( SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') 
+        (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +
+        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
         $result = $this->koneksi->prepare($sql);
         $result->execute();

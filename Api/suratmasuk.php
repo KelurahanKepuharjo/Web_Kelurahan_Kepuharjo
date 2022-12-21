@@ -169,6 +169,31 @@
                                 }  
                             }
 
+                            class suratmasukusaha extends koneksii{
+                                public function lihatsuratmasuk(){
+                                    $_SESSION['hak_akses'];
+                                    if($_SESSION['hak_akses']=='2'){
+                                       echo $row = "Diajukan";
+                                    
+                                    }elseif($_SESSION['hak_akses']=='3'){
+                                        echo $row = "Disetujui RT";
+                                    }elseif($_SESSION['hak_akses']=='1'){
+                                        echo $row = "Disetujui RW";
+                                    }else{
+                                        
+                                    }
+                                 $rt= $_SESSION['rt'];
+                                $rw = $_SESSION['rw'];
+                                    $sql = "SELECT surat_usaha.id_akun, surat_usaha.nama, surat_usaha.tgl_pengajuan, surat_usaha.status_surat FROM surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
+                                    ";
+                                    $result= $this->koneksi->prepare($sql);
+                                    
+                                    $result->execute();
+                                    return $result; 
+                                                                  
+                                    }  
+                                }
+
     // class readprofile extends koneksii{
     //     public function lihatprofile(){
     //         $sql = "SELECT nama_lengkap,image_profil FROM akun JOIN penduduk ON akun.id_akun = penduduk.id_akun 

@@ -152,6 +152,26 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-usaha.php">Surat Usaha <?php $value = 6?>
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        $obj = new readusaha;
+                        $data = $obj->sumusaha();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
+                </a>
 
             </div>
         </form>
@@ -160,7 +180,7 @@ include('include/navbar.php');
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Surat Masuk</h4>
+                    <h4 class="card-title">Surat Masuk Pindah</h4>
                     <p class="card-description">
                         Menampilkan data surat masuk untuk disetujui
                     </p>

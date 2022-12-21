@@ -85,7 +85,7 @@ class domisili extends koneksii
            $row = "Diproses RT";
            $rt= $_SESSION['rt'];
            $rw = $_SESSION['rw'];
-               $sql = "SELECT id_surat, no_surat, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, kebangsaan, agama, status_perkawinan, pekerjaan, nik, alamat, domisili.RT, domisili.RW, no_pengantar_surat, tgl_surat_pengantar, alamat_domisili_kel_kepu, surat_digunakan_untuk, tgl_surat_dibuat, tgl_pengajuan status_surat, domisili.images, akun.no_hp, domisili.id_akun FROM domisili JOIN akun ON domisili.id_akun = akun.id_akun WHERE domisili.status_surat = '$row' AND domisili.RT = '$rt' AND domisili.RW = '$rw'";
+               $sql = "SELECT id_surat, no_surat, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, kebangsaan, agama, status_perkawinan, pekerjaan, nik, alamat, domisili.RT, domisili.RW, no_pengantar_surat, tgl_surat_pengantar, alamat_domisili_kel_kepu, surat_digunakan_untuk, tgl_surat_dibuat, tgl_pengajuan, status_surat, domisili.images, akun.no_hp, domisili.id_akun, domisili.tgl_pengajuan FROM domisili JOIN akun ON domisili.id_akun = akun.id_akun WHERE domisili.status_surat = '$row' AND domisili.RT = '$rt' AND domisili.RW = '$rw'";
                $result = $this->koneksi->prepare($sql);
                $result->execute();
                return $result;
@@ -93,7 +93,7 @@ class domisili extends koneksii
            $row = "Diproses RW";
            $rt= $_SESSION['rt'];
     $rw = $_SESSION['rw'];
-        $sql = "SELECT id_surat, no_surat, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, kebangsaan, agama, status_perkawinan, pekerjaan, nik, alamat, domisili.RT, domisili.RW, no_pengantar_surat, tgl_surat_pengantar, alamat_domisili_kel_kepu, surat_digunakan_untuk, tgl_surat_dibuat, tgl_pengajuan, status_surat, domisili.images, akun.no_hp, domisili.id_akun FROM domisili JOIN akun ON domisili.id_akun = akun.id_akun WHERE domisili.status_surat = '$row' AND domisili.RT = '$rt' AND domisili.RW = '$rw'";
+        $sql = "SELECT id_surat, no_surat, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, kebangsaan, agama, status_perkawinan, pekerjaan, nik, alamat, domisili.RT, domisili.RW, no_pengantar_surat, tgl_surat_pengantar, alamat_domisili_kel_kepu, surat_digunakan_untuk, tgl_surat_dibuat, tgl_pengajuan, status_surat, domisili.images, akun.no_hp, domisili.id_akun, domisili.tgl_pengajuan FROM domisili JOIN akun ON domisili.id_akun = akun.id_akun WHERE domisili.status_surat = '$row' AND domisili.RT = '$rt' AND domisili.RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -101,7 +101,7 @@ class domisili extends koneksii
            $row = "Diproses Kelurahan";
            $rt= $_SESSION['rt'];
     $rw = $_SESSION['rw'];
-        $sql = "SELECT id_surat, no_surat, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, kebangsaan, agama, status_perkawinan, pekerjaan, nik, alamat, domisili.RT, domisili.RW, no_pengantar_surat, tgl_surat_pengantar, alamat_domisili_kel_kepu, surat_digunakan_untuk, tgl_surat_dibuat, tgl_pengajuan, status_surat, domisili.images, akun.no_hp, domisili.id_akun FROM domisili JOIN akun ON domisili.id_akun = akun.id_akun WHERE domisili.status_surat = '$row'";
+        $sql = "SELECT id_surat, no_surat, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, kebangsaan, agama, status_perkawinan, pekerjaan, nik, alamat, domisili.RT, domisili.RW, no_pengantar_surat, tgl_surat_pengantar, alamat_domisili_kel_kepu, surat_digunakan_untuk, tgl_surat_dibuat, tgl_pengajuan, status_surat, domisili.images, akun.no_hp, domisili.id_akun, domisili.tgl_pengajuan FROM domisili JOIN akun ON domisili.id_akun = akun.id_akun WHERE domisili.status_surat = '$row'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
