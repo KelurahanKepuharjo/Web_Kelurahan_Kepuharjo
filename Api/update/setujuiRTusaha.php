@@ -9,14 +9,14 @@
    // set the PDO error mode untuk exception  
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
    //menentukan id record yang akan diupdate  
-   echo $_GET['kode'];
+    echo $_GET['kode'];
    //membuat query mengupdate record pada tabel User    
-   $query="UPDATE surat_tidak_mampu SET status_surat='Disetujui RT' WHERE id_akun='$_GET[kode]'";   
+   $query="UPDATE surat_usaha SET status_surat='Disetujui RT' WHERE id_akun='$_GET[kode]'";   
    // Membuat prepare statement  
    $stmt = $conn->prepare($query);  
    // menjalankan query  
    $stmt->execute();  
-   header("location:../../surat-diproses.php");
+   header("location:../../surat-masuk-SKTM.php");
    }  
  catch(PDOException $e)  
    {  
