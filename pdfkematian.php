@@ -1,5 +1,4 @@
 <?php
-use Mpdf\Tag\Center;
 $nomor = $_POST['nomor'];
 $nama = $_POST['namamendiang'];
 $saksi = $_POST['saksi'];
@@ -13,116 +12,28 @@ $ketsurat = $_POST['ketpengajuan'];
 $tanggal = $_POST['tanggalsurat'];
 
 
-require("../Web_Kelurahan_Kepuharjo/fpdf185/fpdf.php");
- 
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->Image('../Web_Kelurahan_Kepuharjo/images/logohp.png',18,8,50);
-$pdf->SetFont('Times','',14);
-$pdf->SetXY(70,18);
-$pdf->SetFontSize(14);
-$pdf->Write(0,'PEMERINTAH KABUPATEN LUMAJANG');
-$pdf->SetXY(85,24);
-$pdf->SetFontSize(14);
-$pdf->Write(0,'KECAMATAN LUMAJANG');
-$pdf->SetFont('Times','',20);
-$pdf->SetXY(75,30);
-$pdf->SetFontSize(18);
-$pdf->Write(0,'KELURAHAN KEPUHARJO');
-$pdf->SetFont('TIMES','',14);
-$pdf->SetXY(75,36);
-$pdf->SetFontSize(14);
-$pdf->Write(0,'Jl. Langsep No. 18 Telp. (0334) 888243');
-$pdf->SetFont('TIMES','',14);
-$pdf->SetXY(99,42);
-$pdf->SetFontSize(14);
-$pdf->Write(0,'LUMAJANG');
+$document = file_get_contents("suratkematian.rtf");
 
-$pdf->SetXY(10,20);
-$pdf->SetFont('Times','B',14);
-$pdf->Cell(0,80,'SURAT KETERANGAN KEMATIAN',0,0,'C');
-$pdf->SetFont('Times','');
-$pdf->SetXY(70,62);
-$pdf->SetFontSize(12);
-$pdf->Write(10,'Nomor : ');
-$pdf->Write(10,$nomor);
-$pdf->SetFont('Times','');
-$pdf->SetXY(40,80);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'Yang bertanda tangan di bawah ini kami Lurah Kepuharjo Kecamatan ');
-$pdf->SetFont('Times','');
-$pdf->SetXY(25,86);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'Lumajang Kabupaten Lumajang menerangkan bahwa : ');
-$pdf->SetXY(40,96);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'------------------------------<<                                 >>------------------------------' ,0,0,'C');
-$pdf->SetXY(90,96);
-$pdf->SetFontSize(12);
-$pdf->Write(0,$nama);
-$pdf->SetXY(40,106);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'Adalah benar bahwa pada saat hidupnya pernah tercatat sebagai penduduk kami,');
 
-$pdf->SetXY(25,112);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'dan berdasarkan pengakuan                                                 bahwa almarhum telah');
-$pdf->SetXY(78,112);
-$pdf->SetFontSize(12);
-$pdf->Write(0,$saksi);
-$pdf->SetXY(88,112);
-$pdf->SetFontSize(12);
-$pdf->Write(0,$hubungan);
-$pdf->SetXY(25,118);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'meninggal dunia pada :');
-$pdf->SetXY(25,126);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'               Hari                              :');
-$pdf->Write(0,$hari);
-$pdf->SetXY(25,132);    
-$pdf->SetFontSize(12);
-$pdf->Write(0,'               Tanggal/Bulan/Tahun  :');
-$pdf->Write(0,$tgl);
-$pdf->SetXY(25,138);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'               Alamat Terakhir           :');
-$pdf->Write(0,$alamat);
-$pdf->SetXY(25,144);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'               NIK                              :');
-$pdf->Write(0,$nik);
-$pdf->SetXY(25,150);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'               Penyebab Kematian     :');
-$pdf->Write(0,$penyebab);
-$pdf->SetXY(40,160);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'Surat Keterangan ini dipergunakan untuk ');
-$pdf->Write(0,$ketsurat);
-$pdf->SetXY(40,166);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'Demikian surat keterangan ini kami buat untuk dapat dipergunakan sebagaimana ');
-$pdf->SetXY(25,172);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'mestinnya.');
-$pdf->SetXY(45,220);
-$pdf->SetFontSize(12);
-$pdf->Write(0,'                                                                     Lumajang, ');
-$pdf->Write(0,$tanggal);
-$pdf->SetXY(35,226);
-$pdf->SetFontSize(14);
-$pdf->Write(0,'                                                                   LURAH KEPUHARJO');
-$pdf->SetXY(35,258);
-$pdf->SetFontSize(14);
-$pdf->Image('../Web_Kelurahan_Kepuharjo/images/ttd.png',120,235,50);
-$pdf->Image('../Web_Kelurahan_Kepuharjo/images/stempel.png',110,230,40);
-$pdf->SetXY(35,264);
-$pdf->SetFontSize(14);
-$pdf->Write(0,'                                                                MUHAMMAD SAIFUL,S.AP');
-// $pdf->Write(100,$name);
-// $pdf->Write(100,$email);
-// $pdf->Write(100,$mobile);
-//$pdf->Output('D', "filename.pdf", true);
-$pdf->output();
+//mereplace semua kata yang ada di file dengan variabel
+$document = str_replace("#NOMOR", $nomor, $document);
+$document = str_replace("#ALMARHUM", $nama, $document);
+$document = str_replace("#SAKSI", $saksi, $document);
+$document = str_replace("#HUBUNGAN", $hubungan, $document);
+$document = str_replace("#HARI", $hari, $document);
+$document = str_replace("#TGL", $tgl, $document);
+$document = str_replace("#NIK", $nik, $document);
+$document = str_replace("#ALAMAT", $alamat, $document);
+$document = str_replace("#PENYEBAB", $penyebab, $document);
+$document = str_replace("#KET", $ketsurat, $document);
+$document = str_replace("#TANGGAL", date('d-m-Y', strtotime($tanggal)), $document);
+
+
+// header untuk membuka file yang dihasilkan dengna aplikasi Ms. Word
+// nama file yang dihasilkan adalah surat izin.docx
+header("Content-type: application/msword");
+header("Content-disposition: inline; filename=$nama.doc");
+header("Content-length: " . strlen($document));
+echo $document;
+
 ?>

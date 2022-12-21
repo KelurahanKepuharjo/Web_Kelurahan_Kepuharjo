@@ -9,6 +9,9 @@ $status = $_POST['status'];
 $pekerjaan = $_POST['pekerjaan'];
 $nik = $_POST['nik'];
 $alamat = $_POST['alamat'];
+$no = $_POST['nopengantarsurat'];
+$tgl = $_POST['tglpengajuan'];
+$keperluan = $_POST['keperluan'];
 $tanggalsurat = $_POST['tanggalsurat'];
 
 
@@ -26,13 +29,16 @@ $document = str_replace("#STATUS", $status, $document);
 $document = str_replace("#PEKERJAAN", $pekerjaan, $document);
 $document = str_replace("#NIK", $nik, $document);
 $document = str_replace("#ALAMAT", $alamat, $document);
+$document = str_replace("#NO", $no, $document);
+$document = str_replace("#TGL", date('d-m-Y', strtotime($tgl)), $document);
+$document = str_replace("#KET", $keperluan, $document);
 $document = str_replace("#TANGGAL", date('d-m-Y', strtotime($tanggalsurat)), $document);
 
 
 // header untuk membuka file yang dihasilkan dengna aplikasi Ms. Word
 // nama file yang dihasilkan adalah surat izin.docx
 header("Content-type: application/msword");
-header("Content-disposition: inline; filename=surat.doc");
+header("Content-disposition: inline; filename=$nama.doc");
 header("Content-length: " . strlen($document));
 echo $document;
 

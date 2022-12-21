@@ -78,7 +78,10 @@ include('include/navbar.php');
                                         $row['pekerjaan'];
                                         $row['nik'];
                                         $row['alamat'];
+                                        $row['no_pengantar'];
                                         $row['tgl_pengajuan'];
+                                        $row['keperluan'];
+                                        $row['tgl_dibuat'];
                                         $row['image'];
                                         $row['no_hp'];
                                 ?>
@@ -155,11 +158,25 @@ include('include/navbar.php');
                                                                         <span class="text-danger">
                                                                     </div>
                                                                     <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_pengantar']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <div class="form-group">
                                                                         <label>Tanggal Pengajuan</label>
-                                                                        <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                        <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                         <span class="text-danger">
-
                                                                     </div>
+                                                                    <div class="form-group">
+                                                                        <label>Keperluan Surat</label>
+                                                                        <input type="text" name="keperluan" class="form-control" value="<?php echo $row['keperluan']; ?>" maxlength="50" required="">
+                                                                        <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_dibuat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
                                                                     <div class="form-group">
                                                                         <label>Kartu Keluarga</label>
 
@@ -240,6 +257,7 @@ include('include/navbar.php');
                                         $row['alamat_domisili_kel_kepu'];
                                         $row['surat_digunakan_untuk'];
                                         $row['tgl_surat_dibuat'];
+                                        $row['tgl_pengajuan'];
                                         $row['images'];
                                         $row['no_hp'];
                                 ?>
@@ -333,13 +351,18 @@ include('include/navbar.php');
                                                                     <span class="text-danger">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Keterangan Surat</label>
+                                                                    <label>Tanggal Pengajuan</label>
+                                                                    <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Keperluan Surat</label>
                                                                     <input type="text" name="ketsurat" class="form-control" value="<?php echo $row['surat_digunakan_untuk']; ?>" maxlength="50" required="">
                                                                     <span class="text-danger">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Tanggal Pengajuan</label>
-                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat']; ?>" maxlength="50" required="">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat']; ?>" maxlength="50" required="">
                                                                     <span class="text-danger">
                                                                 </div>
                                                                 <div class="form-group">
@@ -414,6 +437,8 @@ include('include/navbar.php');
                                         $row['nik'];
                                         $row['alamat'];
                                         $row['tgl_pengajuan'];
+                                        $row['surat_digunakan'];
+                                        $row['tgl_surat_dibuat'];
                                         $row['no_hp'];
 
                                 ?>
@@ -489,9 +514,22 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                    <label>Keperluan Surat</label>
+                                                                    <input type="text" name="ketsurat" class="form-control" value="<?php echo $row['surat_digunakan']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kartu Keluarga</label>
+                                                                </div>
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
@@ -560,6 +598,7 @@ include('include/navbar.php');
                                         $row['penyebab_kematian'];
                                         $row['surat_digunakan'];
                                         $row['tgl_pengajuan'];
+                                        $row['tanggal_dibuat'];
                                         $row['no_hp'];
                                 ?>
                                         <tr>
@@ -639,9 +678,17 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label>Tanggal Surat Dibuat</label>
+                                                                <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tanggal_dibuat']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <label>Kartu Keluarga</label>
+                                                                </div>
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
@@ -722,6 +769,8 @@ include('include/navbar.php');
                                         $row['pekerjaan_ibu'];
                                         $row['alamat_ibu'];
                                         $row['tgl_pengajuan'];
+                                        $row['keperluan'];
+                                        $row['tgl_surat_dibuat'];
                                         $row['no_hp'];
                                 ?>
                                         <tr>
@@ -846,9 +895,22 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label>Keperluan Surat</label>
+                                                                <input type="text" name="ketsurat" class="form-control" value="<?php echo $row['keperluan']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tanggal Surat Dibuat</label>
+                                                                <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <label>Kartu Keluarga</label>
+                                                                </div>
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
@@ -919,6 +981,7 @@ include('include/navbar.php');
                                         $row['alamat'];
                                         $row['tgl_pengajuan'];
                                         $row['nama_usaha'];
+                                        $row['thn_usaha_dibuat'];
                                         $row['keperluan'];
                                         $row['no_hp'];
 
@@ -999,15 +1062,28 @@ include('include/navbar.php');
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Keterangan Pengajuan</label>
+                                                                <label>Tahun Usaha Dibuat</label>
+                                                                <input type="text" name="tahunusaha" class="form-control" value="<?php echo $row['thn_usaha_dibuat']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Keperluan Surat</label>
                                                                 <input type="text" name="ketsurat" class="form-control" value="<?php echo $row['keperluan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label>Tanggal Surat Dibuat</label>
+                                                                <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <label>Kartu Keluarga</label>
+                                                                </div>
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
@@ -1172,9 +1248,17 @@ include('include/navbar.php');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Tanggal Pengajuan</label>
-                                                                <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
                                                                 <span class="text-danger">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label>Tanggal Surat Dibuat</label>
+                                                                <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <label>Kartu Keluarga</label>
+                                                                </div>
                                                             <div class="form-group">
                                                                     <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
