@@ -46,34 +46,6 @@ class sktm extends koneksii
      
     }
 
-    public function suratdisetujui()
-    {
-        $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Disetujui RT";
-           $rt= $_SESSION['rt'];
-           $rw = $_SESSION['rw'];
-               $sql = "SELECT surat_tidak_mampu.id_akun as id_akun, id_surat, no_surat, nama,tempat_lahir,tanggal_lahir, jenis_kelamin, kebangsaan, agama, status, pekerjaan,nik, alamat, no_pengantar, tgl_pengajuan, keterangan, keperluan, tgl_dibuat, status_surat,surat_tidak_mampu.image, akun.no_hp as no_hp from akun JOIN surat_tidak_mampu on akun.id_akun = surat_tidak_mampu.id_akun WHERE surat_tidak_mampu.status_surat = '$row' AND surat_tidak_mampu.RT = '$rt' AND surat_tidak_mampu.RW = '$rw'";
-               $result = $this->koneksi->prepare($sql);
-               $result->execute();
-               return $result;
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Disetujui RW";
-           $sql = "SELECT surat_tidak_mampu.id_akun as id_akun, id_surat, no_surat, nama,tempat_lahir,tanggal_lahir, jenis_kelamin, kebangsaan, agama, status, pekerjaan,nik, alamat, no_pengantar, tgl_pengajuan, keterangan, keperluan, tgl_dibuat, status_surat,surat_tidak_mampu.image, akun.no_hp as no_hp from akun JOIN surat_tidak_mampu on akun.id_akun = surat_tidak_mampu.id_akun WHERE surat_tidak_mampu.status_surat = '$row' AND surat_tidak_mampu.RT = '$rt' AND surat_tidak_mampu.RW = '$rw'";
-               $result = $this->koneksi->prepare($sql);
-               $result->execute();
-               return $result;
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Disetujui Kelurahan";
-           $sql = "SELECT surat_tidak_mampu.id_akun as id_akun, id_surat, no_surat, nama,tempat_lahir,tanggal_lahir, jenis_kelamin, kebangsaan, agama, status, pekerjaan,nik, alamat, no_pengantar, tgl_pengajuan, keterangan, keperluan, tgl_dibuat, status_surat,surat_tidak_mampu.image, akun.no_hp as no_hp from akun JOIN surat_tidak_mampu on akun.id_akun = surat_tidak_mampu.id_akun WHERE surat_tidak_mampu.status_surat = '$row'";
-               $result = $this->koneksi->prepare($sql);
-               $result->execute();
-               return $result;
-        }else{
-            
-        }
-     
-    }
 }
 
 class domisili extends koneksii

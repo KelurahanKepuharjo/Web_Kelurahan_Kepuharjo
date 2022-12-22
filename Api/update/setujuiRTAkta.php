@@ -16,7 +16,7 @@
    $stmt = $conn->prepare($query);  
    // menjalankan query  
    $stmt->execute();  
-   header("location:../../surat-masuk-SKTM.php");
+   header("location:../../surat-dproses.php");
    }  
  catch(PDOException $e)  
    {  

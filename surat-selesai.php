@@ -57,30 +57,164 @@ include('include/navbar.php');
                                 <?php
                                
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
-
-
-                                $obj = new sktm;
-                                $data = $obj->suratdisetujui();
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
+                                $obj = new suratselesai;
+                                $data = $obj->lihatsuratselesaiSKTM();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
                                     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-
-
-
                                 ?>
 
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
-                                            <td scope="col"><?php echo 'Surat Domisili'; ?></td>
+                                            <td scope="col"><?php echo 'Surat SKTM'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
 
                                         </tr>
+                                        
                                 <?php }
                                 } ?>
+                                 <?php
+                               
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
+                               $obj = new suratselesai;
+                               $data = $obj->lihatsuratselesaidomisili();
+                               $nomor = 1;
+                               if ($data->rowCount() > 0) {
+                                   while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                               ?>
+
+                                       <tr>
+                                           <td scope="col"><?php echo $nomor++; ?></td>
+                                           <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                           <td scope="col"><?php echo $row['nama']; ?></td>
+                                           <td scope="col"><?php echo 'Surat Domisili'; ?></td>
+                                           <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                                           <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+
+                                       </tr>
+                                       
+                               <?php }
+                               } ?>
+                                <?php
+                               
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
+                               $obj = new suratselesai;
+                               $data = $obj->lihatsuratselesaiakta();
+                               $nomor = 1;
+                               if ($data->rowCount() > 0) {
+                                   while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                               ?>
+
+                                       <tr>
+                                           <td scope="col"><?php echo $nomor++; ?></td>
+                                           <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                           <td scope="col"><?php echo $row['nama_anak']; ?></td>
+                                           <td scope="col"><?php echo 'Surat Akta'; ?></td>
+                                           <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                                           <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+
+                                       </tr>
+                                       
+                               <?php }
+                               } ?>
+                                <?php
+                               
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
+                               $obj = new suratselesai;
+                               $data = $obj->lihatsuratselesaipindah();
+                               $nomor = 1;
+                               if ($data->rowCount() > 0) {
+                                   while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                               ?>
+
+                                       <tr>
+                                           <td scope="col"><?php echo $nomor++; ?></td>
+                                           <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                           <td scope="col"><?php echo $row['nama']; ?></td>
+                                           <td scope="col"><?php echo 'Surat Pindah'; ?></td>
+                                           <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                                           <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+
+                                       </tr>
+                                       
+                               <?php }
+                               } ?>
+                                <?php
+                               
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
+                               $obj = new suratselesai;
+                               $data = $obj->lihatsuratselesaibelumnikah();
+                               $nomor = 1;
+                               if ($data->rowCount() > 0) {
+                                   while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                               ?>
+
+                                       <tr>
+                                           <td scope="col"><?php echo $nomor++; ?></td>
+                                           <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                           <td scope="col"><?php echo $row['nama']; ?></td>
+                                           <td scope="col"><?php echo 'Surat Belum Nikah'; ?></td>
+                                           <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                                           <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+
+                                       </tr>
+                                       
+                               <?php }
+                               } ?>
+                                <?php
+                               
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
+                               $obj = new suratselesai;
+                               $data = $obj->lihatsuratselesaikematian();
+                               $nomor = 1;
+                               if ($data->rowCount() > 0) {
+                                   while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                               ?>
+
+                                       <tr>
+                                           <td scope="col"><?php echo $nomor++; ?></td>
+                                           <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                           <td scope="col"><?php echo $row['nama_almarhum']; ?></td>
+                                           <td scope="col"><?php echo 'Surat Kematian'; ?></td>
+                                           <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                                           <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+
+                                       </tr>
+                                       
+                               <?php }
+                               } ?>
+                                <?php
+                               
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                               require_once '../Web_Kelurahan_Kepuharjo/Api/suratselesai.php';
+                               $obj = new suratselesai;
+                               $data = $obj->lihatsuratselesaiusaha();
+                               $nomor = 1;
+                               if ($data->rowCount() > 0) {
+                                   while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                               ?>
+
+                                       <tr>
+                                           <td scope="col"><?php echo $nomor++; ?></td>
+                                           <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                           <td scope="col"><?php echo $row['nama']; ?></td>
+                                           <td scope="col"><?php echo 'Surat Usaha'; ?></td>
+                                           <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                                           <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+
+                                       </tr>
+                                       
+                               <?php }
+                               } ?>
                             </tbody>
                         </table>
                     </div>
