@@ -2,11 +2,10 @@
 
         <?php
         session_start();
-        if ($_SESSION['nama_lengkap'] == ""){
-        // header('location:login.php');
-        echo "<script>alert('Anda Belum Login');window.location='login.php';</script>";
-        }else{
-         
+        if ($_SESSION['nama_lengkap'] == "") {
+          // header('location:login.php');
+          echo "<script>alert('Anda Belum Login');window.location='login.php';</script>";
+        } else {
         }
         ?>
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -76,16 +75,15 @@
             echo '<i class="fas fa-fw fa-table"></i>';
             echo '<span>Berita</span></a>';
             echo '</li>';
-          }elseif($_SESSION['hak_akses'] == "2"){
+          } elseif ($_SESSION['hak_akses'] == "2") {
             echo "";
-          }elseif($_SESSION['hak_akses'] == "3"){
+          } elseif ($_SESSION['hak_akses'] == "3") {
             echo "";
-
-          }else{
+          } else {
             echo "";
           }
           ?>
-        
+
 
           <!-- Nav Item - Tables -->
           <li class="nav-item">
@@ -195,7 +193,7 @@
                       while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
                     ?>
-                        <img class="img-profile rounded-circle" src="uploads/<?php echo $row['image_profil'] ?> ">
+                        <img class="img-profile rounded-circle" src="../web_kelurahan_kepuharjo/Api/uploads/<?php echo $row['image'] ?> ">
                     <?php }
                     } ?>
 

@@ -1,7 +1,7 @@
         <!-- Sidebar -->
         <?php
         session_start();
-        
+
         ?>
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -70,11 +70,11 @@
             echo '<i class="fas fa-fw fa-table"></i>';
             echo '<span>Berita</span></a>';
             echo '</li>';
-          }elseif($_SESSION['hak_akses'] == "2"){
+          } elseif ($_SESSION['hak_akses'] == "2") {
             echo "";
-          }elseif($_SESSION['hak_akses'] == "3"){
+          } elseif ($_SESSION['hak_akses'] == "3") {
             echo "";
-          }else{
+          } else {
             echo "";
           }
           ?>
@@ -201,7 +201,7 @@
 
                     ?>
 
-                        <img class="img-profile rounded-circle" src="uploads/<?php echo $row['image_profil'] ?> ">
+                        <img class="img-profile rounded-circle" src="../web_kelurahan_kepuharjo/Api/uploads/<?php echo $row['image'] ?> ">
                     <?php }
                     } ?>
 

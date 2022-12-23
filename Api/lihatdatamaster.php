@@ -22,23 +22,21 @@ class readberita extends koneksii
         return $result;
     }
 
-    public function insertberita($judull, $bagann, $deskripsii){
+    public function insertberita($judull, $bagann, $deskripsii)
+    {
         try {
             $sql = "INSERT INTO `berita`(`judul`, `sub_title`, `dekripsi`) VALUES (:judul, :sub_title, :dekripsi)";
             $result = $this->koneksi->prepare($sql);
-            $result->bindParam(":judul",$judull);
-            $result->bindParam(":sub_title",$bagann);
-            $result->bindParam(":dekripsi",$deskripsii);
+            $result->bindParam(":judul", $judull);
+            $result->bindParam(":sub_title", $bagann);
+            $result->bindParam(":dekripsi", $deskripsii);
             $result->execute();
             return true;
-            
         } catch (PDOException $e) {
             echo $e->getMessage();
             return false;
             //throw $th;
         }
-       
-
     }
 }
 
@@ -46,8 +44,8 @@ class readprofile extends koneksii
 {
     public function lihatprofile()
     {
-        $sql = "SELECT nama_lengkap,image_profil FROM akun JOIN penduduk ON akun.id_akun = penduduk.id_akun 
-            WHERE akun.id_akun = 'admin' ";
+        $id = $_SESSION['id_akun'];
+        $sql = "SELECT image FROM akun WHERE id_akun = '$id'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -59,18 +57,16 @@ class readsktm extends koneksii
     public function sumsktm()
     {
         $_SESSION['hak_akses'];
-                                if($_SESSION['hak_akses']=='2'){
-                                    $row = "Diajukan";
-                                
-                                }elseif($_SESSION['hak_akses']=='3'){
-                                    $row = "Disetujui RT";
-                                }elseif($_SESSION['hak_akses']=='1'){
-                                    $row = "Disetujui RW";
-                                }else{
-                                    
-                                }
-                             $rt= $_SESSION['rt'];
-                            $rw = $_SESSION['rw'];
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
+        }
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT COUNT(id_surat) as sumid from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -82,18 +78,16 @@ class readdomisili extends koneksii
     public function sumdomisili()
     {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Diajukan";
-        
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Disetujui RW";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT COUNT(domisili.id_surat) as sumid from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -106,18 +100,16 @@ class readusaha extends koneksii
     public function sumusaha()
     {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Diajukan";
-        
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Disetujui RW";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT COUNT(surat_usaha.id_surat) as sumid from surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -130,18 +122,16 @@ class readakta extends koneksii
     public function sumakta()
     {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Diajukan";
-        
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Disetujui RW";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT COUNT(surat_akta_kelahiran.id_surat) as sumid from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -153,18 +143,16 @@ class readpindah extends koneksii
     public function sumpindah()
     {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Diajukan";
-        
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Disetujui RW";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT COUNT(surat_pindah.id_surat) as sumid from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -176,18 +164,16 @@ class readkematian extends koneksii
     public function sumkematian()
     {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Diajukan";
-        
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Disetujui RW";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT COUNT(surat_kematian.id_surat) as sumid from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -199,18 +185,16 @@ class readbelumnikah extends koneksii
     public function sumbelumnikah()
     {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Diajukan";
-        
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Disetujui RW";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT COUNT(surat_ket_belum_menikah.id_surat) as sumid from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
@@ -219,21 +203,22 @@ class readbelumnikah extends koneksii
 }
 
 
-class readsmdash extends koneksii{
-    public function sumsmdash(){
+class readsmdash extends koneksii
+{
+    public function sumsmdash()
+    {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-        $row = "Diajukan";
-        }elseif($_SESSION['hak_akses']=='3'){
-        $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='1'){
-        echo $row = "Disetujui RW";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            echo $row = "Disetujui RW";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
-                  
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
+
         $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
         (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
@@ -247,23 +232,23 @@ class readsmdash extends koneksii{
         $result->execute();
         return $result;
     }
-     
 }
 
-class readspdash extends koneksii{
-    public function sumspdash(){
+class readspdash extends koneksii
+{
+    public function sumspdash()
+    {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-        $row = "Diproses RT";
-        }elseif($_SESSION['hak_akses']=='3'){
-        $row = "Diproses RW";
-        }elseif($_SESSION['hak_akses']=='1'){
-        echo $row = "Diproses Kelurahan";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diproses RT";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Diproses RW";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            echo $row = "Diproses Kelurahan";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = 'diproses')+ 
         (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND surat_tidak_mampu.RT = '$rt' AND surat_tidak_mampu.RW = '$rw') + 
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
@@ -277,23 +262,23 @@ class readspdash extends koneksii{
         $result->execute();
         return $result;
     }
-     
 }
 
-class readssdash extends koneksii{
-    public function sumssdash(){
+class readssdash extends koneksii
+{
+    public function sumssdash()
+    {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-        $row = "Disetujui RT";
-        }elseif($_SESSION['hak_akses']=='3'){
-        $row = "Disetujui RW";
-        }elseif($_SESSION['hak_akses']=='1'){
-        echo $row = "Selesai";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RW";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            echo $row = "Selesai";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
@@ -307,23 +292,23 @@ class readssdash extends koneksii{
         $result->execute();
         return $result;
     }
-     
 }
 
-class readstolakdash extends koneksii{
-    public function sumstolakdash(){
+class readstolakdash extends koneksii
+{
+    public function sumstolakdash()
+    {
         $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-        $row = "Ditolak RT";
-        }elseif($_SESSION['hak_akses']=='3'){
-        $row = "Ditolak RW";
-        }elseif($_SESSION['hak_akses']=='1'){
-        echo $row = "Ditolak Kelurahan";
-        }else{
-            
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Ditolak RT";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Ditolak RW";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            echo $row = "Ditolak Kelurahan";
+        } else {
         }
-     $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
         $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
@@ -337,5 +322,4 @@ class readstolakdash extends koneksii{
         $result->execute();
         return $result;
     }
-     
 }
