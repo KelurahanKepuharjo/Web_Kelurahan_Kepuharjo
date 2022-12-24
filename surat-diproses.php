@@ -207,7 +207,7 @@ include('include/navbar.php');
                                                                 ?>
                                                             <div class="modal-footer">
                                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWSKTM.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolaksktm.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -216,6 +216,7 @@ include('include/navbar.php');
                                                                 echo "";
                                                             }
                                                             ?>
+                                                            
 
 
                                                                 </form>
@@ -393,8 +394,8 @@ include('include/navbar.php');
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWdomisili.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakdomisili.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -555,8 +556,8 @@ include('include/navbar.php');
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWBelumnikah.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakbelummenikah.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -714,8 +715,8 @@ include('include/navbar.php');
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWKematian.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakkematian.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -936,8 +937,8 @@ include('include/navbar.php');
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWAkta.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakakta.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -1109,8 +1110,8 @@ include('include/navbar.php');
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWUsaha.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakusaha.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -1285,8 +1286,8 @@ include('include/navbar.php');
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="ATUR DULU BRO ?kode=<?php echo $row['id_akun']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWPindah.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakpindah.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php

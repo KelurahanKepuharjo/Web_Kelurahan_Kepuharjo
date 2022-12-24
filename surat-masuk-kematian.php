@@ -234,50 +234,17 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo 'Surat Kematian'; ?></td>
                                             <td scope="col"><?php echo $row['tanggal']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
-                                            <td><a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatekematianst.php?kode=<?php echo $row['id_surat']?>">Proses Surat</a></td>
+                                            <td><?php if($_SESSION['hak_akses']== '2'){ ?>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatekematianst.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
+                                            <?php }elseif($_SESSION['hak_akses']=='3'){?>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWkematian.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
+                                            <?php }elseif($_SESSION['hak_akses']=='1'){?>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmKelurahan.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
+                                            <?php }else{} ?>
+                                          </td>
                                         </tr>
                                 <?php }
                                 } ?>
-                                <!-- <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        3602183134758
-                                    </td>
-                                    <td>
-                                        Nadia Ayu Safitri
-                                    </td>
-                                    <td>
-                                        Surat Keterangan Tidak Mampu
-                                    </td>
-                                    <td>
-                                        17 Nopember 2022
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        3602183134759
-                                    </td>
-                                    <td>
-                                        Faisal Oktabrian
-                                    </td>
-                                    <td>
-                                        Surat Keterangan Untuk Nikah
-                                    </td>
-                                    <td>
-                                        18 Nopember 2022
-                                    </td>
-                                    <td>
-                                        
-                                    </td>
-                                </tr> -->
                             </tbody>
 
                         </table>

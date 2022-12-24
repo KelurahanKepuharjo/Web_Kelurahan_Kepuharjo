@@ -11,12 +11,12 @@
    //menentukan id record yang akan diupdate  
     echo $_GET['kode'];
    //membuat query mengupdate record pada tabel User    
-   $query="UPDATE surat_akta_kelahiran SET status_surat='Disetujui RW' WHERE id_surat='$_GET[kode]'";   
+   $query="UPDATE domisili SET status_surat='Diproses RW' WHERE id_surat='$_GET[kode]'";   
    // Membuat prepare statement  
    $stmt = $conn->prepare($query);  
    // menjalankan query  
    $stmt->execute();  
-   header("location:../../surat-diproses.php");
+   header("location:../../surat-masuk-domisili.php");
    }  
  catch(PDOException $e)  
    {  

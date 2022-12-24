@@ -238,7 +238,7 @@ include('include/navbar.php');
                                             <?php if($_SESSION['hak_akses']== '2'){ ?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmst.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmRW.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWsktm.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmKelurahan.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
                                             <?php }else{} ?>
