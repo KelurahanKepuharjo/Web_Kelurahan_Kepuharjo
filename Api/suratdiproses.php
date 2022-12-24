@@ -228,41 +228,41 @@ class kematian extends koneksii
     }
 }
 
-class pindah extends koneksii
-{
-    public function suratdiproses()
-    {   
-        $_SESSION['hak_akses'];
-        if($_SESSION['hak_akses']=='2'){
-           $row = "Diproses RT";
-           $rt= $_SESSION['rt'];
-           $rw = $_SESSION['rw'];
-               $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image as image, surat_pindah.id_akun, no_hp FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_pindah.RT = '$rt' AND surat_pindah.RW = '$rw'";
-               $result = $this->koneksi->prepare($sql);
-               $result->execute();
-               return $result;
-        }elseif($_SESSION['hak_akses']=='3'){
-           $row = "Diproses RW";
-           $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
-        $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image as image, surat_pindah.id_akun, no_hp FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_pindah.RT = '$rt' AND surat_pindah.RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
-        }elseif($_SESSION['hak_akses']=='1'){
-           $row = "Diproses Kelurahan";
-           $rt= $_SESSION['rt'];
-    $rw = $_SESSION['rw'];
-        $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image as image, surat_pindah.id_akun, no_hp FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
-        }else{
+// class pindah extends koneksii
+// {
+//     public function suratdiproses()
+//     {   
+//         $_SESSION['hak_akses'];
+//         if($_SESSION['hak_akses']=='2'){
+//            $row = "Diproses RT";
+//            $rt= $_SESSION['rt'];
+//            $rw = $_SESSION['rw'];
+//                $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image as image, surat_pindah.id_akun, no_hp FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_pindah.RT = '$rt' AND surat_pindah.RW = '$rw'";
+//                $result = $this->koneksi->prepare($sql);
+//                $result->execute();
+//                return $result;
+//         }elseif($_SESSION['hak_akses']=='3'){
+//            $row = "Diproses RW";
+//            $rt= $_SESSION['rt'];
+//     $rw = $_SESSION['rw'];
+//         $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image as image, surat_pindah.id_akun, no_hp FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_pindah.RT = '$rt' AND surat_pindah.RW = '$rw'";
+//         $result = $this->koneksi->prepare($sql);
+//         $result->execute();
+//         return $result;
+//         }elseif($_SESSION['hak_akses']=='1'){
+//            $row = "Diproses Kelurahan";
+//            $rt= $_SESSION['rt'];
+//     $rw = $_SESSION['rw'];
+//         $sql = "SELECT `id_surat`, `tgl_dibuat`, `no_surat`, `sifat`, `lampiran`, `perihal`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `status`, `agama`, `alamat_asal`, `alamat_tujuan`, `kelurahan`, `kecamatan`, `kabupaten`, `provinsi`, `alasan_pindah`, `pengikut`, `status_surat`, `tgl_pengajuan`, surat_pindah.RT, surat_pindah.RW, surat_pindah.image as image, surat_pindah.id_akun, no_hp FROM `surat_pindah` JOIN akun ON surat_pindah.id_akun=akun.id_akun WHERE status_surat='$row'";
+//         $result = $this->koneksi->prepare($sql);
+//         $result->execute();
+//         return $result;
+//         }else{
             
-        }
+//         }
      
-    }
-}
+//     }
+// }
         // class suratbelumnikah extends koneksii{
         //     public function suratdiproses(){
         //         $sql = "SELECT id_akun,nama, tgl_pengajuan, status_surat from surat_ket_belum_nikah WHERE status_surat = 'diproses'";
@@ -271,4 +271,4 @@ class pindah extends koneksii
         //         return $result; 
                                               
         //         }  
-        //     }    
+        //     }

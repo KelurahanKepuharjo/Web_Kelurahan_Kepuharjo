@@ -154,7 +154,7 @@ class readpindah extends koneksii
         }
         $rt = $_SESSION['rt'];
         $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(surat_pindah.id_surat) as sumid from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+        $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
         $result = $this->koneksi->prepare($sql);
         $result->execute();
         return $result;
@@ -225,7 +225,7 @@ class readsmdash extends koneksii
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +  
-        (SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
+        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
         (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +
         (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
@@ -255,7 +255,7 @@ class readspdash extends koneksii
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
-        (SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +
         (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
@@ -285,7 +285,7 @@ class readssdash extends koneksii
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
-        (SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +
         (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
@@ -315,7 +315,7 @@ class readstolakdash extends koneksii
         (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
         (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
-        ( SELECT COUNT(*) from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+        ( SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
         (SELECT COUNT(*) FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +
         (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
         as total ";
