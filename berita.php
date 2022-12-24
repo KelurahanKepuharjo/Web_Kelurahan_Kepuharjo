@@ -1,23 +1,23 @@
 <?php
 include('include/header.php');
-include('include/navbar-tentang.php');
+include('include/navbar.php');
 
 ?>
 <?php
-        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-        $obj = new readberita;
-        if ($_SERVER['REQUEST_METHOD']=='POST'):
-        $judull = $_POST['judul'];
-        $bagann = $_POST['bagan'];
-        $deskripsi = $_POST['deskripsi'];
-        if ($obj->insertberita($judull, $bagann, $deskripsi)):
-        
-        else:
-            echo ' <div class="alert alert-danger">Data Gagal Ditambahkan</div>';
-        endif;
-            endif;    
-            ?>
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+$obj = new readberita;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $judull = $_POST['judul'];
+    $bagann = $_POST['bagan'];
+    $deskripsi = $_POST['deskripsi'];
+    if ($obj->insertberita($judull, $bagann, $deskripsi)) :
+
+    else :
+        echo ' <div class="alert alert-danger">Data Gagal Ditambahkan</div>';
+    endif;
+endif;
+?>
 
 <!-- Begin Page Content -->
 <link rel="stylesheet" href="css/berita.css">

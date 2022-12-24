@@ -11,17 +11,17 @@ include('include/navbar.php');
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-4 text-gray-800">Master Data</h1>
-    <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
-                <div class="input-group">
-                  <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
+        <h1 class="h3 mb-4 text-gray-800">Master Data</h1>
+        <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
-                      <i class="fas fa-search fa-sm"></i>
+                        <i class="fas fa-search fa-sm"></i>
                     </button>
-                  </div>
                 </div>
-              </form>
+            </div>
+        </form>
     </div>
 
     <div class="row">
@@ -44,49 +44,50 @@ include('include/navbar.php');
                                     <th>No Hp</th>
                                     <th>RT</th>
                                     <th>RW</th>
-                           
+
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
-                            require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                            require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-                           
+                                <?php
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
-                            $obj = new read;
-                            $data = $obj->lihatdata();
-                          
-                            
-                            $nomor = 1;
-                            if($data->rowCount()>0){
-                                while($row=$data->fetch(PDO::FETCH_ASSOC)){
-                                  
 
-                            ?>
-		                    
-                                <tr>
-                                <td scope="col"><?php echo $nomor++; ?></td>
-                                <td scope="col"><?php echo $row['id_akun']; ?></td>
-                                <td scope="col"><?php echo $row['nama_lengkap']; ?></td>
-                                
-                                <td scope="col"><?php echo $row['no_hp'];?></td>
-                                <td scope="col"><?php echo $row['rt'];?></td>
-                                <td scope="col"><?php echo $row['rw'];?></td>
-                                
-                                
-                                    <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                            Detail
-                                            <i class="typcn typcn-edit btn-icon-append"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                            Detail
-                                            <i class="typcn typcn-edit btn-icon-append"></i>
-                                        </button>
-                                    </td>
-                                       
-                                </tr>
-                                 <?php }}?> 
+                                $obj = new read;
+                                $data = $obj->lihatdata();
+
+
+                                $nomor = 1;
+                                if ($data->rowCount() > 0) {
+                                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+
+                                ?>
+
+                                        <tr>
+                                            <td scope="col"><?php echo $nomor++; ?></td>
+                                            <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                            <td scope="col"><?php echo $row['nama_lengkap']; ?></td>
+
+                                            <td scope="col"><?php echo $row['no_hp']; ?></td>
+                                            <td scope="col"><?php echo $row['rt']; ?></td>
+                                            <td scope="col"><?php echo $row['rw']; ?></td>
+
+
+                                            <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    Detail
+                                                    <i class="typcn typcn-edit btn-icon-append"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                                    Detail
+                                                    <i class="typcn typcn-edit btn-icon-append"></i>
+                                                </button>
+                                            </td>
+
+                                        </tr>
+                                <?php }
+                                } ?>
                             </tbody>
                         </table>
                     </div>

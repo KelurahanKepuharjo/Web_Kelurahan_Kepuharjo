@@ -1,6 +1,6 @@
 <?php
 include('include/header.php');
-include('include/navbar-tentang.php');
+include('include/navbar.php');
 ?>
 
 <!-- Begin Page Content -->
