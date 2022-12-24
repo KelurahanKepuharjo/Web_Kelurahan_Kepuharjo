@@ -40,6 +40,8 @@ class readberita extends koneksii
     }
 }
 
+
+
 class readprofile extends koneksii
 {
     public function lihatprofile()

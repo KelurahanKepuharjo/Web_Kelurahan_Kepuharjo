@@ -229,15 +229,20 @@ include('include/navbar.php');
 
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
-                                            <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                            <td scope="col"><?php echo $row['nik']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat SKTM'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary" ><?php echo $row['status_surat']; ?></span></td>
                                             <td>
-                                                
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmst.php?kode=<?php echo $row['id_akun']?>">Proses Surat</a>
-                                        </td>
+                                            <?php if($_SESSION['hak_akses']== '2'){ ?>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmst.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
+                                            <?php }elseif($_SESSION['hak_akses']=='3'){?>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmRW.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
+                                            <?php }elseif($_SESSION['hak_akses']=='1'){?>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmKelurahan.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
+                                            <?php }else{} ?>
+                                            </td>
                                         </tr>
                                 <?php }
                                 } ?>
