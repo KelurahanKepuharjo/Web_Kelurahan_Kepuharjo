@@ -540,7 +540,7 @@ include('include/navbar.php');
                                                                ?>
                                                             
                                                             <div class="modal-footer">
-                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download">
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTBelumnikah.php?kode=<?php echo $row['id_surat']?>">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>

@@ -239,7 +239,7 @@ include('include/navbar.php');
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWusaha.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmKelurahan.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelupdateusaha.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
                                             <?php }else{} ?>
                                             </td>
                                         </tr>

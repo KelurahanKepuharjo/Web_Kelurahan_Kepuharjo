@@ -204,10 +204,12 @@
                       <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                       Profile
                     </a>
+                    <?php if($_SESSION['hak_akses']== "1"){?>
                     <a class="dropdown-item" href="kelurahan.php">
                       <i class="fa fa-building fa-sm fa-fw mr-2 text-gray-400"></i>
                       Kelurahan
                     </a>
+                    <?php }elseif($_SESSION['hak_akses']!= "1"){}else{}?>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                       <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

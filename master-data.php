@@ -44,7 +44,7 @@ include('include/navbar.php');
                                     <th>No Hp</th>
                                     <th>RT</th>
                                     <th>RW</th>
-                                    <th>Alamat</th>
+                           
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -73,7 +73,7 @@ include('include/navbar.php');
                                 <td scope="col"><?php echo $row['no_hp'];?></td>
                                 <td scope="col"><?php echo $row['rt'];?></td>
                                 <td scope="col"><?php echo $row['rw'];?></td>
-                                <td scope="col"><?php echo $row['alamat'];?></td>
+                                
                                 
                                     <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
                                             Detail
