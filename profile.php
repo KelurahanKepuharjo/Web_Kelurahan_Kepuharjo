@@ -1,6 +1,15 @@
 <?php
 include('include/header.php');
 include('include/navbar-tentang.php');
+
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+$obj = new readprofile;
+$data = $obj->lihatprofile();
+$nomor = 1;
+    if ($data->rowCount() > 0) {
+    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+    $row['image'];
 ?>
 <link rel="stylesheet" href="css/profil.css">
 <!-- Begin Page Content -->
@@ -9,24 +18,28 @@ include('include/navbar-tentang.php');
     <form method="POST" action="" enctype="multipart/form-data">
         <h1 class="judul">Profil</h1>
         <div class="lingkaran1">
-            <img class="img-profile rounded-circle" src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $result; ?> ">
-            <div class="sub_link">
-                <input type="file" name="choosefile" value="" />
-                <i class="fa fa-camera" style="color: #fff"></i>
-
-            </div>
-
-        </div>
-        <!-- <input type="file" name="choosefile" value="" /> -->
-
-        <div>
-
-            <button type="submit" name="uploadfile">
-                UPLOAD
-            </button>
-
+            <img class="img-profile rounded-circle" src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?> ">
+          <?php }} ?>
         </div>
     </form>
+
+    
+    <form method="POST" action="" enctype="multipart/form-data">        
+
+<input type="file" name="choosefile" value="" />
+
+<div>
+
+    <button type="submit" name="uploadfile">
+
+    UPLOAD
+
+    </button>
+
+</div>
+
+</form>
+
     <?php
     require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
     require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
@@ -106,7 +119,8 @@ if (isset($_POST['uploadfile'])) {
 
         $msg = "Failed to upload image";
     }
-    $result = mysqli_query($db, "SELECT image FROM akun WHERE id_akun = '$akun'");
+  
+
 }
 
 ?>

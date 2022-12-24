@@ -11,6 +11,7 @@ class readsm extends koneksii
     }
 }
 
+
 class sktm extends koneksii
 {
     public function suratdiproses()

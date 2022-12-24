@@ -229,12 +229,12 @@ include('include/navbar.php');
 
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
-                                            <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                            <td scope="col"><?php echo $row['nik']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat Ket Belum Menikah'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
-                                            <td><a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatebelumnikahst.php?kode=<?php echo $row['id_akun']?>">Proses Surat</a></td>
+                                            <td><a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatebelumnikahst.php?kode=<?php echo $row['id_surat']?>">Proses Surat</a></td>
                                         </tr>
                                 <?php }
                                 } ?>

@@ -11,7 +11,8 @@
    //menentukan id record yang akan diupdate  
     echo $_GET['kode'];
    //membuat query mengupdate record pada tabel User    
-   $query="UPDATE surat_usaha SET status_surat='Disetujui RT' WHERE id_akun='$_GET[kode]'";   
+   
+   $query="UPDATE surat_usaha SET status_surat='Disetujui RT' WHERE id_surat='$_GET[kode]'";   
    // Membuat prepare statement  
    $stmt = $conn->prepare($query);  
    // menjalankan query  

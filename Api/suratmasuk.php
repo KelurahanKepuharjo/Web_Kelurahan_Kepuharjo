@@ -40,7 +40,7 @@
          $rt= $_SESSION['rt'];
         $rw = $_SESSION['rw'];
         
-            $sql = "SELECT surat_tidak_mampu.id_surat, surat_tidak_mampu.id_akun, surat_tidak_mampu.nama, surat_tidak_mampu.tgl_pengajuan ,surat_tidak_mampu.status_surat, surat_tidak_mampu.RT, surat_tidak_mampu.RW from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw'";
+            $sql = "SELECT surat_tidak_mampu.id_surat, surat_tidak_mampu.nik, surat_tidak_mampu.id_akun, surat_tidak_mampu.nama, surat_tidak_mampu.tgl_pengajuan ,surat_tidak_mampu.status_surat, surat_tidak_mampu.RT, surat_tidak_mampu.RW from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw'";
             $result= $this->koneksi->prepare($sql);
             $result->execute();
             return $result; 
@@ -63,7 +63,7 @@
                 }
              $rt= $_SESSION['rt'];
             $rw = $_SESSION['rw'];
-                $sql = "SELECT id_akun, nama, tgl_surat_pengantar,status_surat FROM domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
+                $sql = "SELECT id_akun, domisili.nik,id_surat, nama, tgl_surat_pengantar,status_surat FROM domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
                 ";
         
                 $result= $this->koneksi->prepare($sql);
@@ -88,7 +88,7 @@
                     }
                  $rt= $_SESSION['rt'];
                 $rw = $_SESSION['rw'];
-                    $sql = "SELECT surat_akta_kelahiran.id_akun, surat_akta_kelahiran.nama_anak, surat_akta_kelahiran.tgl_pengajuan ,surat_akta_kelahiran.status_surat FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
+                    $sql = "SELECT surat_akta_kelahiran.id_akun, id_surat , surat_akta_kelahiran.nik, surat_akta_kelahiran.nama_anak, surat_akta_kelahiran.tgl_pengajuan ,surat_akta_kelahiran.status_surat FROM surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
                     ";
                     $result= $this->koneksi->prepare($sql);
                     $result->execute();
@@ -112,7 +112,7 @@
                         }
                      $rt= $_SESSION['rt'];
                     $rw = $_SESSION['rw'];
-                        $sql = "SELECT surat_pindah.id_akun, surat_pindah.nama, surat_pindah.tgl_pengajuan ,surat_pindah.status_surat FROM surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
+                        $sql = "SELECT surat_pindah.id_akun, id_surat, surat_pindah.nama, surat_pindah.tgl_pengajuan ,surat_pindah.status_surat FROM surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
                         ";
                         $result= $this->koneksi->prepare($sql);
                         $result->execute();
@@ -136,7 +136,7 @@
                             }
                          $rt= $_SESSION['rt'];
                         $rw = $_SESSION['rw'];
-                            $sql = "SELECT surat_ket_belum_menikah.id_akun, surat_ket_belum_menikah.nama, surat_ket_belum_menikah.tgl_pengajuan ,surat_ket_belum_menikah.status_surat FROM surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+                            $sql = "SELECT surat_ket_belum_menikah.id_akun,nik ,id_surat, surat_ket_belum_menikah.nama, surat_ket_belum_menikah.tgl_pengajuan ,surat_ket_belum_menikah.status_surat FROM surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
                             $result= $this->koneksi->prepare($sql);
                             $result->execute();
                             return $result; 
@@ -159,7 +159,7 @@
                                 }
                              $rt= $_SESSION['rt'];
                             $rw = $_SESSION['rw'];
-                                $sql = "SELECT surat_kematian.id_akun, surat_kematian.nama_almarhum, surat_kematian.tanggal ,surat_kematian.status_surat FROM surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
+                                $sql = "SELECT surat_kematian.id_akun,nik_almarhum ,id_surat, surat_kematian.nama_almarhum, surat_kematian.tanggal ,surat_kematian.status_surat FROM surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
                                 ";
                                 $result= $this->koneksi->prepare($sql);
                                 
@@ -184,7 +184,7 @@
                                     }
                                  $rt= $_SESSION['rt'];
                                 $rw = $_SESSION['rw'];
-                                    $sql = "SELECT surat_usaha.id_akun, surat_usaha.nama, surat_usaha.tgl_pengajuan, surat_usaha.status_surat FROM surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
+                                    $sql = "SELECT surat_usaha.id_akun,nik, id_surat, surat_usaha.nama, surat_usaha.tgl_pengajuan, surat_usaha.status_surat FROM surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
                                     ";
                                     $result= $this->koneksi->prepare($sql);
                                     
@@ -193,17 +193,5 @@
                                                                   
                                     }  
                                 }
-
-    // class readprofile extends koneksii{
-    //     public function lihatprofile(){
-    //         $sql = "SELECT nama_lengkap,image_profil FROM akun JOIN penduduk ON akun.id_akun = penduduk.id_akun 
-    //         WHERE akun.id_akun = 'admin' ";
-    //         $result= $this->koneksi->prepare($sql);
-    //         $result->execute();
-    //         return $result; 
-                                          
-    //         }  
-    //     }
-       
 
 ?>
