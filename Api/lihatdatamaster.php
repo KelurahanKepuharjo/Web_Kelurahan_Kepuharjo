@@ -38,7 +38,38 @@ class readberita extends koneksii
         }
     }
 }
+class readdata extends koneksii
+{
+    // public function lihatdata()
+    // {
+    //     $sql = "SELECT berita.id_berita as id_berita , judul,sub_title,dekripsi FROM berita
+    //     ";
+    //     $result = $this->koneksi->prepare($sql);
+    //     $result->execute();
+    //     return $result;
+    // }
 
+    public function insertdata($idAkun, $nama_lengkapp, $password, $noHP, $HakAkses, $rt, $rw)
+    {
+        try {
+            $sql = "INSERT INTO `akun`(`id_akun`,`nama_lengkap`, `password`, `no_hp`, `hak_akses`, `rt`, `rw`) VALUES (:id_akun,:nama_lengkap, :password, :no_hp, :hak_akses, :rt, :rw)";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":id_akun", $idAkun);
+            $result->bindParam(":nama_lengkap", $nama_lengkapp);
+            $result->bindParam(":password", $password);
+            $result->bindParam(":no_hp", $noHP);
+            $result->bindParam(":hak_akses", $HakAkses);
+            $result->bindParam(":rt", $rt);
+            $result->bindParam(":rw", $rw);
+            $result->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+            //throw $th;
+        }
+    }
+}
 
 
 class readprofile extends koneksii
