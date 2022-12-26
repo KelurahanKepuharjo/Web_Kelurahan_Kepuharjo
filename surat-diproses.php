@@ -1131,6 +1131,168 @@ include('include/navbar.php');
                                     
                                 <?php  }
                                 } ?>
+
+                                <!-- suratberkelakuanbaik -->
+                                <?php
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+
+
+                                $obj = new belum_menikah;
+                                $data = $obj->suratdiproses();
+                                $nomor = 1;
+                                if ($data->rowCount() > 0) {
+                                    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                        $row['nama'];
+                                        $row['no_surat'];
+                                        $row['tempat_lahir'];
+                                        $row['tanggal_lahir'];
+                                        $row['jenis_kelamin'];
+                                        $row['kebangsaan'];
+                                        $row['agama'];
+                                        $row['status'];
+                                        $row['pekerjaan'];
+                                        $row['nik'];
+                                        $row['alamat'];
+                                        $row['tgl_pengajuan'];
+                                        $row['surat_digunakan'];
+                                        $row['tgl_surat_dibuat'];
+                                        $row['no_hp'];
+
+                                ?>
+                                        <tr>
+                                            <td scope="col"><?php echo $nomor++; ?></td>
+                                            <td scope="col"><?php echo $row['id_akun']; ?></td>
+                                            <td scope="col"><?php echo $row['nama']; ?></td>
+                                            <td scope="col"><?php echo 'Surat Berkelakuan Baik'; ?></td>
+                                            <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                                            <td scope="col"><span class="badge badge-warning"><?php echo $row['status_surat']; ?></span></td>
+
+                                            <td>
+                                                <?php //Dibagian Ini Modalnya Oke
+                                                ?>
+                                                <form action="../Web_Kelurahan_Kepuharjo/pdfberkelakuanbaik.php" method="post">
+                                                <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewberkelakuanbaikModal<?php echo $row['id_akun']; ?>">
+                                                    Preview Data
+                                                </a>
+                                                <div class="modal fade" id="PreviewberkelakuanbaikModal<?php echo $row['id_akun']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Preview Surat </h5>
+                                                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">x</span>
+                                                                </button>
+                                                            </div>
+                                                            <style>
+                                                                .form-group {
+                                                                    margin-left: 10%;
+                                                                    margin-right: 10%;
+                                                                }
+                                                            </style>
+                                                            <div class="form-group">
+                                                                <label>Nomor Surat</label>
+                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama</label>
+                                                                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tempat, Tanggal Lahir</label>
+                                                                <input type="text" name="ttl" class="form-control" value="<?php echo $row['tempat_lahir']; ?>, <?php echo $row['tanggal_lahir']; ?>" maxlength="50" required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Jenis kelamin</label>
+                                                                <input type="text" name="kelamin" class="form-control" value="<?php echo $row['jenis_kelamin']; ?>" maxlength="50" required="">
+                                                            </div>
+                                                            <div class="form-group ">
+                                                                <label>Kebangsaan/Agama</label>
+                                                                <input type="text" name="kebangsaan" class="form-control" value="<?php echo $row['kebangsaan']; ?> / <?php echo $row['agama']; ?>" maxlength="30" required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Status</label>
+                                                                <input type="text" name="status" class="form-control" value="<?php echo $row['status']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Pekerjaan</label>
+                                                                <input type="text" name="pekerjaan" class="form-control" value="<?php echo $row['pekerjaan']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>NIK</label>
+                                                                <input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Alamat</label>
+                                                                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tanggal Pengajuan</label>
+                                                                <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
+                                                                <span class="text-danger">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <label>Keperluan Surat</label>
+                                                                    <input type="text" name="ketsurat" class="form-control" value="<?php echo $row['surat_digunakan']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_surat_dibuat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kartu Keluarga</label>
+                                                                </div>
+                                                            <div class="form-group">
+                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                </div>
+                                                                <?php
+                                                            if ($_SESSION['hak_akses'] == "1") {
+                                                               ?>
+                                                            
+                                                            <div class="modal-footer">
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">
+                                                            <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                            <?php 
+                                                            }elseif($_SESSION['hak_akses'] == "2"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuan.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+                                                            }elseif($_SESSION['hak_akses'] == "3"){
+                                                                ?>
+                                                            <div class="modal-footer">
+                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                                                            </div>
+                                                                <?php
+
+                                                            }else{
+                                                                echo "";
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </form>
+                                                <?php //Sampai Sini 
+                                                ?>
+                                            </td>
+                                        </tr>
+                                <?php  }
+                                } ?>
                             </tbody>
                         </table>
                     </div>

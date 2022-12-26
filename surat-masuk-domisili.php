@@ -172,6 +172,26 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-berkelakuanbaik.php">Surat Berkelakuan Baik <?php $value = 7?>
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        $obj = new readusaha;
+                        $data = $obj->sumusaha();
+
+
+                        $nomor = 1;
+                        if ($data->rowCount() > 0) {
+                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                                echo $row['sumid'];
+                            }
+                        }
+                        ?></span>
+                </a>
             </div>
         </form>
     </div>

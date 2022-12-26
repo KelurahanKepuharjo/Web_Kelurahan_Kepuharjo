@@ -228,6 +228,42 @@ class kematian extends koneksii
     }
 }
 
+class berkelakuanbaik extends koneksii
+{
+    public function suratdiproses()
+    {   
+        $_SESSION['hak_akses'];
+        if($_SESSION['hak_akses']=='2'){
+           $row = "Diproses RT";
+           $rt= $_SESSION['rt'];
+           $rw = $_SESSION['rw'];
+               $sql = "SELECT `id_surat`, `no_surat`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `kebangsaan`, `agama`, `status`, `pekerjaan`, `nik`, `alamat`, `status_surat`, `tgl_pengajuan`, surat_berkelakuan_baik.RT, surat_berkelakuan_baik.RW, `surat_digunakan`, `tgl_surat_dibuat`, `file_pdf`, surat_berkelakuan_baik.image, akun.id_akun, akun.no_hp FROM `surat_berkelakuan_baik` JOIN akun ON surat_berkelakuan_baik.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_berkelakuan_baik.RT = '$rt' AND surat_berkelakuan_baik.RW = '$rw'";
+               $result = $this->koneksi->prepare($sql);
+               $result->execute();
+               return $result;
+        }elseif($_SESSION['hak_akses']=='3'){
+           $row = "Diproses RW";
+           $rt= $_SESSION['rt'];
+    $rw = $_SESSION['rw'];
+        $sql = "SELECT `id_surat`, `no_surat`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `kebangsaan`, `agama`, `status`, `pekerjaan`, `nik`, `alamat`, `status_surat`, `tgl_pengajuan`, surat_berkelakuan_baik.RT, surat_berkelakuan_baik.RW, `surat_digunakan`, `tgl_surat_dibuat`, `file_pdf`, surat_berkelakuan_baik.image, akun.id_akun, akun.no_hp FROM `surat_berkelakuan_baik` JOIN akun ON surat_berkelakuan_baik.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_berkelakuan_baik.RT = '$rt' AND surat_berkelakuan_baik.RW = '$rw'";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+        }elseif($_SESSION['hak_akses']=='1'){
+           $row = "Diproses Kelurahan";
+           $rt= $_SESSION['rt'];
+    $rw = $_SESSION['rw'];
+        $sql = "SELECT `id_surat`, `no_surat`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `kebangsaan`, `agama`, `status`, `pekerjaan`, `nik`, `alamat`, `status_surat`, `tgl_pengajuan`, surat_berkelakuan_baik.RT, surat_berkelakuan_baik.RW, `surat_digunakan`, `tgl_surat_dibuat`, `file_pdf`, surat_berkelakuan_baik.image, akun.id_akun, akun.no_hp FROM `surat_berkelakuan_baik` JOIN akun ON surat_berkelakuan_baik.id_akun=akun.id_akun WHERE status_surat='$row' AND surat_berkelakuan_baik.RT = '$rt' AND surat_berkelakuan_baik.RW = '$rw'";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+        }else{
+            
+        }
+     
+    }
+}
+
 // class pindah extends koneksii
 // {
 //     public function suratdiproses()

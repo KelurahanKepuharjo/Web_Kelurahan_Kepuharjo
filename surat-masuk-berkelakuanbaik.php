@@ -8,7 +8,7 @@ include('include/navbar.php');
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-4 text-gray-800">Pengajuan Surat Usaha</h1>
+        <h1 class="h3 mb-4 text-gray-800">Pengajuan Surat Belum Menikah</h1>
         <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Jenis Pengajuan
@@ -199,7 +199,7 @@ include('include/navbar.php');
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Surat Masuk Usaha</h4>
+                    <h4 class="card-title">Surat Masuk Belum Menikah</h4>
                     <p class="card-description">
                         Menampilkan data surat masuk untuk disetujui
                     </p>
@@ -236,7 +236,7 @@ include('include/navbar.php');
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratmasuk.php';
 
 
-                                $obj = new suratmasukusaha;
+                                $obj = new suratmasukbelumnikah;
                                 $data = $obj->lihatsuratmasuk();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
@@ -250,17 +250,17 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['nik']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
-                                            <td scope="col"><?php echo 'Surat Usaha'; ?></td>
+                                            <td scope="col"><?php echo 'Surat Berkelakuan Baik'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
                                             <td><?php if($_SESSION['hak_akses']== '2'){ ?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateusahast.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatebelumnikahst.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWusaha.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelupdateusaha.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
+                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelupdateberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
                                             <?php }else{} ?>
-                                            </td>
+                                        </td>
                                         </tr>
                                 <?php }
                                 } ?>

@@ -92,35 +92,35 @@
           
     } 
         
-        public function lihatsuratselesaipindah(){
-            $_SESSION['hak_akses'];
-            if($_SESSION['hak_akses']=='2'){
-               $row = "Disetujui RT";
-               $rt= $_SESSION['rt'];
-               $rw = $_SESSION['rw'];
-               $sql = "SELECT surat_pindah.id_akun, surat_pindah.nama, surat_pindah.tgl_pengajuan, surat_pindah.status_surat from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-               $result= $this->koneksi->prepare($sql);
-               $result->execute();
-               return $result; 
-            }elseif($_SESSION['hak_akses']=='3'){
-                $row = "Disetujui RW";
-                $rt= $_SESSION['rt'];
-                $rw = $_SESSION['rw'];
-                $sql = "SELECT surat_pindah.id_akun, surat_pindah.nama, surat_pindah.tgl_pengajuan, surat_pindah.status_surat from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-                $result= $this->koneksi->prepare($sql);
-                $result->execute();
-                return $result; 
-            }elseif($_SESSION['hak_akses']=='1'){
-                $row = "Disetujui Kelurahan";
-                $rt= $_SESSION['rt'];
-                $rw = $_SESSION['rw'];
-                $sql = "SELECT surat_pindah.id_akun, surat_pindah.nama, surat_pindah.tgl_pengajuan, surat_pindah.status_surat from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-                $result= $this->koneksi->prepare($sql);
-                $result->execute();
-                return $result; 
-            }else{ 
-            }  
-      } 
+    //     public function lihatsuratselesaipindah(){
+    //         $_SESSION['hak_akses'];
+    //         if($_SESSION['hak_akses']=='2'){
+    //            $row = "Disetujui RT";
+    //            $rt= $_SESSION['rt'];
+    //            $rw = $_SESSION['rw'];
+    //            $sql = "SELECT surat_pindah.id_akun, surat_pindah.nama, surat_pindah.tgl_pengajuan, surat_pindah.status_surat from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+    //            $result= $this->koneksi->prepare($sql);
+    //            $result->execute();
+    //            return $result; 
+    //         }elseif($_SESSION['hak_akses']=='3'){
+    //             $row = "Disetujui RW";
+    //             $rt= $_SESSION['rt'];
+    //             $rw = $_SESSION['rw'];
+    //             $sql = "SELECT surat_pindah.id_akun, surat_pindah.nama, surat_pindah.tgl_pengajuan, surat_pindah.status_surat from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+    //             $result= $this->koneksi->prepare($sql);
+    //             $result->execute();
+    //             return $result; 
+    //         }elseif($_SESSION['hak_akses']=='1'){
+    //             $row = "Disetujui Kelurahan";
+    //             $rt= $_SESSION['rt'];
+    //             $rw = $_SESSION['rw'];
+    //             $sql = "SELECT surat_pindah.id_akun, surat_pindah.nama, surat_pindah.tgl_pengajuan, surat_pindah.status_surat from surat_pindah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+    //             $result= $this->koneksi->prepare($sql);
+    //             $result->execute();
+    //             return $result; 
+    //         }else{ 
+    //         }  
+    //   } 
                     
             public function lihatsuratselesaikematian(){
                 $_SESSION['hak_akses'];
@@ -210,6 +210,35 @@
                 return $result; 
             }else{ 
             }                                                     
-    } 
+    }
+    public function lihatsuratselesaiberkelakuanbaik(){
+        $_SESSION['hak_akses'];
+        if($_SESSION['hak_akses']=='2'){
+           $row = "Disetujui RT";
+           $rt= $_SESSION['rt'];
+           $rw = $_SESSION['rw'];
+           $sql = "SELECT id_akun, nama, tgl_pengajuan, status_surat from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+           $result= $this->koneksi->prepare($sql);
+           $result->execute();
+           return $result; 
+        }elseif($_SESSION['hak_akses']=='3'){
+            $row = "Disetujui RW";
+            $rt= $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT id_akun, nama, tgl_pengajuan, status_surat from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result= $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result; 
+        }elseif($_SESSION['hak_akses']=='1'){
+            $row = "Disetujui Kelurahan";
+            $rt= $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT id_akun, nama, tgl_pengajuan, status_surat from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result= $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result; 
+        }else{ 
+        }                                                     
+}  
     }
 ?>
