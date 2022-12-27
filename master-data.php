@@ -76,11 +76,11 @@ include('include/navbar.php');
 
 
                                             <td><button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                    Detail
+                                                    Edit
                                                     <i class="typcn typcn-edit btn-icon-append"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
-                                                    Detail
+                                                <button type="button" class="btn btn-danger btn-sm btn-icon-text mr-3">
+                                                    Hapus
                                                     <i class="typcn typcn-edit btn-icon-append"></i>
                                                 </button>
                                             </td>

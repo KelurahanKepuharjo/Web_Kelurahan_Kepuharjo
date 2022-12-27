@@ -122,29 +122,31 @@ include('include/navbar.php');
                                       
                               <?php }
                               } ?>
-                               <?php
+                               <!-- <?php
                               
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
-                              $obj = new suratselesai;
-                              $data = $obj->lihatsuratselesaipindah();
-                              $nomor = 1;
-                              if ($data->rowCount() > 0) {
-                                  while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-                              ?>
+                            //   require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                            //   require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                            //   $obj = new suratselesai;
+                            //   $data = $obj->lihatsuratselesaipindah();
+                            //   $nomor = 1;
+                            //   if ($data->rowCount() > 0) {
+                            //       while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                            //   ?>
 
-                                      <tr>
-                                          <td scope="col"><?php echo $nomor++; ?></td>
-                                          <td scope="col"><?php echo $row['id_akun']; ?></td>
-                                          <td scope="col"><?php echo $row['nama']; ?></td>
-                                          <td scope="col"><?php echo 'Surat Pindah'; ?></td>
-                                          <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
-                                          <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+                            //           <tr>
+                            //               <td scope="col"><?php echo $nomor++; ?></td>
+                            //               <td scope="col"><?php echo $row['id_akun']; ?></td>
+                            //               <td scope="col"><?php echo $row['nama']; ?></td>
+                            //               <td scope="col"><?php echo 'Surat Pindah'; ?></td>
+                            //               <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
+                            //               <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
 
-                                      </tr>
+                            //           </tr>
                                       
-                              <?php }
-                              } ?>
+                              <?php 
+                            //   }
+                            //   }
+                               ?> -->
                                <?php
                               
                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';

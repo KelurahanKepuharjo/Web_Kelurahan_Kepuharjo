@@ -8,7 +8,7 @@ include('include/navbar.php');
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-4 text-gray-800">Pengajuan Surat Belum Menikah</h1>
+        <h1 class="h3 mb-4 text-gray-800">Pengajuan Surat Berkelakuan Baik</h1>
         <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Jenis Pengajuan
@@ -92,26 +92,26 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
+                <!-- <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        // require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        // require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readpindah;
-                        $data = $obj->sumpindah();
+                        // $obj = new readpindah;
+                        // $data = $obj->sumpindah();
 
 
-                        $nomor = 1;
-                        if ($data->rowCount() > 0) {
-                            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                        // $nomor = 1;
+                        // if ($data->rowCount() > 0) {
+                        //     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-                                echo $row['sumid'];
-                            }
-                        }
+                        //         echo $row['sumid'];
+                        //     }
+                        // }
                         ?></span>
-                </a>
+                </a> -->
                 <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
                     <span class="badge badge-danger badge-counter">
                         <?php
@@ -199,7 +199,7 @@ include('include/navbar.php');
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Surat Masuk Belum Menikah</h4>
+                    <h4 class="card-title">Surat Masuk Berkelakuan Baik</h4>
                     <p class="card-description">
                         Menampilkan data surat masuk untuk disetujui
                     </p>

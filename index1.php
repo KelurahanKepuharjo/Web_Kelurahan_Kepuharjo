@@ -93,7 +93,7 @@ $obj = new readdata;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $idAkun = $_POST['id_akun'];
     $nama_lengkapp = $_POST['nama_lengkap'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $noHP = $_POST['no_hp'];
     $HakAkses = $_POST['hak_akses'];
     $rt = $_POST['rt'];
@@ -329,7 +329,7 @@ endif;
                         <tbody>
                             <?php
                             $conn = mysqli_connect("localhost", "root", "", "kepuharjo");
-                            $q = mysqli_query($conn, "SELECT * FROM akun");
+                            $q = mysqli_query($conn, "SELECT * FROM akun where hak_akses = '1' OR hak_akses = '2' OR hak_akses = '3'");
                             $no = 0;
                             while ($data = mysqli_fetch_array($q)) {
                                 $no++;

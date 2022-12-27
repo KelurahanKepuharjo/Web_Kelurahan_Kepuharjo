@@ -84,6 +84,8 @@ include('include/navbar.php');
                                         $row['tgl_dibuat'];
                                         $row['image'];
                                         $row['no_hp'];
+                                        $row['RW'];
+                                        $row['RT'];
                                 ?>
 
                                         <tr>
@@ -118,9 +120,42 @@ include('include/navbar.php');
                                                                 </style>
                                                                 <!-- <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post"> -->
                                                                     <div class="form-group">
-                                                                        <label>Nomor Surat</label>
-                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                                    <form action="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php" method="post">    
+                                                                    <label>Nomor Surat</label>
+                                                                        <?php $datenow = date("m");
+                                                                        if($datenow == "1"){
+                                                                            $datenow = "I";
+                                                                        }elseif($datenow == "2"){
+                                                                            $datenow = "II";
+                                                                        }elseif($datenow == "3"){
+                                                                            $datenow = "III";
+                                                                        }elseif($datenow == "4"){
+                                                                            $datenow = "IV";
+                                                                        }elseif($datenow == "5"){
+                                                                            $datenow = "V";
+                                                                        }elseif($datenow == "6"){
+                                                                            $datenow = "VI";
+                                                                        }elseif($datenow == "7"){
+                                                                            $datenow = "VII";
+                                                                        }elseif($datenow == "8"){
+                                                                            $datenow = "VIII";
+                                                                        }elseif($datenow == "9"){
+                                                                            $datenow = "IX";
+                                                                        }elseif($datenow == "10"){
+                                                                            $datenow = "X";
+                                                                        }elseif($datenow == "11"){
+                                                                            $datenow = "XI";
+                                                                        }elseif($datenow == "12"){
+                                                                            $datenow = "XII";
+                                                                        }else{
+
+                                                                        }
+                                                                        $tahunnow = date("Y");
+                                                                        
+                                                                        ?>
+                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
                                                                     </div>
+                                                                    </form>
                                                                     <div class="form-group">
                                                                         <label>Nama </label>
                                                                         <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
@@ -294,9 +329,41 @@ include('include/navbar.php');
                                                                     }
                                                                 </style>
                                                                 <div class="form-group">
-                                                                    <label>Nomor Surat</label>
-                                                                    <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
-                                                                </div>
+                                                                        <label>Nomor Surat</label>
+                                                                        <?php $datenow = date("m");
+                                                                        if($datenow == "1"){
+                                                                            $datenow = "I";
+                                                                        }elseif($datenow == "2"){
+                                                                            $datenow = "II";
+                                                                        }elseif($datenow == "3"){
+                                                                            $datenow = "III";
+                                                                        }elseif($datenow == "4"){
+                                                                            $datenow = "IV";
+                                                                        }elseif($datenow == "5"){
+                                                                            $datenow = "V";
+                                                                        }elseif($datenow == "6"){
+                                                                            $datenow = "VI";
+                                                                        }elseif($datenow == "7"){
+                                                                            $datenow = "VII";
+                                                                        }elseif($datenow == "8"){
+                                                                            $datenow = "VIII";
+                                                                        }elseif($datenow == "9"){
+                                                                            $datenow = "IX";
+                                                                        }elseif($datenow == "10"){
+                                                                            $datenow = "X";
+                                                                        }elseif($datenow == "11"){
+                                                                            $datenow = "XI";
+                                                                        }elseif($datenow == "12"){
+                                                                            $datenow = "XII";
+                                                                        }else{
+
+                                                                        }
+                                                                        
+                                                                        $tahunnow = date("Y");
+                                                                        
+                                                                        ?>
+                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
+                                                                    </div>
                                                                 <div class="form-group">
                                                                     <label>Nama</label>
                                                                     <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
@@ -475,9 +542,40 @@ include('include/navbar.php');
                                                                 }
                                                             </style>
                                                             <div class="form-group">
-                                                                <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
-                                                            </div>
+                                                                        <label>Nomor Surat</label>
+                                                                        <?php $datenow = date("m");
+                                                                        if($datenow == "1"){
+                                                                            $datenow = "I";
+                                                                        }elseif($datenow == "2"){
+                                                                            $datenow = "II";
+                                                                        }elseif($datenow == "3"){
+                                                                            $datenow = "III";
+                                                                        }elseif($datenow == "4"){
+                                                                            $datenow = "IV";
+                                                                        }elseif($datenow == "5"){
+                                                                            $datenow = "V";
+                                                                        }elseif($datenow == "6"){
+                                                                            $datenow = "VI";
+                                                                        }elseif($datenow == "7"){
+                                                                            $datenow = "VII";
+                                                                        }elseif($datenow == "8"){
+                                                                            $datenow = "VIII";
+                                                                        }elseif($datenow == "9"){
+                                                                            $datenow = "IX";
+                                                                        }elseif($datenow == "10"){
+                                                                            $datenow = "X";
+                                                                        }elseif($datenow == "11"){
+                                                                            $datenow = "XI";
+                                                                        }elseif($datenow == "12"){
+                                                                            $datenow = "XII";
+                                                                        }else{
+
+                                                                        }
+                                                                        $tahunnow = date("Y");
+                                                                        
+                                                                        ?>
+                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
+                                                                    </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
                                                                 <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
@@ -634,9 +732,40 @@ include('include/navbar.php');
                                                                 }
                                                             </style>
                                                             <div class="form-group">
-                                                                <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
-                                                            </div>
+                                                                        <label>Nomor Surat</label>
+                                                                        <?php $datenow = date("m");
+                                                                        if($datenow == "1"){
+                                                                            $datenow = "I";
+                                                                        }elseif($datenow == "2"){
+                                                                            $datenow = "II";
+                                                                        }elseif($datenow == "3"){
+                                                                            $datenow = "III";
+                                                                        }elseif($datenow == "4"){
+                                                                            $datenow = "IV";
+                                                                        }elseif($datenow == "5"){
+                                                                            $datenow = "V";
+                                                                        }elseif($datenow == "6"){
+                                                                            $datenow = "VI";
+                                                                        }elseif($datenow == "7"){
+                                                                            $datenow = "VII";
+                                                                        }elseif($datenow == "8"){
+                                                                            $datenow = "VIII";
+                                                                        }elseif($datenow == "9"){
+                                                                            $datenow = "IX";
+                                                                        }elseif($datenow == "10"){
+                                                                            $datenow = "X";
+                                                                        }elseif($datenow == "11"){
+                                                                            $datenow = "XI";
+                                                                        }elseif($datenow == "12"){
+                                                                            $datenow = "XII";
+                                                                        }else{
+
+                                                                        }
+                                                                        $tahunnow = date("Y");
+                                                                        
+                                                                        ?>
+                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
+                                                                    </div>
                                                             <div class="form-group">
                                                                 <label>Nama Mendiang</label>
                                                                 <input type="text" name="namamendiang" class="form-control" value="<?php echo $row['nama_almarhum']; ?>" maxlength="50" required="">
@@ -806,9 +935,40 @@ include('include/navbar.php');
                                                                 }
                                                             </style>
                                                             <div class="form-group">
-                                                                <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['nomor_surat']; ?>" maxlength="50" required="">
-                                                            </div>
+                                                                        <label>Nomor Surat</label>
+                                                                        <?php $datenow = date("m");
+                                                                        if($datenow == "1"){
+                                                                            $datenow = "I";
+                                                                        }elseif($datenow == "2"){
+                                                                            $datenow = "II";
+                                                                        }elseif($datenow == "3"){
+                                                                            $datenow = "III";
+                                                                        }elseif($datenow == "4"){
+                                                                            $datenow = "IV";
+                                                                        }elseif($datenow == "5"){
+                                                                            $datenow = "V";
+                                                                        }elseif($datenow == "6"){
+                                                                            $datenow = "VI";
+                                                                        }elseif($datenow == "7"){
+                                                                            $datenow = "VII";
+                                                                        }elseif($datenow == "8"){
+                                                                            $datenow = "VIII";
+                                                                        }elseif($datenow == "9"){
+                                                                            $datenow = "IX";
+                                                                        }elseif($datenow == "10"){
+                                                                            $datenow = "X";
+                                                                        }elseif($datenow == "11"){
+                                                                            $datenow = "XI";
+                                                                        }elseif($datenow == "12"){
+                                                                            $datenow = "XII";
+                                                                        }else{
+
+                                                                        }
+                                                                        $tahunnow = date("Y");
+                                                                        
+                                                                        ?>
+                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
+                                                                    </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
                                                                 <input type="text" name="namaanak" class="form-control" value="<?php echo $row['nama_anak']; ?>" maxlength="50" required="">
@@ -1019,9 +1179,40 @@ include('include/navbar.php');
                                                                 }
                                                             </style>
                                                             <div class="form-group">
-                                                                <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
-                                                            </div>
+                                                                        <label>Nomor Surat</label>
+                                                                        <?php $datenow = date("m");
+                                                                        if($datenow == "1"){
+                                                                            $datenow = "I";
+                                                                        }elseif($datenow == "2"){
+                                                                            $datenow = "II";
+                                                                        }elseif($datenow == "3"){
+                                                                            $datenow = "III";
+                                                                        }elseif($datenow == "4"){
+                                                                            $datenow = "IV";
+                                                                        }elseif($datenow == "5"){
+                                                                            $datenow = "V";
+                                                                        }elseif($datenow == "6"){
+                                                                            $datenow = "VI";
+                                                                        }elseif($datenow == "7"){
+                                                                            $datenow = "VII";
+                                                                        }elseif($datenow == "8"){
+                                                                            $datenow = "VIII";
+                                                                        }elseif($datenow == "9"){
+                                                                            $datenow = "IX";
+                                                                        }elseif($datenow == "10"){
+                                                                            $datenow = "X";
+                                                                        }elseif($datenow == "11"){
+                                                                            $datenow = "XI";
+                                                                        }elseif($datenow == "12"){
+                                                                            $datenow = "XII";
+                                                                        }else{
+
+                                                                        }
+                                                                        $tahunnow = date("Y");
+                                                                        
+                                                                        ?>
+                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
+                                                                    </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
                                                                 <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
@@ -1192,9 +1383,40 @@ include('include/navbar.php');
                                                                 }
                                                             </style>
                                                             <div class="form-group">
-                                                                <label>Nomor Surat</label>
-                                                                <input type="text" name="nomor" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
-                                                            </div>
+                                                                        <label>Nomor Surat</label>
+                                                                        <?php $datenow = date("m");
+                                                                        if($datenow == "1"){
+                                                                            $datenow = "I";
+                                                                        }elseif($datenow == "2"){
+                                                                            $datenow = "II";
+                                                                        }elseif($datenow == "3"){
+                                                                            $datenow = "III";
+                                                                        }elseif($datenow == "4"){
+                                                                            $datenow = "IV";
+                                                                        }elseif($datenow == "5"){
+                                                                            $datenow = "V";
+                                                                        }elseif($datenow == "6"){
+                                                                            $datenow = "VI";
+                                                                        }elseif($datenow == "7"){
+                                                                            $datenow = "VII";
+                                                                        }elseif($datenow == "8"){
+                                                                            $datenow = "VIII";
+                                                                        }elseif($datenow == "9"){
+                                                                            $datenow = "IX";
+                                                                        }elseif($datenow == "10"){
+                                                                            $datenow = "X";
+                                                                        }elseif($datenow == "11"){
+                                                                            $datenow = "XI";
+                                                                        }elseif($datenow == "12"){
+                                                                            $datenow = "XII";
+                                                                        }else{
+
+                                                                        }
+                                                                        $tahunnow = date("Y");
+                                                                        
+                                                                        ?>
+                                                                        <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
+                                                                    </div>
                                                             <div class="form-group">
                                                                 <label>Nama</label>
                                                                 <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
