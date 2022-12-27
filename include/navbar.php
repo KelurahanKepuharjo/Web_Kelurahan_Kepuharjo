@@ -40,15 +40,93 @@
           <li class="nav-item">
             <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               <i class="fas fa-fw fa-cog"></i>
-              <span>Pengajuan Surat</span>
+              <span>Pengajuan Surat </span>
             </a>
+            
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Status Surat:</h6>
-                <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk</a>
-                <a class="collapse-item" href="surat-diproses.php">Surat Diproses</a>
-                <a class="collapse-item" href="surat-ditolak.php">Surat Ditolak</a>
-                <a class="collapse-item" href="surat-selesai.php">Surat Selesai</a>
+                <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk
+                <span class="badge badge-danger badge-counter">
+                <?php 
+                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
+                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  
+                  $obj = new readsmdash;
+                  $data = $obj->sumsmdash();
+                  // $nomor = 1;
+                  if ($data->rowCount() > 0) {
+                      while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                         echo $row['total'];
+                      }
+                  }
+                
+                  ?>
+                  </span>
+                </a>
+                <a class="collapse-item" href="surat-diproses.php">Surat Diproses 
+                <span class="badge badge-danger badge-counter">
+                <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readspdash;
+              $data = $obj->sumspdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+              ?>
+              </span>
+                </a>
+                <a class="collapse-item" href="surat-ditolak.php">Surat Ditolak 
+                <span class="badge badge-danger badge-counter">
+                <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readstolakdash;
+              $data = $obj->sumstolakdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+              ?>
+              </span>
+                </a>
+                <a class="collapse-item" href="surat-selesai.php">Surat Selesai
+                <span class="badge badge-danger badge-counter">
+                <?php 
+                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
+                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  
+                  $obj = new lihatsuratselesaiRT;
+                  $data = $obj->suratselesai();
+                  // $nomor = 1;
+                  if ($data->rowCount() > 0) {
+                      while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                         echo $row['total'];
+                      }
+                  }
+                
+                  ?>
+                  </span>
+                </a>
+                </a>
               </div>
             </div>
           </li>
@@ -129,8 +207,8 @@
                     </span>
 
                     <?php
-                    require '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                    require '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                    include_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                    include_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
                     $obj = new readprofile;

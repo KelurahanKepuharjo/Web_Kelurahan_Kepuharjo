@@ -3,6 +3,22 @@ include('include/header.php');
 include('include/navbar.php');
 ?>
 
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+$obj = new updatert;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $id = $_POST['idsurat'];
+    $idsp = 'Diproses RT';
+    
+    if ($obj->idRTDomisili($idsp, $id)) :
+
+    else :
+        
+    endif;
+endif;
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -245,7 +261,7 @@ include('include/navbar.php');
 
 
                                 ?>
-
+                                    <form action="surat-masuk-domisili.php" method="post">
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['nik']; ?></td>
@@ -254,7 +270,8 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['tgl_surat_pengantar']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
                                             <td><?php if($_SESSION['hak_akses']== '2'){ ?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatedomisilist.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
+                                                <input class="btn btn-primary" type="submit" value="Proses Surat RT">
+                                                <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWdomisili.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
@@ -262,6 +279,7 @@ include('include/navbar.php');
                                             <?php }else{} ?>
                                           </td>
                                         </tr>
+                                        </form>
                                 <?php }
                                 } ?>
                                

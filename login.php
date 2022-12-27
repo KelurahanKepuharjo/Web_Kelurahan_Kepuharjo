@@ -7,7 +7,51 @@ session_start();
 // if (isset($_SESSION['nama_lengkap'])) {
 //     header("Location: ../Web_Kelurahan_Kepuharjo/dashboard.php");
 // }
+// include '../web_kelurahan_kepuharjo/Api/PDO/pdo.php';
+// /* Login status: false = not authenticated, true = authenticated. */
+// $login = FALSE;
+// /* Username from the login form. */
+// $username = $_POST['id_akun'];
+// /* Password from the login form. */
+// $password = $_POST['password'];
+// /* Remember to validate $username and $password. */
+// /* Look for the username in the database. */
+// $query = 'SELECT * FROM akun WHERE (id_akun = :id_akunn)';
+// /* Values array for PDO. */
+// $values = [':id_akunn' => $username];
+// /* Execute the query */
+// try
+// {
+//   $res = $pdo->prepare($query);
+//   $res->execute($values);
+// }
+// catch (PDOException $e)
+// {
+//   /* Query error. */
+//   echo 'Query error.';
+//   die();
+// }
+// $row = $res->fetch(PDO::FETCH_ASSOC);
+// /* If there is a result, check if the password matches using password_verify(). */
+// if (is_array($row))
+// {
+//   if (password_verify($password, $row['password']))
+//   {
+//     /* The password is correct. */
+//     $login = TRUE;
+//     session_start();
+//                 $_SESSION['id_akun'];
+//                 $_SESSION['password'];
+//                 $_SESSION['nama_lengkap'];
+//                 $_SESSION['hak_akses'];
 
+//                 $_SESSION['rt'];
+//                 $_SESSION['rw'];
+                
+//     header('Location: ../Web_Kelurahan_Kepuharjo/dashboard.php');
+
+//   }
+// }
 if (isset($_POST['submit'])) {
     $email = ($_POST['id_akun']);
     $password = md5($_POST['password']);

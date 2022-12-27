@@ -3,6 +3,22 @@ include('include/header.php');
 include('include/navbar.php');
 ?>
 
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+$obj = new updatert;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $id = $_POST['idsurat'];
+    $idsp = 'Diproses RT';
+    
+    if ($obj->idRTsktm($idsp, $id)) :
+
+    else :
+        
+    endif;
+endif;
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -51,7 +67,9 @@ include('include/navbar.php');
                             }
                         }
                         ?></span>
+                        
                 </a>
+                
                 <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-domisili.php">Domisili <?php $value = 2?>
                     <span class="badge badge-danger badge-counter">
                         <?php
@@ -72,6 +90,7 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
+                
                 <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
                     <span class="badge badge-danger badge-counter">
                         <?php
@@ -112,7 +131,7 @@ include('include/navbar.php');
                         // }
                         ?></span>
                 </a> -->
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Belum menikah <?php $value = 5?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -245,17 +264,21 @@ include('include/navbar.php');
 
 
                                 ?>
-
+                                    <form action="../web_kelurahan_kepuharjo/surat-masuk-SKTM.php" method="post">
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
+                                            
                                             <td scope="col"><?php echo $row['nik']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat SKTM'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary" ><?php echo $row['status_surat']; ?></span></td>
+                                            
                                             <td>
                                             <?php if($_SESSION['hak_akses']== '2'){ ?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatesktmst.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
+                                                <input class="btn btn-primary" type="submit" value="Proses Surat RT">
+                                                <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
+                                            </div>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWsktm.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
@@ -263,6 +286,7 @@ include('include/navbar.php');
                                             <?php }else{} ?>
                                             </td>
                                         </tr>
+                                        </form>
                                 <?php }
                                 } ?>
 

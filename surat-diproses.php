@@ -2,6 +2,21 @@
 include('include/header.php');
 include('include/navbar.php');
 ?>
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+$obj = new updateidsuratpengantar;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $id = $_POST['nomor'];
+    $idsp = $_POST['idsurat'];
+    
+    if ($obj->idspsktm($id, $idsp)) :
+
+    else :
+        echo ' <div class="alert alert-danger">Data Gagal Ditambahkan</div>';
+    endif;
+endif;
+?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -86,6 +101,7 @@ include('include/navbar.php');
                                         $row['no_hp'];
                                         $row['RW'];
                                         $row['RT'];
+                                        $row['id_surat']
                                 ?>
 
                                         <tr>
@@ -214,6 +230,7 @@ include('include/navbar.php');
                                                                 </div>
                                                                     <div class="form-group">
                                                                         <label>Kartu Keluarga</label>
+                                                                        <input type="hidden" id="idsurat" value="<?php echo $row['id_surat']; ?>" />
 
                                                                     </div>
                                                                     <div class="form-group">
@@ -232,11 +249,13 @@ include('include/navbar.php');
                                                             <?php 
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
-                                                            <div class="modal-footer">
+                                                                <form action="surat-diproses.php" method="post">
+                                                            <div class="modal-footer">fo
                                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
                                                             <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolaksktm.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
+                                                            </form>
                                                                 <?php
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>

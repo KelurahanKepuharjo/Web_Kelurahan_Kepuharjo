@@ -72,35 +72,15 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <!-- <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
-                    <span class="badge badge-danger badge-counter">
-                        <?php
-                        // require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        // require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
-
-
-                        // $obj = new readakta;
-                        // $data = $obj->sumakta();
-
-
-                        // $nomor = 1;
-                        // if ($data->rowCount() > 0) {
-                        //     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-
-                        //         echo $row['sumid'];
-                        //     }
-                        // }
-                        ?></span>
-                </a> -->
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
+                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
                     <span class="badge badge-danger badge-counter">
                         <?php
                         require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
                         require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readpindah;
-                        $data = $obj->sumpindah();
+                        $obj = new readakta;
+                        $data = $obj->sumakta();
 
 
                         $nomor = 1;
@@ -112,6 +92,26 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
+                <!-- <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
+                    <span class="badge badge-danger badge-counter">
+                        <?php
+                        // require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+                        // require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+                        // $obj = new readpindah;
+                        // $data = $obj->sumpindah();
+
+
+                        // $nomor = 1;
+                        // if ($data->rowCount() > 0) {
+                        //     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                        //         echo $row['sumid'];
+                        //     }
+                        // }
+                        ?></span>
+                </a> -->
                 <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
                     <span class="badge badge-danger badge-counter">
                         <?php

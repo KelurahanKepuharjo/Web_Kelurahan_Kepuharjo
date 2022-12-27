@@ -161,23 +161,21 @@ include('include/navbar.php');
             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
               Surat Selesai</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
-              <?php
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+            <?php 
+                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
+                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  
+                  $obj = new lihatsuratselesaiRT;
+                  $data = $obj->suratselesai();
+                  // $nomor = 1;
+                  if ($data->rowCount() > 0) {
+                      while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
-
-              $obj = new readssdash;
-              $data = $obj->sumssdash();
-
-
-              $nomor = 1;
-              if ($data->rowCount() > 0) {
-                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-
-                  echo $row['total'];
-                }
-              }
-              ?>
+                         echo $row['total'];
+                      }
+                  }
+                
+                  ?>
             </div>
           </div>
           <div class="col-auto">

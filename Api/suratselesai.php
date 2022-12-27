@@ -37,7 +37,7 @@
            $row = "Disetujui RT";
            $rt= $_SESSION['rt'];
            $rw = $_SESSION['rw'];
-           $sql = "SELECT id_akun, nama, tgl_pengajuan,status_surat FROM surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+           $sql = "SELECT id_akun, nama, tgl_pengajuan,status_surat FROM surat_tidak_mampu WHERE status_surat = '$row' OR status_surat = 'Diproses RW' OR status_surat = 'Disetujui RW' AND RT = '$rt' AND RW = '$rw'";
            $result= $this->koneksi->prepare($sql);
            $result->execute();
            return $result; 

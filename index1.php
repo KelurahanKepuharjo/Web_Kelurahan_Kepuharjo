@@ -93,7 +93,7 @@ $obj = new readdata;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $idAkun = $_POST['id_akun'];
     $nama_lengkapp = $_POST['nama_lengkap'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = md5($_POST['password']);
     $noHP = $_POST['no_hp'];
     $HakAkses = $_POST['hak_akses'];
     $rt = $_POST['rt'];
