@@ -273,7 +273,7 @@ class readsmdash extends koneksii
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
         } elseif ($_SESSION['hak_akses'] == '1') {
-            echo $row = "Disetujui RW";
+            $row = "Disetujui RW";
         } else {
         }
         $rt = $_SESSION['rt'];
@@ -302,7 +302,7 @@ class lihatsuratselesaiRT extends koneksii{
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
         } elseif ($_SESSION['hak_akses'] == '1') {
-            echo $row = "Disetujui RW";
+            $row = "Disetujui RW";
         } else {
         }
         $rt = $_SESSION['rt'];
@@ -326,7 +326,7 @@ class sumsuratmasuk extends koneksii{
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
         } elseif ($_SESSION['hak_akses'] == '1') {
-            echo $row = "Disetujui RW";
+            $row = "Disetujui RW";
         } else {
         }
         $rt = $_SESSION['rt'];
@@ -356,7 +356,7 @@ class readspdash extends koneksii
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Diproses RW";
         } elseif ($_SESSION['hak_akses'] == '1') {
-            echo $row = "Diproses Kelurahan";
+            $row = "Diproses Kelurahan";
         } else {
         }
         $rt = $_SESSION['rt'];
@@ -385,7 +385,7 @@ class readssdash extends koneksii
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RW";
         } elseif ($_SESSION['hak_akses'] == '1') {
-            echo $row = "Selesai";
+            $row = "Selesai";
         } else {
         }
         $rt = $_SESSION['rt'];
@@ -414,7 +414,7 @@ class readstolakdash extends koneksii
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Ditolak RW";
         } elseif ($_SESSION['hak_akses'] == '1') {
-            echo $row = "Ditolak Kelurahan";
+            $row = "Ditolak Kelurahan";
         } else {
         }
         $rt = $_SESSION['rt'];

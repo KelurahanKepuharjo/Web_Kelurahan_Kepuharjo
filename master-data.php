@@ -14,12 +14,7 @@ include('include/navbar.php');
         <h1 class="h3 mb-4 text-gray-800">Master Data</h1>
         <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
             <div class="input-group">
-                <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
+                <input type="text" id="searchInput" onkeyup="searchTable()" class="form-control bg-light border-2 small" placeholder="Cari Akun..." >
             </div>
         </form>
     </div>
@@ -34,7 +29,8 @@ include('include/navbar.php');
                         Menampilkan data masyarakat
                     </p>
                     <div class="table-responsive">
-                        <table class="table">
+                    
+                        <table id="myTable" class="table">
 
                             <thead>
                                 <tr>
@@ -69,7 +65,6 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['id_akun']; ?></td>
                                             <td scope="col"><?php echo $row['nama_lengkap']; ?></td>
-
                                             <td scope="col"><?php echo $row['no_hp']; ?></td>
                                             <td scope="col"><?php echo $row['rt']; ?></td>
                                             <td scope="col"><?php echo $row['rw']; ?></td>
@@ -84,12 +79,45 @@ include('include/navbar.php');
                                                     <i class="typcn typcn-edit btn-icon-append"></i>
                                                 </button>
                                             </td>
+                                            
 
                                         </tr>
+                                        
                                 <?php }
                                 } ?>
                             </tbody>
                         </table>
+
+                        <script>
+                        function searchTable() {
+                        // Get the input field value
+                        var input = document.getElementById("searchInput").value;
+                        // Get the table
+                        var table = document.getElementById("myTable");
+                        // Get the rows of the table
+                        var rows = table.getElementsByTagName("tr");
+                        // Loop through the rows
+                        for (var i = 0; i < rows.length; i++) {
+                            // Get the cells of the current row
+                            var cells = rows[i].getElementsByTagName("td");
+                            // Set found to false
+                            var found = false;
+                            // Loop through the cells
+                            for (var j = 0; j < cells.length; j++) {
+                            // If the cell's text content contains the input value, set found to true
+                            if (cells[j].textContent.toLowerCase().indexOf(input.toLowerCase()) > -1) {
+                                found = true;
+                            }
+                            }
+                            // If found is true, show the row, otherwise hide it
+                            if (found) {
+                            rows[i].style.display = "";
+                            } else {
+                            rows[i].style.display = "none";
+                            }
+                        }
+                        }
+                        </script>
                     </div>
                 </div>
             </div>

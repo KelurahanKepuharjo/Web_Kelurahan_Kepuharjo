@@ -11,12 +11,12 @@ include('include/navbar.php');
         <h1 class="h3 mb-4 text-gray-800">Surat Ditolak</h1>
         <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
             <div class="input-group">
-                <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
+            <input type="text" id="searchInput" onkeyup="searchTable()" class="form-control bg-light border-2 small" placeholder="Cari Surat Ditolak..." >
+                <!-- <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
                     </button>
-                </div>
+                </div> -->
             </div>
         </form>
     </div>
@@ -29,7 +29,7 @@ include('include/navbar.php');
                         Menampilkan data surat yang telah ditolak
                     </p>
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table id="myTable" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>
@@ -218,6 +218,27 @@ include('include/navbar.php');
                               } ?>
                             </tbody>
                         </table>
+                        <script>
+                        function searchTable() {
+                        var input = document.getElementById("searchInput").value;
+                        var table = document.getElementById("myTable");
+                        var rows = table.getElementsByTagName("tr");
+                        for (var i = 0; i < rows.length; i++) {
+                            var cells = rows[i].getElementsByTagName("td");
+                            var found = false;
+                            for (var j = 0; j < cells.length; j++) {
+                            if (cells[j].textContent.toLowerCase().indexOf(input.toLowerCase()) > -1) {
+                                found = true;
+                            }
+                            }
+                            if (found) {
+                            rows[i].style.display = "";
+                            } else {
+                            rows[i].style.display = "none";
+                            }
+                        }
+                        }
+                        </script>
                     </div>
                 </div>
             </div>
