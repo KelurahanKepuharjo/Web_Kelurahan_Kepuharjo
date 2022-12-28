@@ -194,4 +194,32 @@
                                     }  
                                 }
 
+
+                                class suratmasukkelakuanbaik extends koneksii{
+                                    public function lihatsuratmasuk(){
+                                        $_SESSION['hak_akses'];
+                                        if($_SESSION['hak_akses']=='2'){
+                                           echo $row = "Diajukan";
+                                        
+                                        }elseif($_SESSION['hak_akses']=='3'){
+                                            echo $row = "Disetujui RT";
+                                        }elseif($_SESSION['hak_akses']=='1'){
+                                            echo $row = "Disetujui RW";
+                                        }else{
+                                            
+                                        }
+                                     $rt= $_SESSION['rt'];
+                                    $rw = $_SESSION['rw'];
+                                        $sql = "SELECT surat_berkelakuan_baik.id_akun,nik, id_surat, surat_berkelakuan_baik.nama, 
+                                        surat_berkelakuan_baik.tgl_pengajuan, surat_berkelakuan_baik.status_surat 
+                                        FROM surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'
+                                        ";
+                                        $result= $this->koneksi->prepare($sql);
+                                        
+                                        $result->execute();
+                                        return $result; 
+                                                                      
+                                        }  
+                                    }
+    
 ?>

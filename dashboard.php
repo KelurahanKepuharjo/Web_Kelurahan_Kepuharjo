@@ -165,8 +165,8 @@ include('include/navbar.php');
                   include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
                   include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
                   
-                  $obj = new lihatsuratselesaiRT;
-                  $data = $obj->suratselesai();
+                  $obj = new readssdash;
+                  $data = $obj->sumssdash();
                   // $nomor = 1;
                   if ($data->rowCount() > 0) {
                       while ($row = $data->fetch(PDO::FETCH_ASSOC)) {

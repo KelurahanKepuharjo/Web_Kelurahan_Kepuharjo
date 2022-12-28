@@ -4,6 +4,7 @@ include('include/navbar.php');
 ?>
 
 <?php
+if($_SESSION['hak_akses']=='2'){
 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
 require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
 $obj = new updatert;
@@ -17,9 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         
     endif;
 endif;
+}elseif($_SESSION['hak_akses']=='3'){
+
 ?>
 
 <?php
+
 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
 require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
 $obj = new updaterw;
@@ -33,6 +37,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         
     endif;
 endif;
+}elseif($_SESSION['hak_akses']=='1'){
+
+    require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+    require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+    $obj = new updatekelurahan;
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+        $id = $_POST['idsurat'];
+        $idsp = 'Diproses Kelurahan';
+        
+        if ($obj->idkelsktm($idsp, $id)) :
+    
+        else :
+            
+        endif;
+    endif;
+}
+
 ?>
 
 
@@ -300,7 +321,8 @@ endif;
                                                 <input class="btn btn-primary" type="submit" value="Proses Surat RW">
                                                 <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelupdatesktm.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
+                                                <input class="btn btn-primary" type="submit" value="Proses Surat Kelurahan">
+                                                <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }else{} ?>
                                             </td>
                                         </tr>

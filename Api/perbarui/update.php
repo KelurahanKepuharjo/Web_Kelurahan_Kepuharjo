@@ -818,4 +818,139 @@ public function idRWkelakuanBaik($idsp, $id)
     }
 }
 }
+
+class updatekelurahan extends koneksii{
+    public function idkelsktm($idsp, $id)
+    {
+        try {
+            $sql = "UPDATE surat_tidak_mampu SET status_surat =:statuss WHERE id_surat =:idsurat";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":statuss", $idsp);
+            $result->bindParam(":idsurat", $id);
+            $result->execute();
+            // if ($result->rowCount() > 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    
+    public function idkelDomisili($idsp, $id)
+    {
+        try {
+            $sql = "UPDATE domisili SET status_surat =:statuss WHERE id_surat =:idsurat";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":statuss", $idsp);
+            $result->bindParam(":idsurat", $id);
+            $result->execute();
+            // if ($result->rowCount() > 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    
+    public function idkelAkta($idsp, $id)
+    {
+        try {
+            $sql = "UPDATE surat_akta_kelahiran SET status_surat =:statuss WHERE id_surat =:idsurat";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":statuss", $idsp);
+            $result->bindParam(":idsurat", $id);
+            $result->execute();
+            // if ($result->rowCount() > 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    
+    public function idkelBelumnikah($idsp, $id)
+    {
+        try {
+            $sql = "UPDATE surat_ket_belum_menikah SET status_surat =:statuss WHERE id_surat =:idsurat";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":statuss", $idsp);
+            $result->bindParam(":idsurat", $id);
+            $result->execute();
+            // if ($result->rowCount() > 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    
+    public function idkelkematian($idsp, $id)
+    {
+        try {
+            $sql = "UPDATE surat_kematian SET status_surat =:statuss WHERE id_surat =:idsurat";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":statuss", $idsp);
+            $result->bindParam(":idsurat", $id);
+            $result->execute();
+            // if ($result->rowCount() > 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    
+    public function idkelUsaha($idsp, $id)
+    {
+        try {
+            $sql = "UPDATE surat_usaha SET status_surat =:statuss WHERE id_surat =:idsurat";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":statuss", $idsp);
+            $result->bindParam(":idsurat", $id);
+            $result->execute();
+            // if ($result->rowCount() > 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    
+    public function idkelkelakuanBaik($idsp, $id)
+    {
+        try {
+            $sql = "UPDATE surat_berkelakuan_baik SET status_surat =:statuss WHERE id_surat =:idsurat";
+            $result = $this->koneksi->prepare($sql);
+            $result->bindParam(":statuss", $idsp);
+            $result->bindParam(":idsurat", $id);
+            $result->execute();
+            // if ($result->rowCount() > 0) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    }
 ?>

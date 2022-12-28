@@ -3,6 +3,7 @@ include('include/header.php');
 include('include/navbar.php');
 ?>
 <?php
+if($_SESSION['hak_akses']=='2'){
 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
 require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
 $obj = new updatert;
@@ -16,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         
     endif;
 endif;
+}elseif($_SESSION['hak_akses']=='3'){
 ?>
 <?php
 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -31,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         
     endif;
 endif;
+}
 ?>
 
 <!-- Begin Page Content -->

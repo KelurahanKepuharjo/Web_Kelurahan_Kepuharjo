@@ -3,6 +3,7 @@ include('include/header.php');
 include('include/navbar.php');
 ?>
 <?php
+if($_SESSION['hak_akses']=='2'){
 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
 require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
 $obj = new updatert;
@@ -16,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         
     endif;
 endif;
+}elseif($_SESSION['hak_akses']=='3'){
 ?>
 <?php
 require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
@@ -31,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         
     endif;
 endif;
+}
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -233,7 +236,7 @@ endif;
                         Menampilkan data surat masuk untuk disetujui
                     </p>
                     <div class="table-responsive">
-                        <form action="surat-masuk" method="post">
+                        <form action="surat-masuk-berkelakuanbaik.php" method="post">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -266,7 +269,7 @@ endif;
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratmasuk.php';
 
 
-                                $obj = new suratmasukbelumnikah;
+                                $obj = new suratmasukkelakuanbaik;
                                 $data = $obj->lihatsuratmasuk();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {
