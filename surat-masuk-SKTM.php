@@ -19,6 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
 endif;
 ?>
 
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+$obj = new updaterw;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $id = $_POST['idsurat'];
+    $idsp = 'Diproses RW';
+    
+    if ($obj->idRWsktm($idsp, $id)) :
+
+    else :
+        
+    endif;
+endif;
+?>
+
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -280,7 +297,8 @@ endif;
                                                 <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             </div>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWsktm.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
+                                                <input class="btn btn-primary" type="submit" value="Proses Surat RW">
+                                                <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelupdatesktm.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
                                             <?php }else{} ?>

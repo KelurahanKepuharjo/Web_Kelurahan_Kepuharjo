@@ -2,6 +2,36 @@
 include('include/header.php');
 include('include/navbar.php');
 ?>
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+$obj = new updatert;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $id = $_POST['idsurat'];
+    $idsp = 'Diproses RT';
+    
+    if ($obj->idRTAkta($idsp, $id)) :
+
+    else :
+        
+    endif;
+endif;
+?>
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+$obj = new updaterw;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $id = $_POST['idsurat'];
+    $idsp = 'Diproses RW';
+    
+    if ($obj->idRWAkta($idsp, $id)) :
+
+    else :
+        
+    endif;
+endif;
+?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -204,6 +234,7 @@ include('include/navbar.php');
                         Menampilkan data surat masuk untuk disetujui
                     </p>
                     <div class="table-responsive">
+                        <form action="surat-masuk-akta.php" method="post">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -254,9 +285,11 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
                                             <td><?php if($_SESSION['hak_akses']== '2'){ ?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateaktast.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
+                                                <input class="btn btn-primary" type="submit" value="Proses Surat RT">
+                                                <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWakta.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
+                                                <input class="btn btn-primary" type="submit" value="Proses Surat RT">
+                                                <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelupdateakta.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
                                             <?php }else{} ?>
@@ -268,6 +301,7 @@ include('include/navbar.php');
                             </tbody>
 
                         </table>
+                        </form>
                     </div>
                 </div>
             </div>

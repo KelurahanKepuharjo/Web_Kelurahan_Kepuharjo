@@ -19,6 +19,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
 endif;
 ?>
 
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+$obj = new updaterw;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+    $id = $_POST['idsurat'];
+    $idsp = 'Diproses RW';
+    
+    if ($obj->idRTUsaha($idsp, $id)) :
+
+    else :
+        
+    endif;
+endif;
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
