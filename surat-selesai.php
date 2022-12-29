@@ -67,7 +67,7 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['nama']; ?></td>
                                             <td scope="col"><?php echo 'Surat SKTM'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
-                                            <td scope="col"><span class="badge badge-success"><?php echo $row['status_surat']; ?></span></td>
+                                            <td scope="col"><span class="badge badge-success">Selesai</span></td>
 
                                         </tr>
                                         
