@@ -46,6 +46,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Status Surat:</h6>
+                <?php if($_SESSION['hak_akses']=='2'){ ?>
                 <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk
                 <span class="badge badge-danger badge-counter">
                 <?php 
@@ -125,6 +126,128 @@
                 
                   ?>
                   </span>
+
+                  <?php }elseif($_SESSION['hak_akses']=='3'){?>
+                    <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk
+                <span class="badge badge-danger badge-counter">
+                <?php 
+                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
+                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  
+                  $obj = new readsmdash;
+                  $data = $obj->sumsmdash();
+                  // $nomor = 1;
+                  if ($data->rowCount() > 0) {
+                      while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                         echo $row['total'];
+                      }
+                  }
+                
+                  ?>
+                  </span>
+                </a>
+                <a class="collapse-item" href="surat-diproses.php">Surat Diproses 
+                <span class="badge badge-danger badge-counter">
+                <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readspdash;
+              $data = $obj->sumspdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+              ?>
+              </span>
+                </a>
+                <a class="collapse-item" href="surat-ditolak.php">Surat Ditolak 
+                <span class="badge badge-danger badge-counter">
+                <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readstolakdash;
+              $data = $obj->sumstolakdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+              ?>
+              </span>
+                </a>
+                <a class="collapse-item" href="surat-selesai.php">Surat Selesai
+                <span class="badge badge-danger badge-counter">
+                <?php 
+                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
+                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  
+                  $obj = new readssdash;
+                  $data = $obj->sumssdash();
+                  // $nomor = 1;
+                  if ($data->rowCount() > 0) {
+                      while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                         echo $row['total'];
+                      }
+                  }
+                
+                  ?>
+                  </span>
+                  <?php }elseif($_SESSION['hak_akses']=='1'){ ?>
+                    <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk
+                <span class="badge badge-danger badge-counter">
+                <?php 
+                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
+                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  
+                  $obj = new readsmdash;
+                  $data = $obj->sumsmdash();
+                  // $nomor = 1;
+                  if ($data->rowCount() > 0) {
+                      while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                         echo $row['total'];
+                      }
+                  }
+                
+                  ?>
+                  </span>
+                </a>
+                <a class="collapse-item" href="surat-diproses.php">Surat Selesai
+                <span class="badge badge-danger badge-counter">
+                <?php
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readspdash;
+              $data = $obj->sumspdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+              ?>
+              </span>
+              <?php }else{} ?>
                 </a>
                 </a>
               </div>

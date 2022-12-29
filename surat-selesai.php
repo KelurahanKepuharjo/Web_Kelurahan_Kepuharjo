@@ -73,6 +73,7 @@ include('include/navbar.php');
                                         
                                 <?php }
                                 } ?>
+                                
                                  <?php
                                
                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
