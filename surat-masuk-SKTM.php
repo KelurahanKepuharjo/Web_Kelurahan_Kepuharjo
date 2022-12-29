@@ -236,8 +236,8 @@ endif;
                         require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readusaha;
-                        $data = $obj->sumusaha();
+                        $obj = new readkelakuanbaik;
+                        $data = $obj->sumkelakuanbaik();
 
 
                         $nomor = 1;

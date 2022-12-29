@@ -211,5 +211,36 @@
             }else{ 
             }                                                     
     } 
-    }
+    
+
+    public function lihatsuratselesaikelakuanbaik(){
+        $_SESSION['hak_akses'];
+        if($_SESSION['hak_akses']=='2'){
+           $row = "Ditolak RT";
+           $rt= $_SESSION['rt'];
+           $rw = $_SESSION['rw'];
+           $sql = "SELECT id_akun, nama, tgl_pengajuan, status_surat from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+           $result= $this->koneksi->prepare($sql);
+           $result->execute();
+           return $result; 
+        }elseif($_SESSION['hak_akses']=='3'){
+            $row = "Ditolak RW";
+            $rt= $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT id_akun, nama, tgl_pengajuan, status_surat from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result= $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result; 
+        }elseif($_SESSION['hak_akses']=='1'){
+            $row = "Ditolak Kelurahan";
+            $rt= $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT id_akun, nama, tgl_pengajuan, status_surat from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result= $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result; 
+        }else{ 
+        }                                                     
+} 
+}
 ?>

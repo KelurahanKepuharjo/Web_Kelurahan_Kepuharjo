@@ -262,6 +262,28 @@ class readbelumnikah extends koneksii
     }
 }
 
+class readkelakuanbaik extends koneksii
+{
+    public function sumkelakuanbaik()
+    {
+        $_SESSION['hak_akses'];
+        if ($_SESSION['hak_akses'] == '2') {
+            $row = "Diajukan";
+        } elseif ($_SESSION['hak_akses'] == '3') {
+            $row = "Disetujui RT";
+        } elseif ($_SESSION['hak_akses'] == '1') {
+            $row = "Disetujui RW";
+        } else {
+        }
+        $rt = $_SESSION['rt'];
+        $rw = $_SESSION['rw'];
+        $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+        $result = $this->koneksi->prepare($sql);
+        $result->execute();
+        return $result;
+    }
+}
+
 
 class readsmdash extends koneksii
 {

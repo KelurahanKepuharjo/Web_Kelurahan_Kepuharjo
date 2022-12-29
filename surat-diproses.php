@@ -1538,7 +1538,7 @@ endif;
                                                                 ?>
                                                             <div class="modal-footer">
                                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuan.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php

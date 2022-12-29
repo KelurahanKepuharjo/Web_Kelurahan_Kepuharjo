@@ -33,6 +33,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         
     endif;
 endif;
+}elseif($_SESSION['hak_akses']=='1'){
+
+    require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+    require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+    $obj = new updatekelurahan;
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') :
+        $id = $_POST['idsurat'];
+        $idsp = 'Diproses Kelurahan';
+        
+        if ($obj->idkelkelakuanBaik($idsp, $id)) :
+    
+        else :
+            
+        endif;
+    endif;
 }
 ?>
 <!-- Begin Page Content -->
@@ -211,8 +226,8 @@ endif;
                         require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
 
-                        $obj = new readusaha;
-                        $data = $obj->sumusaha();
+                        $obj = new readkelakuanbaik;
+                        $data = $obj->sumkelakuanbaik();
 
 
                         $nomor = 1;
