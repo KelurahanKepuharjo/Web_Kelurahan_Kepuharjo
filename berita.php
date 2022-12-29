@@ -19,6 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
 endif;
 ?>
 
+<?php
+require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+$obj = new deleteberita;
+if ($_SERVER['REQUEST_METHOD'] == 'GET') :
+    $idbrt = $_GET['idberita'];
+   
+    if ($obj->delberita($idbrt)) :
+    endif;
+endif;
+?>
+
 <!-- Begin Page Content -->
 <link rel="stylesheet" href="css/berita.css">
 <div class="container">
@@ -85,10 +97,11 @@ endif;
                             <td scope="col" align="justify"><?php echo $row['sub_title']; ?></td>
                             <td scope="col" align="justify"><?php echo $row['dekripsi']; ?></td>
 
-                            <td><button type="button" class="btn btn-danger btn-sm btn-icon-text mr-3">
-                                    Hapus
-                                    <i class="typcn typcn-edit btn-icon-append"></i>
-                                </button>
+                            <td>
+                            <form action="" method="get">  
+                            <input class="btn btn-danger" type="submit" value="Hapus">
+                                                <td scope="col" ><input type="hidden"name ="idberita" id="idberita" value="<?php echo $row['id_berita']; ?>" /></td>
+                                </form>  
                             </td>
 
                         </tr>

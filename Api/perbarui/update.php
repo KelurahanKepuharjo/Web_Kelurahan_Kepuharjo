@@ -953,4 +953,27 @@ class updatekelurahan extends koneksii{
         }
     }
     }
+
+    class deleteberita extends koneksii{
+    public function delberita($idbrt)
+{
+    try {
+        $sql = "DELETE FROM berita WHERE id_berita = :idberita";
+        $result = $this->koneksi->prepare($sql);
+        $result->bindParam(":idberita", $idbrt);
+        $result->execute();
+        // if ($result->rowCount() > 0) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+        return false;
+    // } finally {
+    //     $result->close();
+    //     $this->koneksi->close();
+    // }
+}}
+    }
 ?>
