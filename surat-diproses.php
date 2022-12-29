@@ -27,12 +27,8 @@ endif;
         <!-- Topbar Search -->
         <form class="d-grid gap-2 d-md-flex justify-content-md-end navbar-search">
             <div class="input-group">
-                <input type="text" class="form-control bg-light border-2 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
+            <input type="text" id="searchInput" onkeyup="searchTable()" class="form-control bg-light border-2 small" placeholder="Cari Surat Diproses..." >
+               
             </div>
         </form>
     </div>
@@ -45,7 +41,7 @@ endif;
                         Menampilkan data surat yang diproses
                     </p>
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                    <table id="myTable" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>
@@ -284,7 +280,7 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
                                                                 <form action="surat-diproses.php" method="post">
-                                                            <div class="modal-footer">fo
+                                                            <div class="modal-footer">
                                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
                                                             <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolaksktm.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
@@ -1791,7 +1787,7 @@ endif;
                                                                 ?>
                                                             <div class="modal-footer">
                                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuan.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -1820,6 +1816,28 @@ endif;
                                 } ?>
                             </tbody>
                         </table>
+
+                        <script>
+                        function searchTable() {
+                        var input = document.getElementById("searchInput").value;
+                        var table = document.getElementById("myTable");
+                        var rows = table.getElementsByTagName("tr");
+                        for (var i = 0; i < rows.length; i++) {
+                            var cells = rows[i].getElementsByTagName("td");
+                            var found = false;
+                            for (var j = 0; j < cells.length; j++) {
+                            if (cells[j].textContent.toLowerCase().indexOf(input.toLowerCase()) > -1) {
+                                found = true;
+                            }
+                            }
+                            if (found) {
+                            rows[i].style.display = "";
+                            } else {
+                            rows[i].style.display = "none";
+                            }
+                        }
+                        }
+                        </script>
                     </div>
                 </div>
             </div>

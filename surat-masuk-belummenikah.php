@@ -284,7 +284,7 @@ endif;
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             <td scope="col"><?php echo $row['nik']; ?></td>
                                             <td scope="col"><?php echo $row['nama']; ?></td>
-                                            <td scope="col"><?php echo 'Surat Ket Belum Menikah'; ?></td>
+                                            <td scope="col"><?php echo 'Surat Belum Menikah'; ?></td>
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
                                             <td><?php if($_SESSION['hak_akses']== '2'){ ?>
