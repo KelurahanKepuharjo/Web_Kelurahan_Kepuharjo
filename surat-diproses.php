@@ -136,8 +136,51 @@ endif;
                                                                 </style>
                                                                 <!-- <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post"> -->
                                                                     <div class="form-group">
-                                                                    <form action="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php" method="post">    
-                                                                    <label>Nomor Surat</label>
+                                                                    <form action="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php" method="post">   
+                                                                        
+                                                                    <?php if($_SESSION['hak_akses']=='1'){?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat </label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_pengantar']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $tgl_dibuat = date("d "); $bulan = date("F"); 
+                                                                    if($bulan=="January"){
+                                                                        echo "Januari";
+                                                                    }elseif($bulan=="February"){
+                                                                        echo "Februari";
+                                                                    }elseif($bulan=="March"){
+                                                                        echo "Maret";
+                                                                    }elseif($bulan=="April"){
+                                                                        echo "April";
+                                                                    }elseif($bulan=="May"){
+                                                                        echo "Mei";
+                                                                    }elseif($bulan=="June"){
+                                                                        echo "Juni";
+                                                                    }elseif($bulan=="July"){
+                                                                        echo "Juli";
+                                                                    }elseif($bulan=="August"){
+                                                                        echo "Agustus";
+                                                                    }elseif($bulan=="September"){
+                                                                        echo "September";
+                                                                    }elseif($bulan=="october"){
+                                                                        echo "Oktober";
+                                                                    }elseif($bulan=="November"){
+                                                                        echo "November";
+                                                                    }elseif($bulan=="December"){
+                                                                        echo "Desember";
+                                                                    }else{}
+                                                                    echo $tahun = date(" Y");
+                                                                    ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <?php }elseif($_SESSION['hak_akses']== '2'){
+                                                                        }elseif($_SESSION['hak_akses']== '3'){
+                                                                        }else{} ?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
                                                                         <?php $datenow = date("m");
                                                                         if($datenow == "1"){
                                                                             $datenow = "I";
@@ -173,6 +216,11 @@ endif;
                                                                     </div>
                                                                     </form>
                                                                     <div class="form-group">
+                                                                        <label>NIK</label>
+                                                                        <input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" maxlength="50" required="">
+                                                                        <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
                                                                         <label>Nama </label>
                                                                         <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" maxlength="50" required="">
                                                                     </div>
@@ -199,20 +247,10 @@ endif;
                                                                         <span class="text-danger">
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label>NIK</label>
-                                                                        <input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" maxlength="50" required="">
-                                                                        <span class="text-danger">
-                                                                    </div>
-                                                                    <div class="form-group">
                                                                         <label>Alamat</label>
                                                                         <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>" maxlength="50" required="">
                                                                         <span class="text-danger">
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                    <label>Nomor Surat Pengantar</label>
-                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_pengantar']; ?>" maxlength="50" required="">
-                                                                    <span class="text-danger">
-                                                                </div>
                                                                     <div class="form-group">
                                                                         <label>Tanggal Pengajuan</label>
                                                                         <input type="text" name="tglpengajuan" class="form-control" value="<?php echo $row['tgl_pengajuan']; ?>" maxlength="50" required="">
@@ -223,11 +261,7 @@ endif;
                                                                         <input type="text" name="keperluan" class="form-control" value="<?php echo $row['keperluan']; ?>" maxlength="50" required="">
                                                                         <span class="text-danger">
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                    <label>Tanggal Surat Dibuat</label>
-                                                                    <input type="date" name="tanggalsurat" class="form-control" value="<?php echo $row['tgl_dibuat']; ?>" maxlength="50" required="">
-                                                                    <span class="text-danger">
-                                                                </div>
+                                                                    
                                                                     <div class="form-group">
                                                                         <label>Kartu Keluarga</label>
                                                                         <input type="hidden" id="idsurat" value="<?php echo $row['id_surat']; ?>" />
@@ -270,9 +304,6 @@ endif;
                                                                 echo "";
                                                             }
                                                             ?>
-                                                            
-
-
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -1348,7 +1379,7 @@ endif;
                                 require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
 
 
-                                $obj = new belum_menikah;
+                                $obj = new berkelakuanbaik;
                                 $data = $obj->suratdiproses();
                                 $nomor = 1;
                                 if ($data->rowCount() > 0) {

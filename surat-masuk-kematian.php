@@ -292,7 +292,7 @@ endif;
                                                 <input class="btn btn-primary" type="submit" value="Proses Surat RT">
                                                 <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
-                                                <input class="btn btn-primary" type="submit" value="Proses Surat RT">
+                                                <input class="btn btn-primary" type="submit" value="Proses Surat RW">
                                                 <td scope="col" ><input type="hidden"name ="idsurat" id="idsurat" value="<?php echo $row['id_surat']; ?>" /></td>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelupdatekematian.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
