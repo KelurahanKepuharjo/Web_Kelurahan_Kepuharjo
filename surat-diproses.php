@@ -141,7 +141,7 @@ endif;
                                                                     <?php if($_SESSION['hak_akses']=='1'){?>
                                                                         <div class="form-group">
                                                                     <label>Nomor Surat </label>
-                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_pengantar']; ?>" maxlength="50" required="">
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
                                                                     <span class="text-danger">
                                                                     </div>
                                                                     <div class="form-group">
@@ -379,7 +379,50 @@ endif;
                                                                     }
                                                                 </style>
                                                                 <div class="form-group">
+                                                                       
+                                                                        <?php if($_SESSION['hak_akses']=='1'){?>
+                                                                        <div class="form-group">
                                                                         <label>Nomor Surat</label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $tgl_dibuat = date("d "); $bulan = date("F"); 
+                                                                    if($bulan=="January"){
+                                                                        echo "Januari";
+                                                                    }elseif($bulan=="February"){
+                                                                        echo "Februari";
+                                                                    }elseif($bulan=="March"){
+                                                                        echo "Maret";
+                                                                    }elseif($bulan=="April"){
+                                                                        echo "April";
+                                                                    }elseif($bulan=="May"){
+                                                                        echo "Mei";
+                                                                    }elseif($bulan=="June"){
+                                                                        echo "Juni";
+                                                                    }elseif($bulan=="July"){
+                                                                        echo "Juli";
+                                                                    }elseif($bulan=="August"){
+                                                                        echo "Agustus";
+                                                                    }elseif($bulan=="September"){
+                                                                        echo "September";
+                                                                    }elseif($bulan=="october"){
+                                                                        echo "Oktober";
+                                                                    }elseif($bulan=="November"){
+                                                                        echo "November";
+                                                                    }elseif($bulan=="December"){
+                                                                        echo "Desember";
+                                                                    }else{}
+                                                                    echo $tahun = date(" Y");
+                                                                    ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <?php }elseif($_SESSION['hak_akses']== '2'){
+                                                                        }elseif($_SESSION['hak_akses']== '3'){
+                                                                        }else{} ?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
                                                                         <?php $datenow = date("m");
                                                                         if($datenow == "1"){
                                                                             $datenow = "I";
@@ -408,10 +451,10 @@ endif;
                                                                         }else{
 
                                                                         }
-                                                                        
                                                                         $tahunnow = date("Y");
                                                                         
                                                                         ?>
+                                                                        
                                                                         <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
                                                                     </div>
                                                                 <div class="form-group">
@@ -591,8 +634,49 @@ endif;
                                                                     margin-right: 10%;
                                                                 }
                                                             </style>
-                                                            <div class="form-group">
+                                                            <div class="form-group"><?php if($_SESSION['hak_akses']=='1'){?>
+                                                                        <div class="form-group">
                                                                         <label>Nomor Surat</label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $tgl_dibuat = date("d "); $bulan = date("F"); 
+                                                                    if($bulan=="January"){
+                                                                        echo "Januari";
+                                                                    }elseif($bulan=="February"){
+                                                                        echo "Februari";
+                                                                    }elseif($bulan=="March"){
+                                                                        echo "Maret";
+                                                                    }elseif($bulan=="April"){
+                                                                        echo "April";
+                                                                    }elseif($bulan=="May"){
+                                                                        echo "Mei";
+                                                                    }elseif($bulan=="June"){
+                                                                        echo "Juni";
+                                                                    }elseif($bulan=="July"){
+                                                                        echo "Juli";
+                                                                    }elseif($bulan=="August"){
+                                                                        echo "Agustus";
+                                                                    }elseif($bulan=="September"){
+                                                                        echo "September";
+                                                                    }elseif($bulan=="october"){
+                                                                        echo "Oktober";
+                                                                    }elseif($bulan=="November"){
+                                                                        echo "November";
+                                                                    }elseif($bulan=="December"){
+                                                                        echo "Desember";
+                                                                    }else{}
+                                                                    echo $tahun = date(" Y");
+                                                                    ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <?php }elseif($_SESSION['hak_akses']== '2'){
+                                                                        }elseif($_SESSION['hak_akses']== '3'){
+                                                                        }else{} ?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
                                                                         <?php $datenow = date("m");
                                                                         if($datenow == "1"){
                                                                             $datenow = "I";
@@ -624,6 +708,7 @@ endif;
                                                                         $tahunnow = date("Y");
                                                                         
                                                                         ?>
+                                                                        
                                                                         <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
                                                                     </div>
                                                             <div class="form-group">
@@ -781,8 +866,49 @@ endif;
                                                                     margin-right: 10%;
                                                                 }
                                                             </style>
-                                                            <div class="form-group">
+                                                            <div class="form-group"><?php if($_SESSION['hak_akses']=='1'){?>
+                                                                        <div class="form-group">
                                                                         <label>Nomor Surat</label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $tgl_dibuat = date("d "); $bulan = date("F"); 
+                                                                    if($bulan=="January"){
+                                                                        echo "Januari";
+                                                                    }elseif($bulan=="February"){
+                                                                        echo "Februari";
+                                                                    }elseif($bulan=="March"){
+                                                                        echo "Maret";
+                                                                    }elseif($bulan=="April"){
+                                                                        echo "April";
+                                                                    }elseif($bulan=="May"){
+                                                                        echo "Mei";
+                                                                    }elseif($bulan=="June"){
+                                                                        echo "Juni";
+                                                                    }elseif($bulan=="July"){
+                                                                        echo "Juli";
+                                                                    }elseif($bulan=="August"){
+                                                                        echo "Agustus";
+                                                                    }elseif($bulan=="September"){
+                                                                        echo "September";
+                                                                    }elseif($bulan=="october"){
+                                                                        echo "Oktober";
+                                                                    }elseif($bulan=="November"){
+                                                                        echo "November";
+                                                                    }elseif($bulan=="December"){
+                                                                        echo "Desember";
+                                                                    }else{}
+                                                                    echo $tahun = date(" Y");
+                                                                    ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <?php }elseif($_SESSION['hak_akses']== '2'){
+                                                                        }elseif($_SESSION['hak_akses']== '3'){
+                                                                        }else{} ?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
                                                                         <?php $datenow = date("m");
                                                                         if($datenow == "1"){
                                                                             $datenow = "I";
@@ -814,6 +940,7 @@ endif;
                                                                         $tahunnow = date("Y");
                                                                         
                                                                         ?>
+                                                                        
                                                                         <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
                                                                     </div>
                                                             <div class="form-group">
@@ -984,8 +1111,49 @@ endif;
                                                                     margin-right: 10%;
                                                                 }
                                                             </style>
-                                                            <div class="form-group">
+                                                            <div class="form-group"><?php if($_SESSION['hak_akses']=='1'){?>
+                                                                        <div class="form-group">
                                                                         <label>Nomor Surat</label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $tgl_dibuat = date("d "); $bulan = date("F"); 
+                                                                    if($bulan=="January"){
+                                                                        echo "Januari";
+                                                                    }elseif($bulan=="February"){
+                                                                        echo "Februari";
+                                                                    }elseif($bulan=="March"){
+                                                                        echo "Maret";
+                                                                    }elseif($bulan=="April"){
+                                                                        echo "April";
+                                                                    }elseif($bulan=="May"){
+                                                                        echo "Mei";
+                                                                    }elseif($bulan=="June"){
+                                                                        echo "Juni";
+                                                                    }elseif($bulan=="July"){
+                                                                        echo "Juli";
+                                                                    }elseif($bulan=="August"){
+                                                                        echo "Agustus";
+                                                                    }elseif($bulan=="September"){
+                                                                        echo "September";
+                                                                    }elseif($bulan=="october"){
+                                                                        echo "Oktober";
+                                                                    }elseif($bulan=="November"){
+                                                                        echo "November";
+                                                                    }elseif($bulan=="December"){
+                                                                        echo "Desember";
+                                                                    }else{}
+                                                                    echo $tahun = date(" Y");
+                                                                    ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <?php }elseif($_SESSION['hak_akses']== '2'){
+                                                                        }elseif($_SESSION['hak_akses']== '3'){
+                                                                        }else{} ?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
                                                                         <?php $datenow = date("m");
                                                                         if($datenow == "1"){
                                                                             $datenow = "I";
@@ -1017,6 +1185,7 @@ endif;
                                                                         $tahunnow = date("Y");
                                                                         
                                                                         ?>
+                                                                        
                                                                         <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
                                                                     </div>
                                                             <div class="form-group">
@@ -1228,8 +1397,49 @@ endif;
                                                                     margin-right: 10%;
                                                                 }
                                                             </style>
-                                                            <div class="form-group">
+                                                            <div class="form-group"><?php if($_SESSION['hak_akses']=='1'){?>
+                                                                        <div class="form-group">
                                                                         <label>Nomor Surat</label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $tgl_dibuat = date("d "); $bulan = date("F"); 
+                                                                    if($bulan=="January"){
+                                                                        echo "Januari";
+                                                                    }elseif($bulan=="February"){
+                                                                        echo "Februari";
+                                                                    }elseif($bulan=="March"){
+                                                                        echo "Maret";
+                                                                    }elseif($bulan=="April"){
+                                                                        echo "April";
+                                                                    }elseif($bulan=="May"){
+                                                                        echo "Mei";
+                                                                    }elseif($bulan=="June"){
+                                                                        echo "Juni";
+                                                                    }elseif($bulan=="July"){
+                                                                        echo "Juli";
+                                                                    }elseif($bulan=="August"){
+                                                                        echo "Agustus";
+                                                                    }elseif($bulan=="September"){
+                                                                        echo "September";
+                                                                    }elseif($bulan=="october"){
+                                                                        echo "Oktober";
+                                                                    }elseif($bulan=="November"){
+                                                                        echo "November";
+                                                                    }elseif($bulan=="December"){
+                                                                        echo "Desember";
+                                                                    }else{}
+                                                                    echo $tahun = date(" Y");
+                                                                    ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <?php }elseif($_SESSION['hak_akses']== '2'){
+                                                                        }elseif($_SESSION['hak_akses']== '3'){
+                                                                        }else{} ?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
                                                                         <?php $datenow = date("m");
                                                                         if($datenow == "1"){
                                                                             $datenow = "I";
@@ -1261,6 +1471,7 @@ endif;
                                                                         $tahunnow = date("Y");
                                                                         
                                                                         ?>
+                                                                        
                                                                         <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
                                                                     </div>
                                                             <div class="form-group">
@@ -1432,8 +1643,49 @@ endif;
                                                                     margin-right: 10%;
                                                                 }
                                                             </style>
-                                                            <div class="form-group">
+                                                            <div class="form-group"><?php if($_SESSION['hak_akses']=='1'){?>
+                                                                        <div class="form-group">
                                                                         <label>Nomor Surat</label>
+                                                                    <input type="text" name="nopengantarsurat" class="form-control" value="<?php echo $row['no_surat']; ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal Surat Dibuat</label>
+                                                                    <input type="text" name="tanggalsurat" class="form-control" value="<?php echo $tgl_dibuat = date("d "); $bulan = date("F"); 
+                                                                    if($bulan=="January"){
+                                                                        echo "Januari";
+                                                                    }elseif($bulan=="February"){
+                                                                        echo "Februari";
+                                                                    }elseif($bulan=="March"){
+                                                                        echo "Maret";
+                                                                    }elseif($bulan=="April"){
+                                                                        echo "April";
+                                                                    }elseif($bulan=="May"){
+                                                                        echo "Mei";
+                                                                    }elseif($bulan=="June"){
+                                                                        echo "Juni";
+                                                                    }elseif($bulan=="July"){
+                                                                        echo "Juli";
+                                                                    }elseif($bulan=="August"){
+                                                                        echo "Agustus";
+                                                                    }elseif($bulan=="September"){
+                                                                        echo "September";
+                                                                    }elseif($bulan=="october"){
+                                                                        echo "Oktober";
+                                                                    }elseif($bulan=="November"){
+                                                                        echo "November";
+                                                                    }elseif($bulan=="December"){
+                                                                        echo "Desember";
+                                                                    }else{}
+                                                                    echo $tahun = date(" Y");
+                                                                    ?>" maxlength="50" required="">
+                                                                    <span class="text-danger">
+                                                                </div>
+                                                                    <?php }elseif($_SESSION['hak_akses']== '2'){
+                                                                        }elseif($_SESSION['hak_akses']== '3'){
+                                                                        }else{} ?>
+                                                                        <div class="form-group">
+                                                                    <label>Nomor Surat Pengantar</label>
                                                                         <?php $datenow = date("m");
                                                                         if($datenow == "1"){
                                                                             $datenow = "I";
@@ -1465,6 +1717,7 @@ endif;
                                                                         $tahunnow = date("Y");
                                                                         
                                                                         ?>
+                                                                        
                                                                         <input type="text" name="nomor" class="form-control" value="<?php echo $row['id_surat'];?> / <?php echo $row['RW']; ?>. <?php echo $row['RT'];?> / <?php  echo $datenow; ?> / <?php  echo $tahunnow; ?>" maxlength="50" required="">
                                                                     </div>
                                                             <div class="form-group">
@@ -1538,7 +1791,7 @@ endif;
                                                                 ?>
                                                             <div class="modal-footer">
                                                             <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuan.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
