@@ -268,7 +268,7 @@
             echo '<li class="nav-item">';
             echo '<a class="nav-link" href="master-data.php">';
             echo '<i class="fas fa-fw fa-chart-area"></i>';
-            echo '<span>Master Data</span></a>';
+            echo '<span>Data Akun User</span></a>';
             echo '</li>';
             echo '';
             echo '<li class="nav-item">';
