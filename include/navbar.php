@@ -149,7 +149,9 @@
                 </a>
                 <a class="collapse-item" href="surat-diproses.php">Surat Diproses 
                 <span class="badge badge-danger badge-counter">
+                  
                 <?php
+                if($_SESSION['hak_akses']=='3'){
               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
               require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
@@ -165,6 +167,38 @@
                   echo $row['total'];
                 }
               }
+            }elseif($_SESSION['hak_akses']=='2'){
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readspdash;
+              $data = $obj->sumspdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+            }elseif($_SESSION['hak_akses']=='1'){
+              include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
+                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  
+                  $obj = new readssdashadmin;
+                  $data = $obj->sumssdash();
+                  // $nomor = 1;
+                  if ($data->rowCount() > 0) {
+                      while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                         echo $row['total'];
+                      }
+                  }
+            }else {
+              
+            }
               ?>
               </span>
                 </a>
@@ -230,6 +264,7 @@
                 <a class="collapse-item" href="surat-diproses.php">Surat Selesai
                 <span class="badge badge-danger badge-counter">
                 <?php
+                if($_SESSION['hak_akses']== '2'){
               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
               require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
 
@@ -245,6 +280,39 @@
                   echo $row['total'];
                 }
               }
+            }elseif($_SESSION['hak_akses']== '3'){
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readspdash;
+              $data = $obj->sumspdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+            }elseif($_SESSION['hak_akses']=='1'){
+              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+
+
+              $obj = new readssdashadmin;
+              $data = $obj->sumssdash();
+
+
+              $nomor = 1;
+              if ($data->rowCount() > 0) {
+                while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+
+                  echo $row['total'];
+                }
+              }
+            }
               ?>
               </span>
               <?php }else{} ?>
