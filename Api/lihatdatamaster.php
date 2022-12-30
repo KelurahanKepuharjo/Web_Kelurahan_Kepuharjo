@@ -1,5 +1,5 @@
 <?php
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+require_once 'Api/oopkoneksi.php';
 class read extends koneksii
 {
     public function lihatdata()

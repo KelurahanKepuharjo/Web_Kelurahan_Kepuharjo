@@ -14,8 +14,8 @@ include('include/navbar.php');
                 Jenis Pengajuan
                 <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readsmdash;
@@ -32,11 +32,11 @@ include('include/navbar.php');
                         ?></span>
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">SKTM <?php $value = 1?>
+                <a class="dropdown-item" href="surat-masuk-SKTM.php">SKTM <?php $value = 1?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readsktm;
@@ -52,11 +52,11 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-domisili.php">Domisili <?php $value = 2?>
+                <a class="dropdown-item" href="surat-masuk-domisili.php">Domisili <?php $value = 2?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readdomisili;
@@ -72,11 +72,11 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
+                <a class="dropdown-item" href="surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readakta;
@@ -92,11 +92,11 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
+                <a class="dropdown-item" href="surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readpindah;
@@ -112,11 +112,11 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
+                <a class="dropdown-item" href="surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readbelumnikah;
@@ -132,11 +132,11 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-kematian.php">Kematian <?php $value = 6?>
+                <a class="dropdown-item" href="surat-masuk-kematian.php">Kematian <?php $value = 6?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readkematian;
@@ -152,11 +152,11 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-usaha.php">Surat Usaha <?php $value = 6?>
+                <a class="dropdown-item" href="surat-masuk-usaha.php">Surat Usaha <?php $value = 6?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readusaha;
@@ -172,11 +172,11 @@ include('include/navbar.php');
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-berkelakuanbaik.php">Surat Berkelakuan Baik <?php $value = 7?>
+                <a class="dropdown-item" href="surat-masuk-berkelakuanbaik.php">Surat Berkelakuan Baik <?php $value = 7?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readkelakuanbaik;
@@ -232,8 +232,8 @@ include('include/navbar.php');
                             </thead>
                             <tbody>
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratmasuk.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratmasuk.php';
 
 
                                 $obj = new suratmasukpindah;
@@ -254,11 +254,11 @@ include('include/navbar.php');
                                             <td scope="col"><?php echo $row['tgl_pengajuan']; ?></td>
                                             <td scope="col"><span class="badge badge-secondary"><?php echo $row['status_surat']; ?></span></td>
                                             <td><?php if($_SESSION['hak_akses']== '2'){ ?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updatpindahst.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
+                                            <a class="btn btn-primary" href="Api/update/updatpindahst.php?kode=<?php echo $row['id_surat']?>">Proses Surat RT</a>
                                             <?php }elseif($_SESSION['hak_akses']=='3'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/updateRWpindah.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
+                                            <a class="btn btn-primary" href="Api/update/updateRWpindah.php?kode=<?php echo $row['id_surat']?>">Proses Surat RW</a>
                                             <?php }elseif($_SESSION['hak_akses']=='1'){?>
-                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/kelUpdatepindah.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
+                                            <a class="btn btn-primary" href="Api/update/kelUpdatepindah.php?kode=<?php echo $row['id_surat']?>">Proses Surat Kelurahan</a>
                                             <?php }else{} ?>
                                           </td>
 

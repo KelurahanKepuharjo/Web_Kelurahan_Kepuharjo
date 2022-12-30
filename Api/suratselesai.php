@@ -1,5 +1,5 @@
 <?php
-    require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
+    require_once 'Api/oopkoneksi.php';
     class suratselesai extends koneksii{
     public function lihatsuratselesaidomisili(){
         $_SESSION['hak_akses'];

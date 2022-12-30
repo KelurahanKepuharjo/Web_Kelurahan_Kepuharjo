@@ -1,5 +1,5 @@
 <?php
-include_once '../web_kelurahan_kepuharjo/Api/oopkoneksi.php';
+include_once 'Api/oopkoneksi.php';
 //setujui RT surat Masuk
 class updatert extends koneksii{
 public function idRTsktm($idsp, $id)

@@ -2,8 +2,8 @@
 include('include/header.php');
 include('include/navbar.php');
 
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+require_once 'Api/oopkoneksi.php';
+require_once 'Api/suratdiproses.php';
 $obj = new readprofile;
 $data = $obj->lihatprofile();
 $nomor = 1;
@@ -18,7 +18,7 @@ if ($data->rowCount() > 0) {
             <form method="POST" action="" enctype="multipart/form-data">
                 <h1 class="judul">Profil</h1>
                 <div class="lingkaran1">
-                    <img class="img-profile rounded-circle" src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?> ">
+                    <img class="img-profile rounded-circle" src="Api/uploads/<?php echo $row['image']; ?> ">
             <?php }
     } ?>
                 </div>
@@ -42,8 +42,8 @@ if ($data->rowCount() > 0) {
             </form>
 
             <?php
-            require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-            require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+            require_once 'Api/oopkoneksi.php';
+            require_once 'Api/lihatdatamaster.php';
 
 
             $obj = new readprofile;
@@ -97,7 +97,7 @@ if ($data->rowCount() > 0) {
             // $target_file = md5(basename($_FILES["choosefile"]["name"])).$file_ext;
             // move_uploaded_file($_FILES["choosefile"]["name"], $target_dir.$target_file);
 
-            $folder = "../Web_Kelurahan_Kepuharjo/Api/uploads/" . $filename;
+            $folder = "Api/uploads/" . $filename;
 
             // connect with the database
 

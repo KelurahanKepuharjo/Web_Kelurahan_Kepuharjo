@@ -1,6 +1,6 @@
 <?php
 
-include '../Web_Kelurahan_Kepuharjo/koneksi/koneksi.php';
+include 'koneksi/koneksi.php';
 error_reporting(0);
 session_start();
 

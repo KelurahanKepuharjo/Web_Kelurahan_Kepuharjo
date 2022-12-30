@@ -5,8 +5,8 @@ include('include/navbar.php');
 
 <?php
 if($_SESSION['hak_akses']=='2'){
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+require_once 'Api/oopkoneksi.php';
+require_once 'Api/perbarui/update.php';
 $obj = new updatert;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $id = $_POST['idsurat'];
@@ -24,8 +24,8 @@ endif;
 
 <?php
 
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+require_once 'Api/oopkoneksi.php';
+require_once 'Api/perbarui/update.php';
 $obj = new updaterw;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $id = $_POST['idsurat'];
@@ -39,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
 endif;
 }elseif($_SESSION['hak_akses']=='1'){
 
-    require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-    require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+    require_once 'Api/oopkoneksi.php';
+    require_once 'Api/perbarui/update.php';
     $obj = new updatekelurahan;
     if ($_SERVER['REQUEST_METHOD'] == 'POST') :
         $id = $_POST['idsurat'];
@@ -68,8 +68,8 @@ endif;
                 Jenis Pengajuan
                 <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readsmdash;
@@ -86,11 +86,11 @@ endif;
                         ?></span>
             </button>
             <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">SKTM <?php $value = 1?>
+                <a class="dropdown-item" href="surat-masuk-SKTM.php">SKTM <?php $value = 1?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readsktm;
@@ -108,11 +108,11 @@ endif;
                         
                 </a>
                 
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-domisili.php">Domisili <?php $value = 2?>
+                <a class="dropdown-item" href="surat-masuk-domisili.php">Domisili <?php $value = 2?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readdomisili;
@@ -129,11 +129,11 @@ endif;
                         ?></span>
                 </a>
                 
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
+                <a class="dropdown-item" href="surat-masuk-akta.php">Akta Kelahiran <?php $value = 3?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readakta;
@@ -149,11 +149,11 @@ endif;
                         }
                         ?></span>
                 </a>
-                <!-- <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
+                <!-- <a class="dropdown-item" href="surat-masuk-pindah.php">Keterangan Pindah <?php $value = 4?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        // require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        // require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        // require_once 'Api/oopkoneksi.php';
+                        // require_once 'Api/lihatdatamaster.php';
 
 
                         // $obj = new readpindah;
@@ -169,11 +169,11 @@ endif;
                         // }
                         ?></span>
                 </a> -->
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
+                <a class="dropdown-item" href="surat-masuk-belummenikah.php">Belum menikah <?php $value = 5?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readbelumnikah;
@@ -189,11 +189,11 @@ endif;
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-kematian.php">Kematian <?php $value = 6?>
+                <a class="dropdown-item" href="surat-masuk-kematian.php">Kematian <?php $value = 6?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readkematian;
@@ -209,11 +209,11 @@ endif;
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-usaha.php">Surat Usaha <?php $value = 6?>
+                <a class="dropdown-item" href="surat-masuk-usaha.php">Surat Usaha <?php $value = 6?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readusaha;
@@ -229,11 +229,11 @@ endif;
                         }
                         ?></span>
                 </a>
-                <a class="dropdown-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-berkelakuanbaik.php">Surat Berkelakuan Baik <?php $value = 7?>
+                <a class="dropdown-item" href="surat-masuk-berkelakuanbaik.php">Surat Berkelakuan Baik <?php $value = 7?>
                     <span class="badge badge-danger badge-counter">
                         <?php
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                        require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                        require_once 'Api/oopkoneksi.php';
+                        require_once 'Api/lihatdatamaster.php';
 
 
                         $obj = new readkelakuanbaik;
@@ -289,8 +289,8 @@ endif;
                             </thead>
                             <tbody>
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratmasuk.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratmasuk.php';
 
 
                                 $obj = new suratmasuksktm;
@@ -302,7 +302,7 @@ endif;
 
 
                                 ?>
-                                    <form action="../web_kelurahan_kepuharjo/surat-masuk-SKTM.php" method="post">
+                                    <form action="surat-masuk-SKTM.php" method="post">
                                         <tr>
                                             <td scope="col"><?php echo $nomor++; ?></td>
                                             

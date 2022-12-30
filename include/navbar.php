@@ -47,11 +47,11 @@
               <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Status Surat:</h6>
                 <?php if($_SESSION['hak_akses']=='2'){ ?>
-                <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk
+                <a class="collapse-item" href="surat-masuk-SKTM.php">Surat Masuk
                 <span class="badge badge-danger badge-counter">
                 <?php 
-                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
-                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  include_once('Api/oopkoneksi.php');
+                  include_once("Api/lihatdatamaster.php");
                   
                   $obj = new readsmdash;
                   $data = $obj->sumsmdash();
@@ -69,8 +69,8 @@
                 <a class="collapse-item" href="surat-diproses.php">Surat Diproses 
                 <span class="badge badge-danger badge-counter">
                 <?php
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readspdash;
@@ -90,8 +90,8 @@
                 <a class="collapse-item" href="surat-ditolak.php">Surat Ditolak 
                 <span class="badge badge-danger badge-counter">
                 <?php
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readstolakdash;
@@ -111,8 +111,8 @@
                 <a class="collapse-item" href="surat-selesai.php">Surat Selesai
                 <span class="badge badge-danger badge-counter">
                 <?php 
-                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
-                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  include_once('Api/oopkoneksi.php');
+                  include_once("Api/lihatdatamaster.php");
                   
                   $obj = new readssdash;
                   $data = $obj->sumssdash();
@@ -128,11 +128,11 @@
                   </span>
 
                   <?php }elseif($_SESSION['hak_akses']=='3'){?>
-                    <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk
+                    <a class="collapse-item" href="surat-masuk-SKTM.php">Surat Masuk
                 <span class="badge badge-danger badge-counter">
                 <?php 
-                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
-                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  include_once('Api/oopkoneksi.php');
+                  include_once("Api/lihatdatamaster.php");
                   
                   $obj = new readsmdash;
                   $data = $obj->sumsmdash();
@@ -152,8 +152,8 @@
                   
                 <?php
                 if($_SESSION['hak_akses']=='3'){
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readspdash;
@@ -168,8 +168,8 @@
                 }
               }
             }elseif($_SESSION['hak_akses']=='2'){
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readspdash;
@@ -184,8 +184,8 @@
                 }
               }
             }elseif($_SESSION['hak_akses']=='1'){
-              include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
-                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+              include_once('Api/oopkoneksi.php');
+                  include_once("Api/lihatdatamaster.php");
                   
                   $obj = new readssdashadmin;
                   $data = $obj->sumssdash();
@@ -205,8 +205,8 @@
                 <a class="collapse-item" href="surat-ditolak.php">Surat Ditolak 
                 <span class="badge badge-danger badge-counter">
                 <?php
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readstolakdash;
@@ -226,8 +226,8 @@
                 <a class="collapse-item" href="surat-selesai.php">Surat Selesai
                 <span class="badge badge-danger badge-counter">
                 <?php 
-                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
-                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  include_once('Api/oopkoneksi.php');
+                  include_once("Api/lihatdatamaster.php");
                   
                   $obj = new readssdash;
                   $data = $obj->sumssdash();
@@ -242,11 +242,11 @@
                   ?>
                   </span>
                   <?php }elseif($_SESSION['hak_akses']=='1'){ ?>
-                    <a class="collapse-item" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php">Surat Masuk
+                    <a class="collapse-item" href="surat-masuk-SKTM.php">Surat Masuk
                 <span class="badge badge-danger badge-counter">
                 <?php 
-                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
-                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  include_once('Api/oopkoneksi.php');
+                  include_once("Api/lihatdatamaster.php");
                   
                   $obj = new readsmdash;
                   $data = $obj->sumsmdash();
@@ -265,8 +265,8 @@
                 <span class="badge badge-danger badge-counter">
                 <?php
                 if($_SESSION['hak_akses']== '2'){
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readspdash;
@@ -281,8 +281,8 @@
                 }
               }
             }elseif($_SESSION['hak_akses']== '3'){
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readspdash;
@@ -297,8 +297,8 @@
                 }
               }
             }elseif($_SESSION['hak_akses']=='1'){
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readssdashadmin;
@@ -398,8 +398,8 @@
                     </span>
 
                     <?php
-                    include_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                    include_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                    include_once 'Api/oopkoneksi.php';
+                    include_once 'Api/lihatdatamaster.php';
 
 
                     $obj = new readprofile;
@@ -409,7 +409,7 @@
                       while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
 
                     ?>
-                        <img class="img-profile rounded-circle" src="../web_kelurahan_kepuharjo/Api/uploads/<?php echo $row['image'] ?> ">
+                        <img class="img-profile rounded-circle" src="Api/uploads/<?php echo $row['image'] ?> ">
                     <?php }
                     } ?>
 
@@ -450,7 +450,7 @@
                   <div class="modal-body">Maka anda akan diarahkan ke halaman landing page.</div>
                   <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-                    <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Logout.php">Iya</a>
+                    <a class="btn btn-primary" href="Logout.php">Iya</a>
                   </div>
                 </div>
               </div>

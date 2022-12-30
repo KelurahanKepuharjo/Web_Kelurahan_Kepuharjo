@@ -23,7 +23,7 @@ $data = mysqli_fetch_assoc($query);
                     <h2>Preview data Syarat Surat</h2>
                 </div>
                 
-                <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
+                <form action="pdfsktm.php" method="post">
 
                     <div class="form-group">
                         <label>Nomor Surat</label>
@@ -76,7 +76,7 @@ $data = mysqli_fetch_assoc($query);
                     <input type="submit" class="btn btn-primary" name="signup" value="Download">
                     <!-- <input type= ""  onclick="location.href='<?php //echo "https://wa.me/62"; echo $data['no_hp']; ?>' "" class="btn btn-primary" name="" value="Kirim"> -->
                     <a class="btn btn-primary" href="<?php echo "https://wa.me/62"; echo $data['no_hp']; ?>" target="_blank" >Kirim Via WhatsApp</a>
-                    <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/surat-masuk-SKTM.php" >Kembali</a>
+                    <a class="btn btn-primary" href="surat-masuk-SKTM.php" >Kembali</a>
                     
                 </form>
             </div>

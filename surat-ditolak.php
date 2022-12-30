@@ -55,8 +55,8 @@ include('include/navbar.php');
                             <tbody>
                             <?php
                                
-                               require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                               require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                               require_once 'Api/oopkoneksi.php';
+                               require_once 'Api/suratditolak.php';
                                $obj = new suratselesai;
                                $data = $obj->lihatsuratselesaiSKTM();
                                $nomor = 1;
@@ -78,8 +78,8 @@ include('include/navbar.php');
                                } ?>
                                 <?php
                               
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                              require_once 'Api/oopkoneksi.php';
+                              require_once 'Api/suratditolak.php';
                               $obj = new suratselesai;
                               $data = $obj->lihatsuratselesaidomisili();
                               $nomor = 1;
@@ -101,8 +101,8 @@ include('include/navbar.php');
                               } ?>
                                <?php
                               
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                              require_once 'Api/oopkoneksi.php';
+                              require_once 'Api/suratditolak.php';
                               $obj = new suratselesai;
                               $data = $obj->lihatsuratselesaiakta();
                               $nomor = 1;
@@ -124,8 +124,8 @@ include('include/navbar.php');
                               } ?>
                                <!-- <?php
                               
-                            //   require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                            //   require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                            //   require_once 'Api/oopkoneksi.php';
+                            //   require_once 'Api/suratditolak.php';
                             //   $obj = new suratselesai;
                             //   $data = $obj->lihatsuratselesaipindah();
                             //   $nomor = 1;
@@ -149,8 +149,8 @@ include('include/navbar.php');
                                ?> -->
                                <?php
                               
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                              require_once 'Api/oopkoneksi.php';
+                              require_once 'Api/suratditolak.php';
                               $obj = new suratselesai;
                               $data = $obj->lihatsuratselesaibelumnikah();
                               $nomor = 1;
@@ -172,8 +172,8 @@ include('include/navbar.php');
                               } ?>
                                <?php
                               
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                              require_once 'Api/oopkoneksi.php';
+                              require_once 'Api/suratditolak.php';
                               $obj = new suratselesai;
                               $data = $obj->lihatsuratselesaikematian();
                               $nomor = 1;
@@ -195,8 +195,8 @@ include('include/navbar.php');
                               } ?>
                                <?php
                               
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                              require_once 'Api/oopkoneksi.php';
+                              require_once 'Api/suratditolak.php';
                               $obj = new suratselesai;
                               $data = $obj->lihatsuratselesaiusaha();
                               $nomor = 1;
@@ -218,8 +218,8 @@ include('include/navbar.php');
                               } ?>
                               <?php
                               
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                              require_once '../Web_Kelurahan_Kepuharjo/Api/suratditolak.php';
+                              require_once 'Api/oopkoneksi.php';
+                              require_once 'Api/suratditolak.php';
                               $obj = new suratselesai;
                               $data = $obj->lihatsuratselesaikelakuanbaik();
                               $nomor = 1;

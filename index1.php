@@ -87,8 +87,8 @@
 
 </html> -->
 <?php
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+require_once 'Api/oopkoneksi.php';
+require_once 'Api/lihatdatamaster.php';
 $obj = new readdata;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $idAkun = $_POST['id_akun'];
@@ -124,8 +124,8 @@ endif;
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../Web_Kelurahan_Kepuharjo/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="../Web_Kelurahan_Kepuharjo/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- buat tabelnya -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
@@ -150,7 +150,7 @@ endif;
                     <h6 class="m-0 font-weight-bold text-primary">Form Tambah Data</h6>
                 </div>
                 <div class="card-body">
-                    <form action="../Web_Kelurahan_Kepuharjo/index1.php" method="post">
+                    <form action="index1.php" method="post">
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">NIK</span>

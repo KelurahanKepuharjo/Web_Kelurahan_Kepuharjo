@@ -2,7 +2,7 @@
 
 <head>
     <title>Landing Page</title>
-    <link rel="stylesheet" href="../Web_Kelurahan_Kepuharjo/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="shortcut icon" href="images/logo_kepuharjo.png" />

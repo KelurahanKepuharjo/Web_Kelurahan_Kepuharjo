@@ -4,8 +4,8 @@ include('include/navbar.php');
 
 ?>
 <?php
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+require_once 'Api/oopkoneksi.php';
+require_once 'Api/lihatdatamaster.php';
 $obj = new readberita;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $judull = $_POST['judul'];
@@ -20,8 +20,8 @@ endif;
 ?>
 
 <?php
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-require_once '../Web_Kelurahan_Kepuharjo/Api/perbarui/update.php';
+require_once 'Api/oopkoneksi.php';
+require_once 'Api/perbarui/update.php';
 $obj = new deleteberita;
 if ($_SERVER['REQUEST_METHOD'] == 'GET') :
     $idbrt = $_GET['idberita'];
@@ -35,7 +35,7 @@ endif;
 <link rel="stylesheet" href="css/berita.css">
 <div class="container">
     <div class="judul">Berita Kepuharjo</div>
-    <form action="../Web_Kelurahan_Kepuharjo/berita.php" method="post">
+    <form action="berita.php" method="post">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Judul Berita</span>
@@ -75,8 +75,8 @@ endif;
             </thead>
             <tbody>
                 <?php
-                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                require_once 'Api/oopkoneksi.php';
+                require_once 'Api/lihatdatamaster.php';
 
 
                 $obj = new readberita;

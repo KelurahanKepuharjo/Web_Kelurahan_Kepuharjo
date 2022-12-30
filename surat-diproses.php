@@ -3,8 +3,8 @@ include('include/header.php');
 include('include/navbar.php');
 ?>
 <?php
-require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+require_once 'Api/oopkoneksi.php';
+require_once 'Api/lihatdatamaster.php';
 $obj = new updateidsuratpengantar;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $id = $_POST['nomor'];
@@ -70,8 +70,8 @@ endif;
                             <tbody> 
                                 <!-- suratsktm -->
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratdiproses.php';
 
 
                                 $obj = new sktm;
@@ -111,7 +111,7 @@ endif;
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post">
+                                                <form action="pdfsktm.php" method="post">
                                                     <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewsktmModal<?php echo $row['id_akun']; ?>">
                                                         Preview Data
                                                     </a>
@@ -130,9 +130,9 @@ endif;
                                                                         margin-right: 10%;
                                                                     }
                                                                 </style>
-                                                                <!-- <form action="../Web_Kelurahan_Kepuharjo/pdfsktm.php" method="post"> -->
+                                                                <!-- <form action="pdfsktm.php" method="post"> -->
                                                                     <div class="form-group">
-                                                                    <form action="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php" method="post">   
+                                                                    <form action="Api/update/setujuiRTSKTM.php" method="post">   
                                                                         
                                                                     <?php if($_SESSION['hak_akses']=='1'){?>
                                                                         <div class="form-group">
@@ -264,7 +264,7 @@ endif;
 
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image'];?>" class="img-thumbnail" alt="Responsive image">
+                                                                        <img src="Api/uploads/<?php echo $row['image'];?>" class="img-thumbnail" alt="Responsive image">
                                                                         
                                                                     </div>
                                                                     <?php
@@ -281,8 +281,8 @@ endif;
                                                                 ?>
                                                                 <form action="surat-diproses.php" method="post">
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTSKTM.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolaksktm.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRTSKTM.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/updatetolaksktm.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                             </form>
@@ -290,8 +290,8 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWSKTM.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolaksktm.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRWSKTM.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/RWupdatetolaksktm.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -313,8 +313,8 @@ endif;
 
                                 <!-- suratdomisili -->
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratdiproses.php';
 
 
                                 $obj = new domisili;
@@ -355,7 +355,7 @@ endif;
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <form action="../Web_Kelurahan_Kepuharjo/pdfdomisili.php" method="post">
+                                                <form action="pdfdomisili.php" method="post">
                                                     <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewdomisiliModal<?php echo $row['id_akun']; ?>">
                                                         Preview Data
                                                     </a>
@@ -527,7 +527,7 @@ endif;
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['images']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="Api/uploads/<?php echo $row['images']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <?php
                                                             if ($_SESSION['hak_akses'] == "1") {
@@ -542,16 +542,16 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTdomisili.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakdomisili.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRTdomisili.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/updatetolakdomisili.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWdomisili.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakdomisili.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRWdomisili.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/RWupdatetolakdomisili.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -573,8 +573,8 @@ endif;
 
                                 <!-- suratbelumnikah -->
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratdiproses.php';
 
 
                                 $obj = new belum_menikah;
@@ -611,7 +611,7 @@ endif;
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <form action="../Web_Kelurahan_Kepuharjo/pdfbelumnikah.php" method="post">
+                                                <form action="pdfbelumnikah.php" method="post">
                                                 <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewbelumnikahModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
@@ -762,14 +762,14 @@ endif;
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                             <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <?php
                                                             if ($_SESSION['hak_akses'] == "1") {
                                                                ?>
                                                             
                                                             <div class="modal-footer">
-                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTBelumnikah.php?kode=<?php echo $row['id_surat']?>">
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download" href="Api/update/setujuiRTBelumnikah.php?kode=<?php echo $row['id_surat']?>">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
@@ -777,16 +777,16 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTBelumnikah.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakbelummenikah.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRTBelumnikah.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/updatetolakbelummenikah.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWBelumnikah.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakbelummenikah.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRWBelumnikah.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/RWupdatetolakbelummenikah.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -808,8 +808,8 @@ endif;
 
                                 <!-- suratkematian -->
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratdiproses.php';
 
 
                                 $obj = new kematian;
@@ -843,7 +843,7 @@ endif;
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <form action="../Web_Kelurahan_Kepuharjo/pdfkematian.php" method="post">
+                                                <form action="pdfkematian.php" method="post">
                                                 <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewkematianModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
@@ -994,7 +994,7 @@ endif;
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                             <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <?php
                                                             if ($_SESSION['hak_akses'] == "1") {
@@ -1009,16 +1009,16 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTKematian.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakkematian.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRTKematian.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/updatetolakkematian.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWKematian.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakkematian.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRWKematian.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/RWupdatetolakkematian.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -1040,8 +1040,8 @@ endif;
 
                                 <!-- suratakta -->
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratdiproses.php';
 
 
                                 $obj = new akta_kelahiran;
@@ -1088,7 +1088,7 @@ endif;
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <form action="../Web_Kelurahan_Kepuharjo/pdfakta.php" method="post">
+                                                <form action="pdfakta.php" method="post">
                                                 <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewaktaModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
@@ -1289,7 +1289,7 @@ endif;
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                             <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <?php
                                                             if ($_SESSION['hak_akses'] == "1") {
@@ -1304,16 +1304,16 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTAkta.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakakta.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRTAkta.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/updatetolakakta.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWAkta.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakakta.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRWAkta.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/RWupdatetolakakta.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -1335,8 +1335,8 @@ endif;
                                 
                                 <!-- suratusaha -->
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratdiproses.php';
 
 
                                 $obj = new ket_usaha;
@@ -1374,7 +1374,7 @@ endif;
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <form action="../Web_Kelurahan_Kepuharjo/pdfusaha.php" method="post">
+                                                <form action="pdfusaha.php" method="post">
                                                 <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewusahaModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
@@ -1535,7 +1535,7 @@ endif;
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                             <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <?php
                                                             if ($_SESSION['hak_akses'] == "1") {
@@ -1550,16 +1550,16 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTUsaha.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakusaha.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRTUsaha.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/updatetolakusaha.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWUsaha.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakusaha.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRWUsaha.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/RWupdatetolakusaha.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
@@ -1582,8 +1582,8 @@ endif;
 
                                 <!-- suratberkelakuanbaik -->
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/suratdiproses.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/suratdiproses.php';
 
 
                                 $obj = new berkelakuanbaik;
@@ -1620,7 +1620,7 @@ endif;
                                             <td>
                                                 <?php //Dibagian Ini Modalnya Oke
                                                 ?>
-                                                <form action="../Web_Kelurahan_Kepuharjo/pdfberkelakuanbaik.php" method="post">
+                                                <form action="pdfberkelakuanbaik.php" method="post">
                                                 <a class="btn btn-success btn-sm btn-icon-text mr-3" href="" data-toggle="modal" data-target="#PreviewberkelakuanbaikModal<?php echo $row['id_akun']; ?>">
                                                     Preview Data
                                                 </a>
@@ -1771,14 +1771,14 @@ endif;
                                                                     <label>Kartu Keluarga</label>
                                                                 </div>
                                                             <div class="form-group">
-                                                                    <img src="../Web_Kelurahan_Kepuharjo/Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
+                                                                    <img src="Api/uploads/<?php echo $row['image']; ?>" class="img-thumbnail" alt="Responsive image">
                                                                 </div>
                                                                 <?php
                                                             if ($_SESSION['hak_akses'] == "1") {
                                                                ?>
                                                             
                                                             <div class="modal-footer">
-                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">
+                                                            <input type="submit" class="btn btn-primary" name="signup" value="Download" href="Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">
                                                             <button class="btn btn-secondary" type="button" data-dismiss="modal" onClick="window.open('https://wa.me/62<?php echo $row['no_hp']; ?>');" target="_blank">Kirim Via WhatsApp</button>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
@@ -1786,16 +1786,16 @@ endif;
                                                             }elseif($_SESSION['hak_akses'] == "2"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/updatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRTberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/updatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php
                                                             }elseif($_SESSION['hak_akses'] == "3"){
                                                                 ?>
                                                             <div class="modal-footer">
-                                                            <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Api/update/setujuiRWberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
-                                                            <a class="btn btn-danger" href="../Web_Kelurahan_Kepuharjo/Api/update/RWupdatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
+                                                            <a class="btn btn-primary" href="Api/update/setujuiRWberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Setujui</a>
+                                                            <a class="btn btn-danger" href="Api/update/RWupdatetolakberkelakuanbaik.php?kode=<?php echo $row['id_surat']?>">Tolak</a>
                                                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
                                                             </div>
                                                                 <?php

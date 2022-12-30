@@ -24,7 +24,7 @@ $data = mysqli_fetch_assoc($query);
                     <h2>Preview data Syarat Surat</h2>
                 </div>
                 
-                <form action="../Web_Kelurahan_Kepuharjo/pdfdomisili.php" method="post">
+                <form action="pdfdomisili.php" method="post">
 
                     <div class="form-group">
                         <label>Nomor Surat</label>

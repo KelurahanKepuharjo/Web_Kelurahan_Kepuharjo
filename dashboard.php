@@ -54,8 +54,8 @@ include('include/navbar.php');
               Surat Masuk</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
               <?php
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readsmdash;
@@ -90,8 +90,8 @@ include('include/navbar.php');
               Surat Diproses</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
               <?php
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readspdash;
@@ -126,8 +126,8 @@ include('include/navbar.php');
               Surat Ditolak</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
               <?php
-              require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-              require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+              require_once 'Api/oopkoneksi.php';
+              require_once 'Api/lihatdatamaster.php';
 
 
               $obj = new readstolakdash;
@@ -162,8 +162,8 @@ include('include/navbar.php');
               Surat Selesai</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800">
             <?php 
-                  include_once('../web_kelurahan_kepuharjo/Api/oopkoneksi.php');
-                  include_once("../web_kelurahan_kepuharjo/Api/lihatdatamaster.php");
+                  include_once('Api/oopkoneksi.php');
+                  include_once("Api/lihatdatamaster.php");
                   
                   $obj = new readssdash;
                   $data = $obj->sumssdash();

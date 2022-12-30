@@ -46,8 +46,8 @@ include('include/navbar.php');
                             </thead>
                             <tbody>
                                 <?php
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                                require_once '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                                require_once 'Api/oopkoneksi.php';
+                                require_once 'Api/lihatdatamaster.php';
 
 
                                 $obj = new read;

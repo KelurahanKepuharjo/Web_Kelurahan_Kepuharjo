@@ -134,8 +134,8 @@
                                                                               echo $_SESSION['nama_lengkap'];
                                                                               ?></span>
                     <?php
-                    require '../Web_Kelurahan_Kepuharjo/Api/oopkoneksi.php';
-                    require '../Web_Kelurahan_Kepuharjo/Api/lihatdatamaster.php';
+                    require 'Api/oopkoneksi.php';
+                    require 'Api/lihatdatamaster.php';
 
 
                     $obj = new readprofile;
@@ -146,7 +146,7 @@
 
                     ?>
 
-                        <img class="img-profile rounded-circle" src="../web_kelurahan_kepuharjo/Api/uploads/<?php echo $row['image'] ?> ">
+                        <img class="img-profile rounded-circle" src="Api/uploads/<?php echo $row['image'] ?> ">
                     <?php }
                     } ?>
 
@@ -184,7 +184,7 @@
                   <div class="modal-body">Maka anda akan diarahkan ke halaman landing page.</div>
                   <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-                    <a class="btn btn-primary" href="../Web_Kelurahan_Kepuharjo/Logout.php">Iya</a>
+                    <a class="btn btn-primary" href="Logout.php">Iya</a>
                   </div>
                 </div>
               </div>
