@@ -119,18 +119,31 @@ class readsktm extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(id_surat) as sumid from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(id_surat) as sumid from surat_tidak_mampu WHERE status_surat = '$row' RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(id_surat) as sumid from surat_tidak_mampu WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(id_surat) as sumid from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 class readdomisili extends koneksii
@@ -140,18 +153,31 @@ class readdomisili extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(domisili.id_surat) as sumid from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(domisili.id_surat) as sumid from domisili WHERE status_surat = '$row' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(domisili.id_surat) as sumid from domisili WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(domisili.id_surat) as sumid from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 
@@ -162,18 +188,31 @@ class readusaha extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_usaha.id_surat) as sumid from surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_usaha.id_surat) as sumid from surat_usaha WHERE status_surat = '$row'  AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_usaha.id_surat) as sumid from surat_usaha WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(surat_usaha.id_surat) as sumid from surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 
@@ -184,18 +223,31 @@ class readakta extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_akta_kelahiran.id_surat) as sumid from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_akta_kelahiran.id_surat) as sumid from surat_akta_kelahiran WHERE status_surat = '$row' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_akta_kelahiran.id_surat) as sumid from surat_akta_kelahiran WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(surat_akta_kelahiran.id_surat) as sumid from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+       
     }
 }
 class readpindah extends koneksii
@@ -205,18 +257,31 @@ class readpindah extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 class readkematian extends koneksii
@@ -226,18 +291,31 @@ class readkematian extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_kematian.id_surat) as sumid from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_kematian.id_surat) as sumid from surat_kematian WHERE status_surat = '$row' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_kematian.id_surat) as sumid from surat_kematian WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(surat_kematian.id_surat) as sumid from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 class readbelumnikah extends koneksii
@@ -247,18 +325,31 @@ class readbelumnikah extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_ket_belum_menikah.id_surat) as sumid from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_ket_belum_menikah.id_surat) as sumid from surat_ket_belum_menikah WHERE status_surat = '$row' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_ket_belum_menikah.id_surat) as sumid from surat_ket_belum_menikah WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(surat_ket_belum_menikah.id_surat) as sumid from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 
@@ -269,18 +360,31 @@ class readkelakuanbaik extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row'  AND RW = '$rw'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row'";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT COUNT(surat_berkelakuan_baik.id_surat) as sumid from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW = '$rw'";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+       
     }
 }
 
@@ -292,26 +396,55 @@ class readsmdash extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND  RW = '$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND  RW = '$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' )+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' ) + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' )+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' ) + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-
-        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
-        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
-        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
-        (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
-        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +  
-        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
-        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
-        as total ";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 
@@ -345,26 +478,55 @@ class sumsuratmasuk extends koneksii{
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diajukan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND  RW = '$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row'  AND  RW = '$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND  RW = '$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND  RW = '$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-
-        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
-        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
-        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
-        (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')+ 
-        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') +  
-        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw') + 
-        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
-        as total ";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 
@@ -375,25 +537,52 @@ class readspdash extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Diproses RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Diproses RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Diproses Kelurahan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
-        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
-        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
-        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
-        as total ";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 
@@ -404,25 +593,52 @@ class readssdash extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Selesai";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
-        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
-        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
-        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND  RW = '$rw')  
-        as total ";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
 
@@ -433,24 +649,51 @@ class readssdashadmin extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Disetujui RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row'  AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Disetujui RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND RW ='$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Selesai";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        
-        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row')+ 
-        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
-        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row') + 
-        (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row')+ 
-        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row') +  
-        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row') + 
-        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row')  
-        as total ";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
     }
 }
 
@@ -461,24 +704,51 @@ class readstolakdash extends koneksii
         $_SESSION['hak_akses'];
         if ($_SESSION['hak_akses'] == '2') {
             $row = "Ditolak RT";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '3') {
             $row = "Ditolak RW";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RW ='$rw')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RW ='$rw') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RW ='$rw') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row' AND  RW = '$rw')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } elseif ($_SESSION['hak_akses'] == '1') {
             $row = "Ditolak Kelurahan";
+            $rt = $_SESSION['rt'];
+            $rw = $_SESSION['rw'];
+            $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row')+ 
+            (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row') +  
+            (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row') + 
+            (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row')  
+            as total ";
+            $result = $this->koneksi->prepare($sql);
+            $result->execute();
+            return $result;
         } else {
         }
-        $rt = $_SESSION['rt'];
-        $rw = $_SESSION['rw'];
-        $sql = "SELECT (SELECT COUNT(*) from domisili WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
-        (SELECT COUNT(*) from surat_tidak_mampu WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) from surat_akta_kelahiran WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) from surat_kematian WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw')+ 
-        (SELECT COUNT(*) from surat_ket_belum_menikah WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') +  
-        (SELECT COUNT(*) from surat_berkelakuan_baik WHERE status_surat = '$row' AND RT = '$rt' AND RW ='$rw') + 
-        (SELECT COUNT(*) FROM surat_usaha WHERE status_surat = '$row'  AND RT = '$rt' AND  RW = '$rw')  
-        as total ";
-        $result = $this->koneksi->prepare($sql);
-        $result->execute();
-        return $result;
+        
     }
 }
