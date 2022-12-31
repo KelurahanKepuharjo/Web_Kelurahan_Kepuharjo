@@ -66,7 +66,8 @@ NIK	                              : $nik
 Alamat 	                        : $alamat
 ",
 0, 'L', false, 20);
-
+$pdf->Image('images/stempel.png',120,216,33,0,'PNG');
+$pdf->Image('images/ttd.png',110,220,40,0,'PNG');
         $pdf->SetXY(20,156);
         $pdf->MultiCell(0, 6, "             Kelurahan Kepuharjo Kecamatan Lumajang 
 
@@ -88,7 +89,7 @@ $nomor   Tanggal, $tanggalsurat dan pengakuannya. Bahwa nama yang tersebut diata
         ",
         0, 'L', false, 20);
 
-
-$pdf->Output("F","Api/pdf/sktm$nama.pdf");
+        $pdf->Output("F","Api/pdf/sktm$nama.pdf");
+        header("location: surat-diproses.php");
 
 ?>

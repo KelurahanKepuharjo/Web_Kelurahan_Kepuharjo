@@ -1,4 +1,5 @@
 <?php
+require_once('fpdf185/fpdf.php');
 $nomor = $_POST['nomor'];
 $nama = $_POST['nama'];
 $ttl = $_POST['ttl'];
@@ -12,28 +13,75 @@ $tanggalsurat = $_POST['tanggalsurat'];
 $ketsurat = $_POST['ketsurat'];
 
 
-$document = file_get_contents("suratberkelakuanbaik.rtf");
+$pdf = new FPDF('P', 'mm', 'A4');
+$pdf->AddPage();
+$pdf->Image('images/logohp.png',18,27,43,0,'PNG');
+// $pdf->SetFont('Arial','B',12);
+$pdf->SetFont('Times','',12);
+$pdf->SetXY(30,24);
+
+// Add a multi-line cell with a left indentation of 20mm
+$pdf->MultiCell(0, 6, "
+P E M E R I N T A H   K A B U P A T E N  L U M A J A N G
+KECAMATAN LUMAJANG
+KELURAHAN KEPUHARJO
+Jl. Langsep No. 18 Telp. (0334) 888243
+L U M A J A N G 
+
+",
+0, 'C', false, 20);
+
+$pdf->SetFont('Times','B',14);
+$pdf->SetXY(20,66);
+
+// Add a multi-line cell with a left indentation of 20mm
+$pdf->MultiCell(0, 6, "SURAT KETERANGAN KEMATIAN            
+",
+0, 'C', false, 20);
+
+$pdf->SetFont('Times','',12);
+$pdf->SetXY(20,72);
+
+// Add a multi-line cell with a left indentation of 20mm
+$pdf->MultiCell(0, 6, "NOMOR : $nomor       
+",
+0, 'C', false, 20);
+
+$pdf->Image('images/stempel.png',120,216,33,0,'PNG');
+$pdf->Image('images/ttd.png',110,220,40,0,'PNG');
+$pdf->SetFont('Times','',12);
+$pdf->SetXY(20,84);
+$pdf->MultiCell(0, 6, "             Yang bertanda tangan di bawah ini kami Lurah Kepuharjo Kecamatan Lumajang Kabupaten Lumajang menerangkan bahwa  : 
+
+                            N a m a                             	:	$nama
+                            Tempat / Tgl Lahir          	 :	$ttl
+                            Jenis Kelamin 	                  :	$kelamin
+                            Kebangsaan / Agama         :	$kebangsaan
+                            Status 		                              :	$status
+                            Pekerjaan                           :	$pekerjaan
+                            N I K 		                               :	$nik
+                            A l a m a t	                         :	$alamat
+			    Kelurahan Kepuharjo Kecamatan Lumajang 
+
+                Adalah benar sampai dengan saat ini warga kami menerangkan bahwa nama tersebut diatas berkelakuan baik dan tidak tersangkut urusan kriminal. Surat keterangan ini hanya dipergunakan untuk $ketsurat
+Demikian surat keterangan ini kami buat untuk dapat dipergunakan sebagaimana mestinya.
 
 
-//mereplace semua kata yang ada di file dengan variabel
-$document = str_replace("#NOMOR", $nomor, $document);
-$document = str_replace("#NAMA", $nama, $document);
-$document = str_replace("#TTL", $ttl, $document);
-$document = str_replace("#KELAMIN", $kelamin, $document);
-$document = str_replace("#KEBANGSAAN", $kebangsaan, $document);
-$document = str_replace("#STATUS", $status, $document);
-$document = str_replace("#PEKERJAAN", $pekerjaan, $document);
-$document = str_replace("#NIK", $nik, $document);
-$document = str_replace("#ALAMAT", $alamat, $document);
-$document = str_replace("#KET", $ketsurat, $document);
-$document = str_replace("#TANGGAL", date('d-m-Y', strtotime($tanggalsurat)), $document);
+
+                                                                                    Lumajang, $tanggalsurat
+                                                                                    LURAH KEPUHARJO
+                                                                                                            
 
 
-// header untuk membuka file yang dihasilkan dengna aplikasi Ms. Word
-// nama file yang dihasilkan adalah surat izin.docx
-header("Content-type: application/msword");
-header("Content-disposition: inline; filename=$nama.doc");
-header("Content-length: " . strlen($document));
-echo $document;
 
+                                                                                    MUHAMMAD SAIFUL,S.AP
+                                                                                    NIP. 19720202 199803 1 010
+
+
+
+",
+0, 'L', false, 20);
+
+$pdf->Output("F","Api/pdf/kelBaik$nama.pdf");
+header("location: surat-diproses.php");
 ?>

@@ -66,7 +66,8 @@ NIK	                              : $nik
 Alamat 	                        : $alamat
 ",
 0, 'L', false, 20);
-
+$pdf->Image('images/stempel.png',120,216,33,0,'PNG');
+$pdf->Image('images/ttd.png',110,220,40,0,'PNG');
         $pdf->SetXY(20,156);
         $pdf->MultiCell(0, 6, "             Menerangkan bahwa nama tersebut diatas benar mempunyai Usaha $usaha Berdiri sejak tahun $thnusaha sampai dengan sekarang, Surat keterangan ini hanya di pergunakan untuk Persyaratan $ketsurat
         Demikian surat keterangan ini kami buat untuk dapat dipergunakan sebagaimana mestinya.
@@ -84,8 +85,8 @@ Alamat 	                        : $alamat
 
         ",
         0, 'L', false, 20);
-$pdf->Output();
-// $pdf->Output("F","Api/pdf/Domisili$nik.pdf");
-// header("location: surat-diproses.php");
+
+$pdf->Output("F","Api/pdf/Domisili$nama.pdf");
+header("location: surat-diproses.php");
 
 ?>

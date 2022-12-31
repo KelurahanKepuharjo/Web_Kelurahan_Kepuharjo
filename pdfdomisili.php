@@ -67,7 +67,8 @@ NIK	                              : $nik
 Alamat 	                        : $alamat
 ",
 0, 'L', false, 20);
-
+$pdf->Image('images/stempel.png',120,216,33,0,'PNG');
+$pdf->Image('images/ttd.png',110,220,40,0,'PNG');
         $pdf->SetXY(20,156);
         $pdf->MultiCell(0, 6, "             Adalah benar sampai dengan saat ini bukan warga kami dan berdasarkan surat pengantar $nomor tanggal $tanggalsurat Nomor : $no dan pengakuannya.  Menerangkan bahwa nama  tersebut diatas benar berdomisili di $alamat Surat Keterangan Domisili ini dipergunakan untuk $ketsurat. 
 
@@ -86,7 +87,8 @@ Alamat 	                        : $alamat
         ",
         0, 'L', false, 20);
 
-$pdf->Output("F","Api/pdf/Domisili$nik.pdf");
+
+$pdf->Output("F","Api/pdf/Domisili$nama.pdf");
 header("location: surat-diproses.php");
 
 ?>
